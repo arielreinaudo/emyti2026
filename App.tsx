@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Layout from './components/Layout';
 import BookingRouter from './components/BookingRouter';
-import { Language } from './types';
+import { Language, BookingState } from './types';
 
 const TRANSLATIONS = {
   es: {
@@ -36,11 +36,40 @@ const TRANSLATIONS = {
       title: 'Elige tu camino',
       sub: 'Opciones puntuales o programas de transformación profunda.',
       cards: [
-        { title: 'Ala Metabólica', lead: 'Dra. Adriana Ortiz', type: 'Salud Funcional', desc: 'Para quienes buscan balance hormonal, salud digestiva o longevidad metabólica.', features: ['Laboratorios funcionales', 'Protocolo nutricional', 'Soporte ES/EN'], cta: 'Ver más' },
-        { title: 'Ala de Acupuntura', lead: 'Dra. Adriana Ortiz + Ariel Reinaudo', type: 'Medicina Tradicional', desc: 'Tratamiento del dolor y reequilibrio homeostático mediante técnicas milenarias. Solo presencial.', features: ['Atención en Rosario', 'Manejo del dolor', 'Regulación biológica'], cta: 'Ver más' },
-        { title: 'Programa Integrado', lead: 'Dra. Ortiz + Ariel Reinaudo', type: 'Transformación 360', desc: 'Nuestro programa premium. La sinergia total entre medicina y manejo de estrés.', features: ['Enfoque combinado', 'Optimización biológica', 'Coaching de estrés'], cta: 'Agendar Integrado' },
-        { title: 'Ala de Estrés', lead: 'Ariel Reinaudo', type: 'Manejo de Estrés', desc: 'Para quienes conviven con ansiedad, burnout o síntomas psicosomáticos persistentes.', features: ['Entrenamiento Vagal', 'Regulación Emocional', 'Solo Español'], cta: 'Ver más' }
+        { id: 'metabolica', title: 'Ala Metabólica', lead: 'Dra. Adriana Ortiz', type: 'Salud Funcional', desc: 'Para quienes buscan balance hormonal, salud digestiva o longevidad metabólica.', features: ['Laboratorios funcionales', 'Protocolo nutricional', 'Soporte ES/EN'], cta: 'Ver más' },
+        { id: 'acupuntura', title: 'Ala de Acupuntura', lead: 'Dra. Adriana Ortiz + Ariel Reinaudo', type: 'Medicina Tradicional', desc: 'Tratamiento del dolor y reequilibrio homeostático mediante técnicas milenarias. Solo presencial.', features: ['Atención en Rosario', 'Manejo del dolor', 'Regulación biológica'], cta: 'Ver más' },
+        { id: 'integrado', title: 'Programa Integrado', lead: 'Dra. Ortiz + Ariel Reinaudo', type: 'Transformación 360', desc: 'Nuestro programa premium. La sinergia total entre medicina y manejo de estrés.', features: ['Enfoque combinado', 'Optimización biológica', 'Coaching de estrés'], cta: 'Agendar Integrado' },
+        { id: 'estres', title: 'Ala de Estrés', lead: 'Ariel Reinaudo', type: 'Manejo de Estrés', desc: 'Para quienes conviven con ansiedad, burnout o síntomas psicosomáticos persistentes.', features: ['Entrenamiento Vagal', 'Regulación Emocional', 'Solo Español'], cta: 'Ver más' }
       ]
+    },
+    details: {
+      metabolica: {
+        title: "Consulta Virtual de Medicina Nutricional y Metabólica",
+        description: "Consulta integral enfocada en la evaluación de tu salud metabólica y nutricional desde la comodidad de tu hogar. A través de un análisis detallado de síntomas, hábitos y valores bioquímicos, recibirás recomendaciones personalizadas para optimizar tu bienestar y mejorar tu metabolismo.",
+        servicesTitle: "Servicios incluidos en la consulta",
+        services: [
+          "Evaluación de historial clínico, síntomas y hábitos de vida",
+          "Análisis de valores bioquímicos (si están disponibles)",
+          "Interpretación de indicadores clave en salud metabólica",
+          "Recomendaciones personalizadas para mejorar los parámetros evaluados"
+        ],
+        benefitsTitle: "Beneficios de esta consulta",
+        benefits: [
+          "Obtén un análisis detallado de tu estado metabólico sin salir de casa",
+          "Identifica desequilibrios que pueden afectar tu salud y energía",
+          "Optimiza tu bienestar con estrategias nutricionales y funcionales",
+          "Recibe recomendaciones prácticas y aplicables a tu día a día"
+        ],
+        investmentTitle: "Inversión",
+        investment: [
+          "$80 primer encuentro",
+          "$50 encuentros posteriores, si fuera necesario y mientras tu membresía este activa.",
+          "Incluye un mes de la Membresía V.I.P.",
+          "(Consulta por precio promocional para quienes viven en Argentina)",
+          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial."
+        ],
+        cta: "Agendar ahora"
+      }
     },
     team: {
       title: 'El Equipo',
@@ -65,7 +94,7 @@ const TRANSLATIONS = {
     footer: {
       tagline: '360° Holistic Healing Model. Medicina Funcional, Metabolismo y Manejo de Estrés.',
       explore: 'Explorar',
-      modality: 'Modalidad',
+      modality: 'Modality',
       links: {
         model: 'Nuestro Modelo',
         programs: 'Programas Metabólicos',
@@ -110,11 +139,40 @@ const TRANSLATIONS = {
       title: 'Choose your path',
       sub: 'Specific options or deep transformation programs.',
       cards: [
-        { title: 'Metabolic Wing', lead: 'Dr. Adriana Ortiz', type: 'Functional Health', desc: 'For those seeking hormonal balance, digestive health, or metabolic longevity.', features: ['Functional labs', 'Nutritional protocol', 'ES/EN Support'], cta: 'See more' },
-        { title: 'Acupuncture Wing', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Traditional Medicine', desc: 'Pain treatment and homeostatic rebalancing through ancient techniques. In-person only.', features: ['Rosario-based care', 'Pain management', 'Biological regulation'], cta: 'See more' },
-        { title: 'Integrated Program', lead: 'Dr. Ortiz + Ariel Reinaudo', type: '360 transformation', desc: 'Our premium program. Total synergy between medicine and stress management.', features: ['Combined approach', 'Biological optimization', 'Stress coaching'], cta: 'Book Integrated' },
-        { title: 'Stress Wing', lead: 'Ariel Reinaudo', type: 'Stress Management', desc: 'For those living with anxiety, burnout, or persistent psychiatrist symptoms.', features: ['Vagal Training', 'Emotional Regulation', 'Spanish Only'], cta: 'See more' }
+        { id: 'metabolica', title: 'Metabolic Wing', lead: 'Dr. Adriana Ortiz', type: 'Functional Health', desc: 'For those seeking hormonal balance, digestive health, or metabolic longevity.', features: ['Functional labs', 'Nutritional protocol', 'ES/EN Support'], cta: 'See more' },
+        { id: 'acupuntura', title: 'Acupuncture Wing', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Traditional Medicine', desc: 'Pain treatment and homeostatic rebalancing through ancient techniques. In-person only.', features: ['Rosario-based care', 'Pain management', 'Biological regulation'], cta: 'See more' },
+        { id: 'integrado', title: 'Integrated Program', lead: 'Dr. Ortiz + Ariel Reinaudo', type: '360 transformation', desc: 'Our premium program. Total synergy between medicine and stress management.', features: ['Combined approach', 'Biological optimization', 'Stress coaching'], cta: 'Book Integrated' },
+        { id: 'estres', title: 'Stress Wing', lead: 'Ariel Reinaudo', type: 'Stress Management', desc: 'For those living with anxiety, burnout, or persistent psychiatrist symptoms.', features: ['Vagal Training', 'Emotional Regulation', 'Spanish Only'], cta: 'See more' }
       ]
+    },
+    details: {
+      metabolica: {
+        title: "Virtual Nutritional and Metabolic Medicine Consultation",
+        description: "Comprehensive consultation focused on assessing your metabolic and nutritional health from the comfort of your home. Through detailed analysis of symptoms, habits, and biochemical values, you will receive personalized recommendations to optimize your well-being and improve your metabolism.",
+        servicesTitle: "Services included in the consultation",
+        services: [
+          "Evaluation of clinical history, symptoms, and lifestyle habits",
+          "Analysis of biochemical values (if available)",
+          "Interpretation of key metabolic health indicators",
+          "Personalized recommendations to improve evaluated parameters"
+        ],
+        benefitsTitle: "Benefits of this consultation",
+        benefits: [
+          "Obtain a detailed analysis of your metabolic status without leaving home",
+          "Identify imbalances that may affect your health and energy",
+          "Optimize your well-being with nutritional and functional strategies",
+          "Receive practical and applicable recommendations for your daily life"
+        ],
+        investmentTitle: "Investment",
+        investment: [
+          "$80 first encounter",
+          "$50 subsequent encounters, if necessary and while your membership is active.",
+          "Includes one month of VIP Membership.",
+          "(Inquire for promotional price for residents in Argentina)",
+          "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
+        ],
+        cta: "Agendar ahora"
+      }
     },
     team: {
       title: 'The Team',
@@ -133,8 +191,8 @@ const TRANSLATIONS = {
       cta: 'Book in Rosario'
     },
     routerSection: {
-      title: 'Start your process',
-      desc: 'Use our smart assistant to find the appointment and professional that best fits your case.'
+      title: 'Comienza tu proceso',
+      desc: 'Utiliza nuestro asistente inteligente para encontrar el turno y profesional que mejor se adapte a tu caso.'
     },
     footer: {
       tagline: '360° Holistic Healing Model. Functional Medicine, Metabolism and Stress Management.',
@@ -157,7 +215,26 @@ const TRANSLATIONS = {
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('es');
+  const [activeModal, setActiveModal] = useState<string | null>(null);
+  // Usamos una clave para forzar el reinicio del componente BookingRouter
+  const [routerResetKey, setRouterResetKey] = useState<number>(0);
   const d = TRANSLATIONS[lang];
+
+  const closeModal = () => setActiveModal(null);
+
+  const handleBookNowFromModal = () => {
+    // Cerramos el modal
+    closeModal();
+    
+    // Incrementamos la clave para forzar que el BookingRouter vuelva a su estado inicial
+    setRouterResetKey(prev => prev + 1);
+    
+    // Scroll suave hasta la sección de reservas
+    const target = document.getElementById('reservar');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <Layout currentLang={lang} onLanguageChange={setLang} dict={d}>
@@ -251,13 +328,84 @@ const App: React.FC = () => {
                 desc={card.desc}
                 features={card.features}
                 cta={card.cta}
-                href="#reservar"
+                href={card.id === 'metabolica' ? undefined : "#reservar"}
+                onClick={card.id === 'metabolica' ? () => setActiveModal('metabolica') : undefined}
                 isFeatured={i === 2}
               />
             ))}
           </div>
         </div>
       </section>
+
+      {/* DETAILS MODAL */}
+      {activeModal === 'metabolica' && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-6 overflow-y-auto bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-300">
+          <div className="relative bg-white w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[90vh] flex flex-col">
+            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 sticky top-0 bg-white z-10">
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900">{d.details.metabolica.title}</h3>
+              <button onClick={closeModal} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                <svg className="w-6 h-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="p-6 md:p-10 overflow-y-auto">
+              <p className="text-slate-600 leading-relaxed mb-10 text-lg">
+                {d.details.metabolica.description}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-600 mb-6">{d.details.metabolica.servicesTitle}</h4>
+                  <ul className="space-y-4">
+                    {d.details.metabolica.services.map((s, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0"></span>
+                        <span className="text-sm leading-relaxed">{s}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-600 mb-6">{d.details.metabolica.benefitsTitle}</h4>
+                  <ul className="space-y-4">
+                    {d.details.metabolica.benefits.map((b, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0"></span>
+                        <span className="text-sm leading-relaxed">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                <h4 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-6">{d.details.metabolica.investmentTitle}</h4>
+                <div className="space-y-3">
+                  {d.details.metabolica.investment.map((line, i) => {
+                    const isNote = line.includes('(') || line.includes('Importes');
+                    return (
+                      <p key={i} className={`${isNote ? 'text-xs text-slate-400' : 'text-slate-700 font-medium'}`}>
+                        {line}
+                      </p>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="mt-12 mb-6 flex justify-center">
+                <button 
+                  onClick={handleBookNowFromModal} 
+                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02]"
+                >
+                  {d.details.metabolica.cta}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* EQUIPO */}
       <section id="equipo" className="py-24 bg-white">
@@ -328,7 +476,10 @@ const App: React.FC = () => {
              </p>
           </div>
           
-          <BookingRouter initialLang={lang} />
+          <BookingRouter 
+            initialLang={lang} 
+            key={`booking-router-${routerResetKey}`}
+          />
         </div>
       </section>
     </Layout>
@@ -352,36 +503,47 @@ const ProgramCard: React.FC<{
   desc: string, 
   features: string[], 
   cta: string, 
-  href: string,
+  href?: string,
+  onClick?: () => void,
   isFeatured?: boolean 
-}> = ({ title, lead, type, desc, features, cta, href, isFeatured }) => (
-  <div className={`p-8 rounded-3xl flex flex-col h-full border transition-all ${
-    isFeatured 
-    ? 'bg-slate-900 text-white border-slate-800 shadow-2xl shadow-indigo-200/20 scale-105 z-10' 
-    : 'bg-white text-slate-900 border-slate-200 hover:border-indigo-300'
-  }`}>
-    <div className="mb-6">
-      <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded mb-4 inline-block ${isFeatured ? 'bg-indigo-600' : 'bg-slate-100 text-slate-500'}`}>{type}</span>
-      <h3 className="text-2xl font-bold mb-1">{title}</h3>
-      <p className={`text-sm ${isFeatured ? 'text-indigo-400' : 'text-slate-500'}`}>{lead}</p>
-    </div>
-    <p className={`text-sm mb-8 flex-grow leading-relaxed ${isFeatured ? 'text-slate-400' : 'text-slate-600'}`}>{desc}</p>
-    <ul className="space-y-4 mb-10">
-      {features.map((f, i) => (
-        <li key={i} className="flex items-center gap-3 text-sm">
-          <span className={`w-1 h-1 rounded-full ${isFeatured ? 'bg-indigo-500' : 'bg-indigo-300'}`}></span>
-          {f}
-        </li>
-      ))}
-    </ul>
-    <a href={href} className={`w-full py-4 rounded-xl text-center font-bold transition-all ${
+}> = ({ title, lead, type, desc, features, cta, href, onClick, isFeatured }) => {
+  const ButtonContent = () => (
+    <div className={`w-full py-4 rounded-xl text-center font-bold transition-all ${
       isFeatured 
       ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-900/40' 
       : 'bg-slate-900 text-white hover:bg-indigo-600 shadow-sm'
     }`}>
       {cta}
-    </a>
-  </div>
-);
+    </div>
+  );
+
+  return (
+    <div className={`p-8 rounded-3xl flex flex-col h-full border transition-all ${
+      isFeatured 
+      ? 'bg-slate-900 text-white border-slate-800 shadow-2xl shadow-indigo-200/20 scale-105 z-10' 
+      : 'bg-white text-slate-900 border-slate-200 hover:border-indigo-300'
+    }`}>
+      <div className="mb-6">
+        <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded mb-4 inline-block ${isFeatured ? 'bg-indigo-600' : 'bg-slate-100 text-slate-500'}`}>{type}</span>
+        <h3 className="text-2xl font-bold mb-1">{title}</h3>
+        <p className={`text-sm ${isFeatured ? 'text-indigo-400' : 'text-slate-500'}`}>{lead}</p>
+      </div>
+      <p className={`text-sm mb-8 flex-grow leading-relaxed ${isFeatured ? 'text-slate-400' : 'text-slate-600'}`}>{desc}</p>
+      <ul className="space-y-4 mb-10">
+        {features.map((f, i) => (
+          <li key={i} className="flex items-center gap-3 text-sm">
+            <span className={`w-1 h-1 rounded-full ${isFeatured ? 'bg-indigo-500' : 'bg-indigo-300'}`}></span>
+            {f}
+          </li>
+        ))}
+      </ul>
+      {href ? (
+        <a href={href}><ButtonContent /></a>
+      ) : (
+        <button onClick={onClick}><ButtonContent /></button>
+      )}
+    </div>
+  );
+};
 
 export default App;

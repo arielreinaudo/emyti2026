@@ -10,7 +10,13 @@ interface BookingRouterProps {
 }
 
 const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang, onClose }) => {
-  const [step, setStep] = useState(1);
+  // Calculamos el paso inicial basado en la información recibida
+  const getInitialStep = () => {
+    if (initialState?.area && initialState?.type && initialState?.modality) return 4;
+    return 1;
+  };
+
+  const [step, setStep] = useState(getInitialStep());
   const [booking, setBooking] = useState<BookingState>({
     modality: initialState?.modality || null,
     type: initialState?.type || null,
@@ -54,7 +60,7 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
   const isEnglishRestricted = booking.lang === 'en' && (booking.area === 'ariel' || booking.area === 'integrado');
 
   return (
-    <div id="booking-router" className="max-w-4xl mx-auto p-6 md:p-12 bg-white rounded-2xl shadow-xl border border-slate-100 my-12">
+    <div id="booking-router" className="max-w-4xl mx-auto p-6 md:p-12 bg-white rounded-2xl shadow-xl border border-slate-100 my-12 scroll-mt-24">
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-2xl font-bold text-slate-800">Reserva tu consulta</h2>
         <button onClick={reset} className="text-sm text-slate-400 hover:text-slate-600 transition-colors underline">Reiniciar</button>
@@ -160,7 +166,7 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
 
       {step === 5 && (
         <div className="text-center space-y-8 animate-in zoom-in duration-500">
-          <div className="bg-indigo-50 p-8 rounded-2xl border border-indigo-100 inline-block w-full">
+          <div className="bg-indigo-50 p-8 rounded-2xl border border-indigo-100 inline-block w-full text-center">
             <h3 className="text-2xl font-bold text-slate-800 mb-2">Tu mejor opción</h3>
             <p className="text-slate-600 mb-6">
               Hemos seleccionado el canal de atención óptimo basado en tus necesidades.
@@ -185,7 +191,7 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
           <div className="pt-8 border-t border-slate-100">
             <p className="text-sm text-slate-400 mb-4">¿No es lo que buscabas? Puedes volver atrás o iniciar una consulta general.</p>
             <div className="flex justify-center gap-4">
-               <button onClick={() => setStep(4)} className="px-4 py-2 text-slate-600 hover:text-indigo-600">Volver</button>
+               <button onClick={() => setStep(initialState ? 4 : 4)} className="px-4 py-2 text-slate-600 hover:text-indigo-600">Volver</button>
                <a href={CALENDLY.default_orientacion} target="_blank" className="px-4 py-2 border border-slate-200 rounded-lg text-slate-600 hover:border-indigo-600 transition-colors">Consulta de Orientación</a>
             </div>
           </div>
