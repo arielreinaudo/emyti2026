@@ -19,7 +19,7 @@ const TRANSLATIONS = {
     },
     model: {
       title: 'Nuestro Modelo de Salud',
-      sub: 'No tratamos síntomas aislados. Entendemos la salud como un equilibrio dinámico entre tu biología, tu sistema nervioso y tus vínculos.',
+      sub: 'No tratamos síntomas aislados. Entendemos la salud como un equilibrio dinámico entre tu biología, tu sistema nervioso y tu entorno.',
       cards: [
         { title: 'Acupuntura', desc: 'Técnica milenaria para equilibrar tu energía y tratar dolores crónicos, disponible únicamente en nuestra sede de Rosario.' },
         { title: 'Salud Metabólica', desc: 'Optimizamos tus hormonas, nutrición y energía celular para que tu cuerpo funcione en su máximo potencial.' },
@@ -76,8 +76,20 @@ const TRANSLATIONS = {
       desc: 'Profesionales especializados que colaboran de manera constante para ofrecerte un diagnóstico coherente y una estrategia unificada.',
       quote: 'Nuestro objetivo es que dejes de ser un paciente pasivo para convertirte en el arquitecto de tu propia salud.',
       members: [
-        { name: 'Dra. Adriana Ortiz', role: 'Functional Medicine (ES/EN)', desc: 'Experta en metabolismo y salud funcional con mirada global.', cta: 'Reservar con Dra. →' },
-        { name: 'Ariel Reinaudo', role: 'Stress Management (ES)', desc: 'Especialista en regulación del sistema nervioso y conducta.', cta: 'Reservar con Ariel →' }
+        { 
+          name: 'Dra. Adriana Ortiz', 
+          role: 'Functional Medicine (ES/EN)', 
+          desc: 'Experta en metabolismo y salud funcional con mirada global.', 
+          cta: 'Reservar con Dra. →',
+          image: 'https://www.dropbox.com/scl/fi/otjqcs6zsn2xlek2pxnn0/Adriana-circle.png?rlkey=9nelpp0neu1ihmqdic4cwme3x&raw=1'
+        },
+        { 
+          name: 'Ariel Reinaudo', 
+          role: 'Stress Management (ES)', 
+          desc: 'Especialista en regulación del sistema nervioso y conducta.', 
+          cta: 'Reservar con Ariel →',
+          image: 'https://www.dropbox.com/scl/fi/urm1fbnflxg4o89178k3r/Iconos-landing-visualmedita.png?rlkey=rxura802yl8l7gyns15e5njz7&raw=1'
+        }
       ]
     },
     rosario: {
@@ -85,7 +97,8 @@ const TRANSLATIONS = {
       title: 'Atención Presencial en Rosario',
       desc: 'Contamos con un espacio diseñado para tu bienestar en el corazón de Rosario, Argentina. Ofrecemos una experiencia cercana y humana para quienes prefieren el contacto directo.',
       features: ['Consultas de evaluación exhaustiva.', 'Mediciones antropométricas y funcionales en sitio.'],
-      cta: 'Agendar en Rosario'
+      cta: 'Agendar en Rosario',
+      image: 'https://www.dropbox.com/scl/fi/560vp920ntxlc15fsz4js/rosario-web.jpg?rlkey=8p8ulhxtokz7plms37ddj7ua9&raw=1'
     },
     routerSection: {
       title: 'Comienza tu proceso',
@@ -122,7 +135,7 @@ const TRANSLATIONS = {
     },
     model: {
       title: 'Our Health Model',
-      sub: 'We don\'t treat isolated symptoms. We understand health as a dynamic balance between your biology, your nervous system, and your relationships.',
+      sub: 'We don\'t treat isolated symptoms. We understand health as a dynamic balance between your biology, your nervous system, and your surroundings.',
       cards: [
         { title: 'Acupuncture', desc: 'Ancient technique to balance your energy and treat chronic pain, available exclusively at our Rosario clinic.' },
         { title: 'Metabolic Health', desc: 'We optimize your hormones, nutrition, and cellular energy so your body functions at its peak potential.' },
@@ -179,8 +192,20 @@ const TRANSLATIONS = {
       desc: 'Specialized professionals collaborating constantly to offer you a coherent diagnosis and a unified strategy.',
       quote: 'Our goal is for you to stop being a passive patient and become the architect of your own health.',
       members: [
-        { name: 'Dr. Adriana Ortiz', role: 'Functional Medicine (ES/EN)', desc: 'Expert in metabolism and functional health with a global perspective.', cta: 'Book with Dr. →' },
-        { name: 'Ariel Reinaudo', role: 'Stress Management (ES)', desc: 'Specialist in nervous system regulation and behavior.', cta: 'Book with Ariel →' }
+        { 
+          name: 'Dr. Adriana Ortiz', 
+          role: 'Functional Medicine (ES/EN)', 
+          desc: 'Expert in metabolism and functional health with a global perspective.', 
+          cta: 'Book with Dr. →',
+          image: 'https://www.dropbox.com/scl/fi/otjqcs6zsn2xlek2pxnn0/Adriana-circle.png?rlkey=9nelpp0neu1ihmqdic4cwme3x&raw=1'
+        },
+        { 
+          name: 'Ariel Reinaudo', 
+          role: 'Stress Management (ES)', 
+          desc: 'Specialist in nervous system regulation and behavior.', 
+          cta: 'Book with Ariel →',
+          image: 'https://www.dropbox.com/scl/fi/urm1fbnflxg4o89178k3r/Iconos-landing-visualmedita.png?rlkey=rxura802yl8l7gyns15e5njz7&raw=1'
+        }
       ]
     },
     rosario: {
@@ -188,7 +213,8 @@ const TRANSLATIONS = {
       title: 'In-person Care in Rosario',
       desc: 'We have a space designed for your well-being in the heart of Rosario, Argentina. We offer a close and human experience for those who prefer direct contact.',
       features: ['Exhaustive evaluation consultations.', 'On-site anthropometric and functional measurements.'],
-      cta: 'Book in Rosario'
+      cta: 'Book in Rosario',
+      image: 'https://www.dropbox.com/scl/fi/560vp920ntxlc15fsz4js/rosario-web.jpg?rlkey=8p8ulhxtokz7plms37ddj7ua9&raw=1'
     },
     routerSection: {
       title: 'Comienza tu proceso',
@@ -216,20 +242,14 @@ const TRANSLATIONS = {
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('es');
   const [activeModal, setActiveModal] = useState<string | null>(null);
-  // Usamos una clave para forzar el reinicio del componente BookingRouter
   const [routerResetKey, setRouterResetKey] = useState<number>(0);
   const d = TRANSLATIONS[lang];
 
   const closeModal = () => setActiveModal(null);
 
   const handleBookNowFromModal = () => {
-    // Cerramos el modal
     closeModal();
-    
-    // Incrementamos la clave para forzar que el BookingRouter vuelva a su estado inicial
     setRouterResetKey(prev => prev + 1);
-    
-    // Scroll suave hasta la sección de reservas
     const target = document.getElementById('reservar');
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
@@ -322,15 +342,22 @@ const App: React.FC = () => {
             {d.programs.cards.map((card, i) => (
               <ProgramCard 
                 key={i}
+                id={card.id}
                 title={card.title}
                 lead={card.lead}
                 type={card.type}
                 desc={card.desc}
                 features={card.features}
                 cta={card.cta}
-                href={card.id === 'metabolica' ? undefined : "#reservar"}
-                onClick={card.id === 'metabolica' ? () => setActiveModal('metabolica') : undefined}
-                isFeatured={i === 2}
+                isFeatured={card.id === 'integrado'}
+                onAction={() => {
+                  if (card.id === 'metabolica') {
+                    setActiveModal('metabolica');
+                  } else {
+                    const target = document.getElementById('reservar');
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               />
             ))}
           </div>
@@ -339,8 +366,8 @@ const App: React.FC = () => {
 
       {/* DETAILS MODAL */}
       {activeModal === 'metabolica' && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-6 overflow-y-auto bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-300">
-          <div className="relative bg-white w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[90vh] flex flex-col">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-6 overflow-y-auto bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300">
+          <div className="relative bg-white w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[95vh] flex flex-col">
             <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 sticky top-0 bg-white z-10">
               <h3 className="text-xl md:text-2xl font-bold text-slate-900">{d.details.metabolica.title}</h3>
               <button onClick={closeModal} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
@@ -350,7 +377,7 @@ const App: React.FC = () => {
               </button>
             </div>
             
-            <div className="p-6 md:p-10 overflow-y-auto">
+            <div className="p-6 md:p-10 overflow-y-auto flex-grow">
               <p className="text-slate-600 leading-relaxed mb-10 text-lg">
                 {d.details.metabolica.description}
               </p>
@@ -394,10 +421,10 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-12 mb-6 flex justify-center">
+              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
                 <button 
                   onClick={handleBookNowFromModal} 
-                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02]"
+                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
                 >
                   {d.details.metabolica.cta}
                 </button>
@@ -424,9 +451,13 @@ const App: React.FC = () => {
             </div>
             <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-12">
               {d.team.members.map((member, i) => (
-                <div key={i} className="group">
-                  <div className="aspect-[4/5] bg-slate-100 rounded-2xl overflow-hidden mb-6 relative">
-                    <img src={`https://picsum.photos/seed/doctor${i+1}/800/1000`} alt={member.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                <div key={i} className="group flex flex-col items-center text-center sm:items-start sm:text-left">
+                  <div className="w-64 h-64 aspect-square bg-slate-100 rounded-full overflow-hidden mb-6 relative border-4 border-white shadow-xl">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover transition-all duration-700 hover:scale-110" 
+                    />
                   </div>
                   <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                   <p className="text-indigo-600 text-sm font-semibold mb-3 uppercase tracking-wider">{member.role}</p>
@@ -461,7 +492,7 @@ const App: React.FC = () => {
              <a href="#reservar" className="inline-block mt-12 px-10 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-100 transition-all">{d.rosario.cta}</a>
           </div>
           <div className="flex-1 w-full h-80 md:h-[500px] bg-slate-800 rounded-3xl overflow-hidden shadow-2xl">
-             <img src="https://picsum.photos/seed/rosario/1200/800" alt="Consultorio Rosario" className="w-full h-full object-cover opacity-60" />
+             <img src={d.rosario.image} alt="Consultorio Rosario" className="w-full h-full object-cover opacity-60" />
           </div>
         </div>
       </section>
@@ -496,27 +527,19 @@ const ModelCard: React.FC<{ title: string, desc: string }> = ({ title, desc }) =
   </div>
 );
 
-const ProgramCard: React.FC<{ 
-  title: string, 
-  lead: string, 
-  type: string, 
-  desc: string, 
-  features: string[], 
-  cta: string, 
-  href?: string,
-  onClick?: () => void,
-  isFeatured?: boolean 
-}> = ({ title, lead, type, desc, features, cta, href, onClick, isFeatured }) => {
-  const ButtonContent = () => (
-    <div className={`w-full py-4 rounded-xl text-center font-bold transition-all ${
-      isFeatured 
-      ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-900/40' 
-      : 'bg-slate-900 text-white hover:bg-indigo-600 shadow-sm'
-    }`}>
-      {cta}
-    </div>
-  );
+interface ProgramCardProps {
+  id: string;
+  title: string;
+  lead: string;
+  type: string;
+  desc: string;
+  features: string[];
+  cta: string;
+  onAction: () => void;
+  isFeatured?: boolean;
+}
 
+const ProgramCard: React.FC<ProgramCardProps> = ({ id, title, lead, type, desc, features, cta, onAction, isFeatured }) => {
   return (
     <div className={`p-8 rounded-3xl flex flex-col h-full border transition-all ${
       isFeatured 
@@ -537,11 +560,17 @@ const ProgramCard: React.FC<{
           </li>
         ))}
       </ul>
-      {href ? (
-        <a href={href}><ButtonContent /></a>
-      ) : (
-        <button onClick={onClick}><ButtonContent /></button>
-      )}
+      <button 
+        type="button"
+        onClick={onAction}
+        className={`w-full py-4 rounded-xl text-center font-bold transition-all transform hover:scale-[1.02] active:scale-[0.98] ${
+          isFeatured 
+          ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-900/40' 
+          : 'bg-slate-900 text-white hover:bg-indigo-600 shadow-sm'
+        }`}
+      >
+        {cta}
+      </button>
     </div>
   );
 };
