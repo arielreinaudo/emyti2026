@@ -19,7 +19,7 @@ const TRANSLATIONS = {
     },
     model: {
       title: 'Nuestro Modelo de Salud',
-      sub: 'No tratamos síntomas aislados. Entendemos la salud como un equilibrio dinámico entre tu biología, tu sistema nervioso y tu entorno.',
+      sub: 'Acompañamos tu salud de manera integral, entendiendo el bienestar como un equilibrio dinámico entre tu biología, tu sistema nervioso y tu entorno. Por eso trabajamos sobre las causas que sostienen el problema: cómo funciona tu metabolismo, cómo estás regulando el estrés en el cuerpo y qué hábitos y relaciones están influyendo en tu día a día. Cuando estos tres ejes se alinean, el cuerpo recupera estabilidad, mejora la energía, el sueño y la claridad mental, y se vuelve más fácil sostener cambios reales en el tiempo. Nuestro objetivo es acompañarte con un plan claro y medible, integrando ciencia, hábitos y seguimiento, para que tu bienestar sea consistente y no dependa de “fuerza de voluntad” momentánea.',
       cards: [
         { title: 'Acupuntura', desc: 'Técnica milenaria para equilibrar tu energía y tratar dolores crónicos, disponible únicamente en nuestra sede de Rosario.' },
         { title: 'Salud Metabólica', desc: 'Optimizamos tus hormonas, nutrición y energía celular para que tu cuerpo funcione en su máximo potencial.' },
