@@ -13,7 +13,7 @@ const TRANSLATIONS = {
       titleAccent: 'modelo integrado',
       sub: 'Medicina Metabólica y Manejo de Estrés. Un enfoque científico y humano para transformar tu salud desde la raíz.',
       ctaPrimary: 'Reservar Ahora',
-      ctaSecondary: 'Ver Programas',
+      ctaSecondary: 'Ver Consultas',
       ctaText: 'No sé por dónde empezar →',
       stats: ['Virtual Global', 'Presencial Rosario', 'Bilingüe (ES / EN)']
     },
@@ -36,10 +36,10 @@ const TRANSLATIONS = {
       title: 'Elige tu camino',
       sub: 'Opciones puntuales o programas de transformación profunda.',
       cards: [
-        { id: 'metabolica', title: 'Ala Metabólica', lead: 'Dra. Adriana Ortiz', type: 'Salud Funcional', desc: 'Para quienes buscan balance hormonal, salud digestiva o longevidad metabólica.', features: ['Laboratorios funcionales', 'Protocolo nutricional', 'Soporte ES/EN'], cta: 'Ver más' },
-        { id: 'acupuntura', title: 'Ala de Acupuntura', lead: 'Dra. Adriana Ortiz + Ariel Reinaudo', type: 'Medicina Tradicional', desc: 'Tratamiento del dolor y reequilibrio homeostático mediante técnicas milenarias. Solo presencial.', features: ['Atención en Rosario', 'Manejo del dolor', 'Regulación biológica'], cta: 'Ver más' },
+        { id: 'metabolica', title: 'Medicina Nutricional y Metabólica', lead: 'Dra. Adriana Ortiz', type: 'Salud Funcional', desc: 'Para quienes buscan balance hormonal, salud digestiva o longevidad metabólica.', features: ['Laboratorios funcionales', 'Protocolo nutricional', 'Atencion virtual en Español o Ingles'], cta: 'Ver más' },
+        { id: 'acupuntura', title: 'Evaluación Energética y Acupuntura', lead: 'Dra. Adriana Ortiz + Ariel Reinaudo', type: 'Medicina Tradicional', desc: 'Tratamiento del dolor y reequilibrio homeostático mediante técnicas milenarias. Solo presencial.', features: ['Atención en Rosario', 'Manejo del dolor', 'Regulación biológica'], cta: 'Ver más' },
         { id: 'integrado', title: 'Programa Integrado', lead: 'Dra. Ortiz + Ariel Reinaudo', type: 'Transformación 360', desc: 'Nuestro programa premium. La sinergia total entre medicina y manejo de estrés.', features: ['Enfoque combinado', 'Optimización biológica', 'Coaching de estrés'], cta: 'Agendar Integrado' },
-        { id: 'estres', title: 'Ala de Estrés', lead: 'Ariel Reinaudo', type: 'Manejo de Estrés', desc: 'Para quienes conviven con ansiedad, burnout o síntomas psicosomáticos persistentes.', features: ['Entrenamiento Vagal', 'Regulación Emocional', 'Solo Español'], cta: 'Ver más' }
+        { id: 'estres', title: 'Entrenamiento en Manejo de Estrés', lead: 'Ariel Reinaudo', type: 'Manejo de Estrés', desc: 'Para quienes conviven con ansiedad, burnout o síntomas psicosomáticos persistentes.', features: ['Entrenamiento Vagal', 'Regulación Emocional', 'Solo Español'], cta: 'Ver más' }
       ]
     },
     details: {
@@ -129,7 +129,7 @@ const TRANSLATIONS = {
       titleAccent: 'integrated model',
       sub: 'Metabolic Medicine & Stress Management. A scientific and human approach to transform your health from the root.',
       ctaPrimary: 'Book Now',
-      ctaSecondary: 'View Programs',
+      ctaSecondary: 'View Consultations',
       ctaText: 'Don\'t know where to start? →',
       stats: ['Global Virtual', 'In-person Rosario', 'Bilingual (ES / EN)']
     },
