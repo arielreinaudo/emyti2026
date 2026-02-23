@@ -299,7 +299,7 @@ const App: React.FC = () => {
       {/* NUESTRO MODELO */}
       <section id="modelo" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mb-20">
+          <div className="mb-20">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">{d.model.title}</h2>
             <p className="text-xl text-slate-600 leading-relaxed">
               {d.model.sub}
