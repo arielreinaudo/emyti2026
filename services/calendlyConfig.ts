@@ -37,6 +37,7 @@ export const CALENDLY: CalendlyLinks = {
 
   // ACUPUNTURA - PRESENCIAL ONLY
   "acupuntura_puntual_presencial_es": "https://calendly.com/emyti/acupuntura-p-es",
+  "acupuntura_programa_presencial_es": "https://calendly.com/emyti/acupuntura-programa-es",
 
   // INTEGRADO (DRA + ARIEL) - VIRTUAL
   "integrado_programa_virtual_es": "https://calendly.com/emyti/integrado-programa-es-v",

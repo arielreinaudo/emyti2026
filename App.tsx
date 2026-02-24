@@ -9,9 +9,9 @@ const TRANSLATIONS = {
     nav: { model: 'Modelo', programs: 'Programas', team: 'Equipo', rosario: 'Presencial' },
     hero: {
       tag: '360° Holistic Healing',
-      title: 'Recupera tu vitalidad con un',
-      titleAccent: 'modelo integrado',
-      sub: 'Medicina Metabólica y Manejo de Estrés. Un enfoque científico y humano para transformar tu salud desde la raíz.',
+      title: 'En EMYTI volvés a sentirte bien',
+      titleAccent: 'en tu propio cuerpo',
+      sub: 'Te acompañamos con Coaching en Medicina Funcional y Metabólica, trabajando metabolismo y estrés para lograr cambios sostenibles.',
       ctaPrimary: 'Reservar Ahora',
       ctaSecondary: 'Ver Consultas',
       ctaText: 'No sé por dónde empezar →',
@@ -63,10 +63,10 @@ const TRANSLATIONS = {
         investmentTitle: "Inversión",
         investment: [
           "$80 primer encuentro",
-          "$50 encuentros posteriores, si fuera necesario y mientras tu membresía este activa.",
+          "$50 encuentros posteriores y mientras tu membresía esté activa.",
           "Incluye un mes de la Membresía V.I.P.",
           "(Consulta por precio promocional para quienes viven en Argentina)",
-          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial."
+          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial compra."
         ],
         cta: "Agendar ahora"
       },
@@ -90,8 +90,8 @@ const TRANSLATIONS = {
         investmentTitle: "Inversión",
         investment: [
           "$80 USD",
-          "Podés pagar en Dólares o en Pesos al dólar oficial compra del día por transferencia o Débito/Crédito.",
-          "Si sos miembro activo, tenés 30% de descuento."
+          "Si sos miembro activo, tenés 30% de descuento.",
+          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial compra."
         ],
         cta: "Agendar ahora"
       },
@@ -115,8 +115,8 @@ const TRANSLATIONS = {
         investmentTitle: "Inversión",
         investment: [
           "$80 USD",
-          "Podés pagar en Dólares o en Pesos al dólar oficial compra del día por transferencia o Débito/Crédito.",
-          "Si sos miembro activo, tenés 30% de descuento."
+          "Si sos miembro activo, tenés 30% de descuento.",
+          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial compra."
         ],
         cta: "Agendar ahora"
       },
@@ -140,8 +140,8 @@ const TRANSLATIONS = {
         investmentTitle: "Inversión",
         investment: [
           "$60 USD",
-          "Podés pagar en Dólares o en Pesos al dólar libre del día por transferencia o Débito/Crédito.",
-          "Si sos miembro activo, tenés 20% de descuento."
+          "Si sos miembro activo, tenés 30% de descuento.",
+          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial compra."
         ],
         cta: "Agendar ahora"
       }
@@ -229,9 +229,9 @@ const TRANSLATIONS = {
     nav: { model: 'Model', programs: 'Programs', team: 'Team', rosario: 'In-person' },
     hero: {
       tag: '360° Holistic Healing',
-      title: 'Recover your vitality with an',
-      titleAccent: 'integrated model',
-      sub: 'Metabolic Medicine & Stress Management. A scientific and human approach to transform your health from the root.',
+      title: 'At EMYTI, you feel good again',
+      titleAccent: 'in your own body',
+      sub: 'We accompany you with Functional and Metabolic Medicine Coaching, working on metabolism and stress to achieve sustainable changes.',
       ctaPrimary: 'Book Now',
       ctaSecondary: 'View Consultations',
       ctaText: 'Don\'t know where to start? →',
@@ -239,7 +239,7 @@ const TRANSLATIONS = {
     },
     model: {
       title: 'Our Health Model',
-      sub: 'We don\'t treat isolated symptoms. We understand health as a dynamic balance between your biology, your nervous system, and your surroundings.',
+      sub: 'We accompany your health in a holistic way, understanding well-being as a dynamic balance between your biology, your nervous system, and your environment. That is why we work on the root causes: how your metabolism functions, how you regulate stress in your body, and which habits and relationships are influencing your daily life. When these three axes align, the body regains stability, energy improves, sleep and mental clarity are restored, and it becomes easier to sustain real changes over time. Our goal is to accompany you with a clear and measurable plan, integrating science, habits, and follow-up, so that your well-being is consistent and does not depend on momentary "willpower".',
       cards: [
         { title: 'Acupuncture', desc: 'Ancient technique to balance your energy and treat chronic pain, available exclusively at our Rosario clinic.' },
         { title: 'Metabolic Health', desc: 'We optimize your hormones, nutrition, and cellular energy so your body functions at its peak potential.' },
@@ -256,10 +256,10 @@ const TRANSLATIONS = {
       title: 'Choose your path',
       sub: 'Specific options or deep transformation programs.',
       cards: [
-        { id: 'metabolica', title: 'Metabolic Wing', lead: 'Dr. Adriana Ortiz', type: 'Functional Health', desc: 'For those seeking hormonal balance, digestive health, or metabolic longevity.', features: ['Functional labs', 'Nutritional protocol', 'ES/EN Support'], cta: 'See more' },
-        { id: 'evaluacion_metabolica', title: 'Nutritional and Metabolic Assessment', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Holistic Health', desc: 'Personalized assessment of metabolic parameters and body composition', features: ['In-person Rosario', 'Body composition', 'Vitamins and Minerals'], cta: 'See more' },
-        { id: 'acupuntura', title: 'Acupuncture Wing', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Acupuncture', desc: 'Pain treatment and homeostatic rebalancing through ancient techniques.', features: ['Rosario-based care', 'Pain management', 'Biological regulation'], cta: 'See more' },
-        { id: 'estres', title: 'Assessment and Training for Stress Control', lead: 'Ariel Reinaudo', type: 'Stress Management', desc: 'For those living with anxiety, burnout, or persistent psychiatrist symptoms.', features: ['In-person Rosario', 'Vagal Training', 'Emotional Regulation', 'Spanish Only'], cta: 'See more' }
+        { id: 'metabolica', title: 'Nutritional and Metabolic Medicine', lead: 'Dr. Adriana Ortiz', type: 'Functional Health', desc: 'For those seeking hormonal balance, digestive health, or metabolic longevity.', features: ['Functional labs', 'Nutritional protocol', 'Virtual care in Spanish or English'], cta: 'See more' },
+        { id: 'evaluacion_metabolica', title: 'Nutritional and Metabolic Evaluation', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Holistic Health', desc: 'Personalized assessment of metabolic parameters and body composition', features: ['Care in Rosario', 'Body composition', 'Vitamins and Minerals'], cta: 'See more' },
+        { id: 'acupuntura', title: 'Energy Evaluation and Acupuncture', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Acupuncture', desc: 'Pain treatment and homeostatic rebalancing through ancient techniques.', features: ['Care in Rosario', 'Pain management', 'Biological regulation'], cta: 'See more' },
+        { id: 'estres', title: 'Stress Control Evaluation and Training', lead: 'Ariel Reinaudo', type: 'Stress Management', desc: 'For those living with anxiety, burnout, or persistent psychiatrist symptoms.', features: ['Care in Rosario', 'Vagal Training', 'Emotional Regulation', 'Spanish Only'], cta: 'See more' }
       ]
     },
     details: {
@@ -283,7 +283,7 @@ const TRANSLATIONS = {
         investmentTitle: "Investment",
         investment: [
           "$80 first encounter",
-          "$50 subsequent encounters, if necessary and while your membership is active.",
+          "$50 subsequent encounters and while your membership is active.",
           "Includes one month of VIP Membership.",
           "(Inquire for promotional price for residents in Argentina)",
           "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
@@ -310,8 +310,8 @@ const TRANSLATIONS = {
         investmentTitle: "Investment",
         investment: [
           "$80 USD",
-          "You can pay in Dollars or Pesos at the official daily exchange rate via transfer or Debit/Credit card.",
-          "If you are an active member, you get a 30% discount."
+          "If you are an active member, you get a 30% discount.",
+          "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
         ],
         cta: "Book now"
       },
@@ -335,8 +335,8 @@ const TRANSLATIONS = {
         investmentTitle: "Investment",
         investment: [
           "$80 USD",
-          "You can pay in Dollars or Pesos at the official daily exchange rate via transfer or Debit/Credit card.",
-          "If you are an active member, you get a 30% discount."
+          "If you are an active member, you get a 30% discount.",
+          "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
         ],
         cta: "Book now"
       },
@@ -360,8 +360,8 @@ const TRANSLATIONS = {
         investmentTitle: "Investment",
         investment: [
           "$60 USD",
-          "You can pay in Dollars or in Pesos at the day's free dollar rate via transfer or Debit/Credit.",
-          "If you are an active member, you have a 20% discount."
+          "If you are an active member, you get a 30% discount.",
+          "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
         ],
         cta: "Book now"
       }
@@ -425,8 +425,8 @@ const TRANSLATIONS = {
       image: 'https://www.dropbox.com/scl/fi/560vp920ntxlc15fsz4js/rosario-web.jpg?rlkey=8p8ulhxtokz7plms37ddj7ua9&raw=1'
     },
     routerSection: {
-      title: 'Comienza tu proceso',
-      desc: 'Utiliza nuestro asistente inteligente para encontrar el turno y profesional que mejor se adapte a tu caso.'
+      title: 'Start your process',
+      desc: 'Use our smart assistant to find the appointment and professional that best suits your case.'
     },
     footer: {
       tagline: '360° Holistic Healing Model. Functional Medicine, Metabolism and Stress Management.',
@@ -1107,14 +1107,19 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ id, title, lead, type, desc, 
             <li key={i} className="flex items-start gap-3 text-sm">
               <span className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${dotStyles}`}></span>
               <span className="leading-tight">
-              {f.split(/(Atención virtual|Atención en Rosario|In-person Rosario)/i).map((part, j) => {
-                const lowerPart = part.toLowerCase();
-                if (lowerPart === 'atención virtual' || lowerPart === 'atención en rosario' || lowerPart === 'in-person rosario') {
-                  return <span key={j} className="font-bold text-blue-600">{part}</span>;
-                }
-                return part;
-              })}
-            </span>
+                {f.split(/(Atención virtual|Atención en Rosario|Virtual care|Care in Rosario)/i).map((part, j) => {
+                  const lowerPart = part.toLowerCase();
+                  if (
+                    lowerPart === 'atención virtual' || 
+                    lowerPart === 'atención en rosario' || 
+                    lowerPart === 'virtual care' || 
+                    lowerPart === 'care in rosario'
+                  ) {
+                    return <span key={j} className="font-bold text-blue-600">{part}</span>;
+                  }
+                  return part;
+                })}
+              </span>
             </li>
           ))}
         </ul>
