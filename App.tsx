@@ -152,20 +152,49 @@ const TRANSLATIONS = {
       quote: 'Nuestro objetivo es que dejes de ser un paciente pasivo para convertirte en el arquitecto de tu propia salud.',
       members: [
         { 
+          id: 'adriana',
           name: 'Dra. Adriana Ortiz', 
           role: 'Functional Medicine (ES/EN)', 
-          desc: 'Experta en metabolismo y salud funcional con mirada global.', 
-          cta: 'Reservar con Dra. →',
+          desc: 'Experta en metabolismo y salud funcional con mirada global. Mat. Medica 6075 (Arg)', 
+          cta: 'Conoce más de mí',
           image: 'https://www.dropbox.com/scl/fi/otjqcs6zsn2xlek2pxnn0/Adriana-circle.png?rlkey=9nelpp0neu1ihmqdic4cwme3x&raw=1'
         },
         { 
+          id: 'ariel',
           name: 'Ariel Reinaudo', 
           role: 'Stress Management (ES)', 
           desc: 'Especialista en regulación del sistema nervioso y conducta.', 
-          cta: 'Reservar con Ariel →',
+          cta: 'Conoce más de mí',
           image: 'https://www.dropbox.com/scl/fi/urm1fbnflxg4o89178k3r/Iconos-landing-visualmedita.png?rlkey=rxura802yl8l7gyns15e5njz7&raw=1'
         }
-      ]
+      ],
+      details: {
+        adriana: {
+          title: 'Dra. Adriana Ortiz, MD (Argentina)',
+          subtitle: 'RMA, Medical Assistant y CNH, Nutrition & Health Coach',
+          bio: [
+            'Adriana ejerció la Medicina Convencional por 12 años en Argentina como Médica General.',
+            'Obtuvo un Postgrado en Medicina Tradicional China (MTC) y Homeopatía en la Universidad Nacional de Rosario.',
+            'Especialista en PsicoNeuroAcupuntura.',
+            'Postgrado en Nutrición y Trastornos Metabólicos en Argentina.'
+          ],
+          usaLicences: [
+            'CRCC (Clinical Research Coordinator Certificated)',
+            'RMA (Registered Medical Assistant)',
+            'NHC (Nutrition and Health Coach)'
+          ]
+        },
+        ariel: {
+          title: 'Ariel Reinaudo',
+          bio: [
+            'Profesor de Yoga Terapéutico.',
+            'Practitioner en Programación Neurolingüística (PNL).',
+            'Facilitador en Técnicas de Variabilidad de la Frecuencia Cardíaca (VFC) y Coherencia Cardíaca.',
+            'Autor del libro "Modelo de Supraconsciencia Microbiana" (2025).',
+            'Facilitador en Técnicas con Eneagrama.'
+          ]
+        }
+      }
     },
     rosario: {
       tag: 'Sede Central',
@@ -343,20 +372,49 @@ const TRANSLATIONS = {
       quote: 'Our goal is for you to stop being a passive patient and become the architect of your own health.',
       members: [
         { 
+          id: 'adriana',
           name: 'Dr. Adriana Ortiz', 
           role: 'Functional Medicine (ES/EN)', 
-          desc: 'Expert in metabolism and functional health with a global perspective.', 
-          cta: 'Book with Dr. →',
+          desc: 'Expert in metabolism and functional health with a global perspective. Mat. Medica 6075 (Arg)', 
+          cta: 'Learn more about me',
           image: 'https://www.dropbox.com/scl/fi/otjqcs6zsn2xlek2pxnn0/Adriana-circle.png?rlkey=9nelpp0neu1ihmqdic4cwme3x&raw=1'
         },
         { 
+          id: 'ariel',
           name: 'Ariel Reinaudo', 
           role: 'Stress Management (ES)', 
           desc: 'Specialist in nervous system regulation and behavior.', 
-          cta: 'Book with Ariel →',
+          cta: 'Learn more about me',
           image: 'https://www.dropbox.com/scl/fi/urm1fbnflxg4o89178k3r/Iconos-landing-visualmedita.png?rlkey=rxura802yl8l7gyns15e5njz7&raw=1'
         }
-      ]
+      ],
+      details: {
+        adriana: {
+          title: 'Dr. Adriana Ortiz, MD (Argentina)',
+          subtitle: 'RMA, Medical Assistant and CNH, Nutrition & Health Coach',
+          bio: [
+            'Adriana practiced Conventional Medicine for 12 years in Argentina as a General Practitioner.',
+            'Obtained a Postgraduate degree in Traditional Chinese Medicine (TCM) and Homeopathy at the National University of Rosario.',
+            'Specialist in PsychoNeuroAcupuncture.',
+            'Postgraduate in Nutrition and Metabolic Disorders in Argentina.'
+          ],
+          usaLicences: [
+            'CRCC (Clinical Research Coordinator Certificated)',
+            'RMA (Registered Medical Assistant)',
+            'NHC (Nutrition and Health Coach)'
+          ]
+        },
+        ariel: {
+          title: 'Ariel Reinaudo',
+          bio: [
+            'Therapeutic Yoga Professor.',
+            'Neuro-Linguistic Programming (NLP) Practitioner.',
+            'Facilitator in HRV (Heart Rate Variability) and Heart Coherence techniques.',
+            'Author of the book "Microbial Supraconsciousness Model" (2025).',
+            'Facilitator in Enneagram techniques.'
+          ]
+        }
+      }
     },
     rosario: {
       tag: 'Headquarters',
@@ -807,6 +865,78 @@ const App: React.FC = () => {
         </div>
       )}
 
+      {/* TEAM MODAL */}
+      {(activeModal === 'team_adriana' || activeModal === 'team_ariel') && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-6 overflow-y-auto bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300">
+          <div className="relative bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[90vh] flex flex-col">
+            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 sticky top-0 bg-white z-10">
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900">
+                {activeModal === 'team_adriana' ? d.team.details.adriana.title : d.team.details.ariel.title}
+              </h3>
+              <button onClick={closeModal} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                <svg className="w-6 h-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="p-6 md:p-10 overflow-y-auto flex-grow">
+              {activeModal === 'team_adriana' && (
+                <div className="space-y-8">
+                  <div>
+                    <p className="text-indigo-600 font-bold text-sm uppercase tracking-widest mb-4">
+                      {d.team.details.adriana.subtitle}
+                    </p>
+                    <div className="space-y-4">
+                      {d.team.details.adriana.bio.map((item, i) => (
+                        <div key={i} className="flex items-start gap-3 text-slate-600">
+                          <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0"></span>
+                          <p className="text-base leading-relaxed">{item}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-4">Licencias en USA</h4>
+                    <div className="grid grid-cols-1 gap-3">
+                      {d.team.details.adriana.usaLicences.map((lic, i) => (
+                        <div key={i} className="flex items-center gap-3 text-slate-600">
+                          <svg className="w-5 h-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-sm font-medium">{lic}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {activeModal === 'team_ariel' && (
+                <div className="space-y-6">
+                  {d.team.details.ariel.bio.map((item, i) => (
+                    <div key={i} className="flex items-start gap-3 text-slate-600">
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0"></span>
+                      <p className="text-lg leading-relaxed">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            
+            <div className="p-6 border-t border-slate-100 flex justify-end bg-slate-50">
+              <button 
+                onClick={closeModal}
+                className="px-8 py-3 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-all"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* EQUIPO */}
       <section id="equipo" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -835,7 +965,14 @@ const App: React.FC = () => {
                   <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                   <p className="text-indigo-600 text-sm font-semibold mb-3 uppercase tracking-wider">{member.role}</p>
                   <p className="text-slate-500 text-sm leading-relaxed mb-6">{member.desc}</p>
-                  <a href="#reservar" className="text-slate-900 font-bold text-sm hover:underline">{member.cta}</a>
+                  <button 
+                    onClick={() => {
+                      setActiveModal(`team_${member.id}`);
+                    }}
+                    className="px-6 py-2.5 bg-slate-900 text-white font-bold text-sm rounded-xl hover:bg-indigo-600 transition-all shadow-sm hover:shadow-md"
+                  >
+                    {member.cta}
+                  </button>
                 </div>
               ))}
             </div>
