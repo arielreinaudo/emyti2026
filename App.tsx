@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Layout from './components/Layout';
 import BookingRouter from './components/BookingRouter';
-import { Language, BookingState } from './types';
+import { Language, BookingState, Modality } from './types';
 
 const TRANSLATIONS = {
   es: {
@@ -36,10 +36,10 @@ const TRANSLATIONS = {
       title: 'Elige tu camino',
       sub: 'Opciones puntuales o programas de transformación profunda.',
       cards: [
-        { id: 'metabolica', title: 'Medicina Nutricional y Metabólica', lead: 'Dra. Adriana Ortiz', type: 'Salud Funcional', desc: 'Para quienes buscan balance hormonal, salud digestiva o longevidad metabólica.', features: ['Laboratorios funcionales', 'Protocolo nutricional', 'Atencion virtual en Español o Ingles'], cta: 'Ver más' },
-        { id: 'acupuntura', title: 'Evaluación Energética y Acupuntura', lead: 'Dra. Adriana Ortiz + Ariel Reinaudo', type: 'Medicina Tradicional', desc: 'Tratamiento del dolor y reequilibrio homeostático mediante técnicas milenarias. Solo presencial.', features: ['Atención en Rosario', 'Manejo del dolor', 'Regulación biológica'], cta: 'Ver más' },
-        { id: 'integrado', title: 'Programa Integrado', lead: 'Dra. Ortiz + Ariel Reinaudo', type: 'Transformación 360', desc: 'Nuestro programa premium. La sinergia total entre medicina y manejo de estrés.', features: ['Enfoque combinado', 'Optimización biológica', 'Coaching de estrés'], cta: 'Agendar Integrado' },
-        { id: 'estres', title: 'Entrenamiento en Manejo de Estrés', lead: 'Ariel Reinaudo', type: 'Manejo de Estrés', desc: 'Para quienes conviven con ansiedad, burnout o síntomas psicosomáticos persistentes.', features: ['Entrenamiento Vagal', 'Regulación Emocional', 'Solo Español'], cta: 'Ver más' }
+        { id: 'metabolica', title: 'Medicina Nutricional y Metabólica', lead: 'Dra. Adriana Ortiz', type: 'Salud Funcional', desc: 'Para quienes buscan balance hormonal, salud digestiva o longevidad metabólica.', features: ['Laboratorios funcionales', 'Protocolo nutricional', 'Atención virtual en Español o Ingles'], cta: 'Ver más' },
+        { id: 'evaluacion_metabolica', title: 'Evaluación Nutricional y Metabólica', lead: 'Dra. Adriana Ortiz + Ariel Reinaudo', type: 'Salud Integral', desc: 'Evaluación personalizada de parámetros metabólicos y composición corporal', features: ['Atención en Rosario', 'Composición corporal', 'Vitaminas y Minerales'], cta: 'Ver más' },
+        { id: 'acupuntura', title: 'Evaluación Energética y Acupuntura', lead: 'Dra. Adriana Ortiz + Ariel Reinaudo', type: 'Acupuntura', desc: 'Tratamiento del dolor y reequilibrio homeostático mediante técnicas milenarias.', features: ['Atención en Rosario', 'Manejo del dolor', 'Regulación biológica'], cta: 'Ver más' },
+        { id: 'estres', title: 'Evaluación y Entrenamiento para Control del Estrés', lead: 'Ariel Reinaudo', type: 'Manejo de Estrés', desc: 'Para quienes conviven con ansiedad, burnout o síntomas psicosomáticos persistentes.', features: ['Atención en Rosario', 'Entrenamiento Vagal', 'Regulación Emocional', 'Solo Español'], cta: 'Ver más' }
       ]
     },
     details: {
@@ -67,6 +67,81 @@ const TRANSLATIONS = {
           "Incluye un mes de la Membresía V.I.P.",
           "(Consulta por precio promocional para quienes viven en Argentina)",
           "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial."
+        ],
+        cta: "Agendar ahora"
+      },
+      evaluacion_metabolica: {
+        title: "Consulta de Medicina Nutricional y Metabólica (Presencial)",
+        description: "Consulta integral basada en la evaluación personalizada de parámetros metabólicos y composición corporal. Mediciones corporales y de Vitaminas y Minerales, junto con un análisis funcional detallado, te permitirán obtener recomendaciones personalizadas para optimizar tu salud y mejorar tu metabolismo.",
+        servicesTitle: "Servicios incluidos en la consulta",
+        services: [
+          "Medición de composición corporal",
+          "Evaluación de niveles de Vitaminas y Minerales (EAV)",
+          "Interpretación de valores clave en salud metabólica",
+          "Recomendaciones personalizadas"
+        ],
+        benefitsTitle: "Beneficios de esta consulta",
+        benefits: [
+          "Conoce el estado real de tu composición corporal",
+          "Identifica desequilibrios que afectan tu salud",
+          "Optimiza tu salud con evaluación funcional",
+          "Recibe indicaciones prácticas para salud óptima"
+        ],
+        investmentTitle: "Inversión",
+        investment: [
+          "$80 USD",
+          "Podés pagar en Dólares o en Pesos al dólar oficial compra del día por transferencia o Débito/Crédito.",
+          "Si sos miembro activo, tenés 30% de descuento."
+        ],
+        cta: "Agendar ahora"
+      },
+      acupuntura: {
+        title: "Evaluación Energética y Acupuntura (Presencial)",
+        description: "Tratamiento integral del dolor y reequilibrio homeostático mediante técnicas milenarias de la Medicina Tradicional China. Un enfoque natural para regular las funciones biológicas y recuperar el bienestar físico y emocional.",
+        servicesTitle: "Servicios incluidos en la consulta",
+        services: [
+          "Evaluación energética completa",
+          "Sesión de Acupuntura personalizada",
+          "Manejo del dolor crónico y agudo",
+          "Regulación del sistema homeostático"
+        ],
+        benefitsTitle: "Beneficios de esta consulta",
+        benefits: [
+          "Alivio efectivo del dolor",
+          "Reducción del estrés y la ansiedad",
+          "Mejora en la calidad del sueño",
+          "Equilibrio de las funciones vitales"
+        ],
+        investmentTitle: "Inversión",
+        investment: [
+          "$80 USD",
+          "Podés pagar en Dólares o en Pesos al dólar oficial compra del día por transferencia o Débito/Crédito.",
+          "Si sos miembro activo, tenés 30% de descuento."
+        ],
+        cta: "Agendar ahora"
+      },
+      estres: {
+        title: "Entrenamiento en Coherencia Cardíaca y Regulación del Estrés",
+        description: "Sesión integral basada en la evaluación personalizada de la variabilidad de la frecuencia cardíaca (VFC) y la respuesta del sistema nervioso al estrés. A través del biofeedback, determinaremos tu ritmo respiratorio óptimo y te enseñaremos una técnica efectiva para mejorar tu bienestar sin necesidad de dispositivos costosos.",
+        servicesTitle: "Servicios incluidos en la consulta",
+        services: [
+          "Medición de variabilidad de la frecuencia cardíaca (VFC) y resistencia galvánica de la piel (GSR) con biofeedback",
+          "Identificación de tu ritmo respiratorio óptimo para inducir coherencia cardíaca",
+          "Entrenamiento personalizado en técnica de respiración guiada",
+          "Protocolo de práctica en casa con una app gratuita de metrónomo"
+        ],
+        benefitsTitle: "Beneficios de esta consulta",
+        benefits: [
+          "Reduce el estrés y la ansiedad en minutos",
+          "Mejora la calidad del sueño y la recuperación fisiológica",
+          "Aumenta la claridad mental y la toma de decisiones",
+          "Fortalece el equilibrio del sistema nervioso y la resiliencia emocional"
+        ],
+        investmentTitle: "Inversión",
+        investment: [
+          "$60 USD",
+          "Podés pagar en Dólares o en Pesos al dólar libre del día por transferencia o Débito/Crédito.",
+          "Si sos miembro activo, tenés 20% de descuento."
         ],
         cta: "Agendar ahora"
       }
@@ -153,9 +228,9 @@ const TRANSLATIONS = {
       sub: 'Specific options or deep transformation programs.',
       cards: [
         { id: 'metabolica', title: 'Metabolic Wing', lead: 'Dr. Adriana Ortiz', type: 'Functional Health', desc: 'For those seeking hormonal balance, digestive health, or metabolic longevity.', features: ['Functional labs', 'Nutritional protocol', 'ES/EN Support'], cta: 'See more' },
-        { id: 'acupuntura', title: 'Acupuncture Wing', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Traditional Medicine', desc: 'Pain treatment and homeostatic rebalancing through ancient techniques. In-person only.', features: ['Rosario-based care', 'Pain management', 'Biological regulation'], cta: 'See more' },
-        { id: 'integrado', title: 'Integrated Program', lead: 'Dr. Ortiz + Ariel Reinaudo', type: '360 transformation', desc: 'Our premium program. Total synergy between medicine and stress management.', features: ['Combined approach', 'Biological optimization', 'Stress coaching'], cta: 'Book Integrated' },
-        { id: 'estres', title: 'Stress Wing', lead: 'Ariel Reinaudo', type: 'Stress Management', desc: 'For those living with anxiety, burnout, or persistent psychiatrist symptoms.', features: ['Vagal Training', 'Emotional Regulation', 'Spanish Only'], cta: 'See more' }
+        { id: 'evaluacion_metabolica', title: 'Nutritional and Metabolic Assessment', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Holistic Health', desc: 'Personalized assessment of metabolic parameters and body composition', features: ['In-person Rosario', 'Body composition', 'Vitamins and Minerals'], cta: 'See more' },
+        { id: 'acupuntura', title: 'Acupuncture Wing', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Acupuncture', desc: 'Pain treatment and homeostatic rebalancing through ancient techniques.', features: ['Rosario-based care', 'Pain management', 'Biological regulation'], cta: 'See more' },
+        { id: 'estres', title: 'Assessment and Training for Stress Control', lead: 'Ariel Reinaudo', type: 'Stress Management', desc: 'For those living with anxiety, burnout, or persistent psychiatrist symptoms.', features: ['In-person Rosario', 'Vagal Training', 'Emotional Regulation', 'Spanish Only'], cta: 'See more' }
       ]
     },
     details: {
@@ -184,7 +259,82 @@ const TRANSLATIONS = {
           "(Inquire for promotional price for residents in Argentina)",
           "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
         ],
-        cta: "Agendar ahora"
+        cta: "Book now"
+      },
+      evaluacion_metabolica: {
+        title: "Nutritional and Metabolic Medicine Consultation (In-person)",
+        description: "Comprehensive consultation based on personalized assessment of metabolic parameters and body composition. Body measurements and Vitamin and Mineral levels, along with a detailed functional analysis, will allow you to obtain personalized recommendations to optimize your health and improve your metabolism.",
+        servicesTitle: "Services included in the consultation",
+        services: [
+          "Body composition measurement",
+          "Vitamin and Mineral level assessment (EAV)",
+          "Interpretation of key metabolic health indicators",
+          "Personalized recommendations"
+        ],
+        benefitsTitle: "Benefits of this consultation",
+        benefits: [
+          "Know the real state of your body composition",
+          "Identify imbalances affecting your health",
+          "Optimize your health with functional assessment",
+          "Receive practical indications for optimal health"
+        ],
+        investmentTitle: "Investment",
+        investment: [
+          "$80 USD",
+          "You can pay in Dollars or Pesos at the official daily exchange rate via transfer or Debit/Credit card.",
+          "If you are an active member, you get a 30% discount."
+        ],
+        cta: "Book now"
+      },
+      acupuntura: {
+        title: "Acupuncture and Energy Assessment (In-person)",
+        description: "Comprehensive pain treatment and homeostatic rebalancing through ancient Traditional Chinese Medicine techniques. A natural approach to regulate biological functions and recover physical and emotional well-being.",
+        servicesTitle: "Services included in the consultation",
+        services: [
+          "Complete energy assessment",
+          "Personalized Acupuncture session",
+          "Chronic and acute pain management",
+          "Homeostatic system regulation"
+        ],
+        benefitsTitle: "Benefits of this consultation",
+        benefits: [
+          "Effective pain relief",
+          "Reduction of stress and anxiety",
+          "Improvement in sleep quality",
+          "Balance of vital functions"
+        ],
+        investmentTitle: "Investment",
+        investment: [
+          "$80 USD",
+          "You can pay in Dollars or Pesos at the official daily exchange rate via transfer or Debit/Credit card.",
+          "If you are an active member, you get a 30% discount."
+        ],
+        cta: "Book now"
+      },
+      estres: {
+        title: "Heart Coherence Training and Stress Regulation",
+        description: "Comprehensive session based on personalized assessment of heart rate variability (HRV) and the nervous system's response to stress. Through biofeedback, we will determine your optimal breathing rhythm and teach you an effective technique to improve your well-being without the need for expensive devices.",
+        servicesTitle: "Services included in the consultation",
+        services: [
+          "Measurement of heart rate variability (HRV) and galvanic skin resistance (GSR) with biofeedback",
+          "Identification of your optimal breathing rhythm to induce heart coherence",
+          "Personalized training in guided breathing technique",
+          "Home practice protocol with a free metronome app"
+        ],
+        benefitsTitle: "Benefits of this consultation",
+        benefits: [
+          "Reduces stress and anxiety in minutes",
+          "Improves sleep quality and physiological recovery",
+          "Increases mental clarity and decision making",
+          "Strengthens nervous system balance and emotional resilience"
+        ],
+        investmentTitle: "Investment",
+        investment: [
+          "$60 USD",
+          "You can pay in Dollars or in Pesos at the day's free dollar rate via transfer or Debit/Credit.",
+          "If you are an active member, you have a 20% discount."
+        ],
+        cta: "Book now"
       }
     },
     team: {
@@ -243,12 +393,14 @@ const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('es');
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [routerResetKey, setRouterResetKey] = useState<number>(0);
+  const [initialBookingState, setInitialBookingState] = useState<Partial<BookingState>>({});
   const d = TRANSLATIONS[lang];
 
   const closeModal = () => setActiveModal(null);
 
-  const handleBookNowFromModal = () => {
+  const handleBookNowFromModal = (modality: Modality = 'virtual') => {
     closeModal();
+    setInitialBookingState({ modality });
     setRouterResetKey(prev => prev + 1);
     const target = document.getElementById('reservar');
     if (target) {
@@ -277,15 +429,29 @@ const App: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#reservar" className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl shadow-lg hover:bg-indigo-700 transition-all hover:shadow-indigo-200">
+            <button 
+              onClick={() => {
+                setInitialBookingState({});
+                setRouterResetKey(prev => prev + 1);
+                document.getElementById('reservar')?.scrollIntoView({ behavior: 'smooth' });
+              }} 
+              className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl shadow-lg hover:bg-indigo-700 transition-all hover:shadow-indigo-200"
+            >
               {d.hero.ctaPrimary}
-            </a>
+            </button>
             <a href="#programas" className="w-full sm:w-auto px-8 py-4 bg-white text-slate-900 border border-slate-200 font-bold rounded-xl hover:bg-slate-50 transition-all">
               {d.hero.ctaSecondary}
             </a>
-            <a href="#reservar" className="w-full sm:w-auto px-8 py-4 text-slate-500 font-medium hover:text-indigo-600 transition-colors">
+            <button 
+              onClick={() => {
+                setInitialBookingState({});
+                setRouterResetKey(prev => prev + 1);
+                document.getElementById('reservar')?.scrollIntoView({ behavior: 'smooth' });
+              }} 
+              className="w-full sm:w-auto px-8 py-4 text-slate-500 font-medium hover:text-indigo-600 transition-colors"
+            >
               {d.hero.ctaText}
-            </a>
+            </button>
           </div>
 
           <div className="mt-20 pt-10 border-t border-slate-100 flex flex-wrap justify-center gap-12 text-slate-400 text-sm font-semibold uppercase tracking-widest">
@@ -350,10 +516,19 @@ const App: React.FC = () => {
                 features={card.features}
                 cta={card.cta}
                 isFeatured={card.id === 'integrado'}
+                isVirtual={card.id === 'metabolica'}
                 onAction={() => {
                   if (card.id === 'metabolica') {
                     setActiveModal('metabolica');
+                  } else if (card.id === 'evaluacion_metabolica') {
+                    setActiveModal('evaluacion_metabolica');
+                  } else if (card.id === 'acupuntura') {
+                    setActiveModal('acupuntura');
+                  } else if (card.id === 'estres') {
+                    setActiveModal('estres');
                   } else {
+                    setInitialBookingState({});
+                    setRouterResetKey(prev => prev + 1);
                     const target = document.getElementById('reservar');
                     if (target) target.scrollIntoView({ behavior: 'smooth' });
                   }
@@ -423,10 +598,208 @@ const App: React.FC = () => {
 
               <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
                 <button 
-                  onClick={handleBookNowFromModal} 
+                  onClick={() => handleBookNowFromModal('virtual')} 
                   className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
                 >
                   {d.details.metabolica.cta}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeModal === 'evaluacion_metabolica' && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-6 overflow-y-auto bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300">
+          <div className="relative bg-white w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[95vh] flex flex-col">
+            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 sticky top-0 bg-white z-10">
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900">{d.details.evaluacion_metabolica.title}</h3>
+              <button onClick={closeModal} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                <svg className="w-6 h-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="p-6 md:p-10 overflow-y-auto flex-grow">
+              <p className="text-slate-600 leading-relaxed mb-10 text-lg">
+                {d.details.evaluacion_metabolica.description}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-600 mb-6">{d.details.evaluacion_metabolica.servicesTitle}</h4>
+                  <ul className="space-y-4">
+                    {d.details.evaluacion_metabolica.services.map((s, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0"></span>
+                        <span className="text-sm leading-relaxed">{s}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-600 mb-6">{d.details.evaluacion_metabolica.benefitsTitle}</h4>
+                  <ul className="space-y-4">
+                    {d.details.evaluacion_metabolica.benefits.map((b, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0"></span>
+                        <span className="text-sm leading-relaxed">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                <h4 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-6">{d.details.evaluacion_metabolica.investmentTitle}</h4>
+                <div className="space-y-3">
+                  {d.details.evaluacion_metabolica.investment.map((line, i) => (
+                    <p key={i} className="text-slate-700 font-medium">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
+                <button 
+                  onClick={() => handleBookNowFromModal('presencial')} 
+                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  {d.details.evaluacion_metabolica.cta}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeModal === 'acupuntura' && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-6 overflow-y-auto bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300">
+          <div className="relative bg-white w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[95vh] flex flex-col">
+            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 sticky top-0 bg-white z-10">
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900">{d.details.acupuntura.title}</h3>
+              <button onClick={closeModal} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                <svg className="w-6 h-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="p-6 md:p-10 overflow-y-auto flex-grow">
+              <p className="text-slate-600 leading-relaxed mb-10 text-lg">
+                {d.details.acupuntura.description}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-600 mb-6">{d.details.acupuntura.servicesTitle}</h4>
+                  <ul className="space-y-4">
+                    {d.details.acupuntura.services.map((s, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0"></span>
+                        <span className="text-sm leading-relaxed">{s}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-600 mb-6">{d.details.acupuntura.benefitsTitle}</h4>
+                  <ul className="space-y-4">
+                    {d.details.acupuntura.benefits.map((b, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0"></span>
+                        <span className="text-sm leading-relaxed">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                <h4 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-6">{d.details.acupuntura.investmentTitle}</h4>
+                <div className="space-y-3">
+                  {d.details.acupuntura.investment.map((line, i) => (
+                    <p key={i} className="text-slate-700 font-medium">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
+                <button 
+                  onClick={() => handleBookNowFromModal('presencial')} 
+                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  {d.details.acupuntura.cta}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeModal === 'estres' && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-6 overflow-y-auto bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300">
+          <div className="relative bg-white w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[95vh] flex flex-col">
+            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 sticky top-0 bg-white z-10">
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900">{d.details.estres.title}</h3>
+              <button onClick={closeModal} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                <svg className="w-6 h-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="p-6 md:p-10 overflow-y-auto flex-grow">
+              <p className="text-slate-600 leading-relaxed mb-10 text-lg">
+                {d.details.estres.description}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-600 mb-6">{d.details.estres.servicesTitle}</h4>
+                  <ul className="space-y-4">
+                    {d.details.estres.services.map((s, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0"></span>
+                        <span className="text-sm leading-relaxed">{s}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-600 mb-6">{d.details.estres.benefitsTitle}</h4>
+                  <ul className="space-y-4">
+                    {d.details.estres.benefits.map((b, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0"></span>
+                        <span className="text-sm leading-relaxed">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                <h4 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-6">{d.details.estres.investmentTitle}</h4>
+                <div className="space-y-3">
+                  {d.details.estres.investment.map((line, i) => (
+                    <p key={i} className="text-slate-700 font-medium">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
+                <button 
+                  onClick={() => handleBookNowFromModal('presencial')} 
+                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  {d.details.estres.cta}
                 </button>
               </div>
             </div>
@@ -489,7 +862,16 @@ const App: React.FC = () => {
                   </div>
                 ))}
              </div>
-             <a href="#reservar" className="inline-block mt-12 px-10 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-100 transition-all">{d.rosario.cta}</a>
+             <button 
+               onClick={() => {
+                 setInitialBookingState({ modality: 'presencial' });
+                 setRouterResetKey(prev => prev + 1);
+                 document.getElementById('reservar')?.scrollIntoView({ behavior: 'smooth' });
+               }} 
+               className="inline-block mt-12 px-10 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-100 transition-all"
+             >
+               {d.rosario.cta}
+             </button>
           </div>
           <div className="flex-1 w-full h-80 md:h-[500px] bg-slate-800 rounded-3xl overflow-hidden shadow-2xl">
              <img src={d.rosario.image} alt="Consultorio Rosario" className="w-full h-full object-cover opacity-60" />
@@ -509,6 +891,7 @@ const App: React.FC = () => {
           
           <BookingRouter 
             initialLang={lang} 
+            initialState={initialBookingState}
             key={`booking-router-${routerResetKey}`}
           />
         </div>
@@ -537,37 +920,74 @@ interface ProgramCardProps {
   cta: string;
   onAction: () => void;
   isFeatured?: boolean;
+  isVirtual?: boolean;
 }
 
-const ProgramCard: React.FC<ProgramCardProps> = ({ id, title, lead, type, desc, features, cta, onAction, isFeatured }) => {
+const ProgramCard: React.FC<ProgramCardProps> = ({ id, title, lead, type, desc, features, cta, onAction, isFeatured, isVirtual }) => {
+  let cardStyles = 'bg-white text-slate-900 border-slate-200 hover:border-indigo-300';
+  let badgeStyles = 'bg-slate-100 text-slate-500';
+  let leadStyles = 'text-slate-500';
+  let descStyles = 'text-slate-600';
+  let dotStyles = 'bg-indigo-300';
+  let btnStyles = 'bg-slate-900 text-white hover:bg-indigo-600 shadow-sm';
+
+  if (isFeatured) {
+    cardStyles = 'bg-slate-900 text-white border-slate-800 shadow-2xl shadow-indigo-200/20 scale-105 z-10';
+    badgeStyles = 'bg-indigo-600 text-white';
+    leadStyles = 'text-indigo-400';
+    descStyles = 'text-slate-400';
+    dotStyles = 'bg-indigo-500';
+    btnStyles = 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-900/40';
+  } else if (isVirtual) {
+    cardStyles = 'bg-sky-50 text-slate-900 border-sky-200 hover:border-sky-400 shadow-sm';
+    badgeStyles = 'bg-blue-600 text-white';
+    leadStyles = 'text-blue-700';
+    descStyles = 'text-slate-600';
+    dotStyles = 'bg-blue-500';
+    btnStyles = 'bg-blue-600 text-white hover:bg-blue-700 shadow-md';
+  }
+
   return (
-    <div className={`p-8 rounded-3xl flex flex-col h-full border transition-all ${
-      isFeatured 
-      ? 'bg-slate-900 text-white border-slate-800 shadow-2xl shadow-indigo-200/20 scale-105 z-10' 
-      : 'bg-white text-slate-900 border-slate-200 hover:border-indigo-300'
-    }`}>
-      <div className="mb-6">
-        <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded mb-4 inline-block ${isFeatured ? 'bg-indigo-600' : 'bg-slate-100 text-slate-500'}`}>{type}</span>
-        <h3 className="text-2xl font-bold mb-1">{title}</h3>
-        <p className={`text-sm ${isFeatured ? 'text-indigo-400' : 'text-slate-500'}`}>{lead}</p>
+    <div className={`p-8 rounded-3xl flex flex-col h-full border transition-all ${cardStyles}`}>
+      {/* Header Section: Badge + Title + Lead */}
+      <div className="mb-4 min-h-[190px]">
+        <div className="mb-3">
+          <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded inline-block ${badgeStyles}`}>{type}</span>
+        </div>
+        <h3 className="text-2xl font-bold mb-1 leading-tight">{title}</h3>
+        <p className={`text-sm ${leadStyles}`}>{lead}</p>
       </div>
-      <p className={`text-sm mb-8 flex-grow leading-relaxed ${isFeatured ? 'text-slate-400' : 'text-slate-600'}`}>{desc}</p>
-      <ul className="space-y-4 mb-10">
-        {features.map((f, i) => (
-          <li key={i} className="flex items-center gap-3 text-sm">
-            <span className={`w-1 h-1 rounded-full ${isFeatured ? 'bg-indigo-500' : 'bg-indigo-300'}`}></span>
-            {f}
-          </li>
-        ))}
-      </ul>
+
+      {/* Description Section */}
+      <div className="mb-6 min-h-[80px]">
+        <p className={`text-sm leading-relaxed ${descStyles}`}>{desc}</p>
+      </div>
+
+      {/* Features Section */}
+      <div className="flex-grow mb-8 min-h-[160px]">
+        <ul className="space-y-3">
+          {features.map((f, i) => (
+            <li key={i} className="flex items-start gap-3 text-sm">
+              <span className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${dotStyles}`}></span>
+              <span className="leading-tight">
+              {f.split(/(Atención virtual|Atención en Rosario|In-person Rosario)/i).map((part, j) => {
+                const lowerPart = part.toLowerCase();
+                if (lowerPart === 'atención virtual' || lowerPart === 'atención en rosario' || lowerPart === 'in-person rosario') {
+                  return <span key={j} className="font-bold text-blue-600">{part}</span>;
+                }
+                return part;
+              })}
+            </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* CTA Button */}
       <button 
         type="button"
         onClick={onAction}
-        className={`w-full py-4 rounded-xl text-center font-bold transition-all transform hover:scale-[1.02] active:scale-[0.98] ${
-          isFeatured 
-          ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-900/40' 
-          : 'bg-slate-900 text-white hover:bg-indigo-600 shadow-sm'
-        }`}
+        className={`w-full py-4 rounded-xl text-center font-bold transition-all transform hover:scale-[1.02] active:scale-[0.98] ${btnStyles}`}
       >
         {cta}
       </button>

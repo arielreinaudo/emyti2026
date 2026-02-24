@@ -13,6 +13,7 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
   // Calculamos el paso inicial basado en la información recibida
   const getInitialStep = () => {
     if (initialState?.area && initialState?.type && initialState?.modality) return 4;
+    if (initialState?.modality) return 2;
     return 1;
   };
 
