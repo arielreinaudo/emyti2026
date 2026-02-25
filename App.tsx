@@ -9,7 +9,7 @@ const TRANSLATIONS = {
     nav: { model: 'Modelo', programs: 'Programas', team: 'Equipo', rosario: 'Presencial' },
     hero: {
       tag: '360° Holistic Healing',
-      title: 'En EMYTI volvés a sentirte bien',
+      title: 'Volvé a sentirte bien',
       titleAccent: 'en tu propio cuerpo',
       sub: 'Te acompañamos con Coaching en Medicina Funcional y Metabólica, trabajando metabolismo y estrés para lograr cambios sostenibles.',
       ctaPrimary: 'Reservar Ahora',
@@ -154,7 +154,7 @@ const TRANSLATIONS = {
         { 
           id: 'adriana',
           name: 'Dra. Adriana Ortiz', 
-          role: 'Functional Medicine (ES/EN)', 
+          role: 'Medicina Funcional (ES/EN)', 
           desc: 'Experta en metabolismo y salud funcional con mirada global. Mat. Medica 6075 (Arg)', 
           cta: 'Conoce más de mí',
           image: 'https://www.dropbox.com/scl/fi/otjqcs6zsn2xlek2pxnn0/Adriana-circle.png?rlkey=9nelpp0neu1ihmqdic4cwme3x&raw=1'
@@ -162,7 +162,7 @@ const TRANSLATIONS = {
         { 
           id: 'ariel',
           name: 'Ariel Reinaudo', 
-          role: 'Stress Management (ES)', 
+          role: 'Manejo de Estrés (ES)', 
           desc: 'Especialista en regulación del sistema nervioso y conducta.', 
           cta: 'Conoce más de mí',
           image: 'https://www.dropbox.com/scl/fi/urm1fbnflxg4o89178k3r/Iconos-landing-visualmedita.png?rlkey=rxura802yl8l7gyns15e5njz7&raw=1'
@@ -479,6 +479,12 @@ const App: React.FC = () => {
           <span className="inline-block py-1 px-3 bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-widest rounded-full mb-6">
             {d.hero.tag}
           </span>
+          <img 
+            src="https://www.dropbox.com/scl/fi/s8536h7tgg2xi0nzxfkke/Emyti-nuevo-logo-transparente.png?rlkey=nztnagwk4hog68blvm8eym4qv&raw=1" 
+            alt="EMYTI Logo" 
+            className="mx-auto w-32 h-32 object-contain mb-8"
+            referrerPolicy="no-referrer"
+          />
           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-8 leading-tight tracking-tight">
             {d.hero.title} <br className="hidden md:block" /> <span className="text-indigo-600">{d.hero.titleAccent}</span>
           </h1>

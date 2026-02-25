@@ -15,9 +15,12 @@ const Layout: React.FC<LayoutProps> = ({ children, currentLang, onLanguageChange
       <header className="sticky top-0 z-50 glass-effect border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold">E</span>
-            </div>
+            <img 
+              src="https://www.dropbox.com/scl/fi/s8536h7tgg2xi0nzxfkke/Emyti-nuevo-logo-transparente.png?rlkey=nztnagwk4hog68blvm8eym4qv&raw=1" 
+              alt="EMYTI Logo" 
+              className="w-10 h-10 rounded-lg object-cover"
+              referrerPolicy="no-referrer"
+            />
             <span className="text-xl font-bold tracking-tight text-slate-900 uppercase">Emyti</span>
           </div>
           
@@ -25,7 +28,6 @@ const Layout: React.FC<LayoutProps> = ({ children, currentLang, onLanguageChange
             <a href="#modelo" className="hover:text-indigo-600 transition-colors">{dict.nav.model}</a>
             <a href="#programas" className="hover:text-indigo-600 transition-colors">{dict.nav.programs}</a>
             <a href="#equipo" className="hover:text-indigo-600 transition-colors">{dict.nav.team}</a>
-            <a href="#rosario" className="hover:text-indigo-600 transition-colors">{dict.nav.rosario}</a>
           </nav>
 
           <div className="flex items-center">
@@ -55,9 +57,12 @@ const Layout: React.FC<LayoutProps> = ({ children, currentLang, onLanguageChange
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-white">
-              <div className="w-6 h-6 bg-indigo-500 rounded flex items-center justify-center">
-                <span className="text-white font-bold text-xs">E</span>
-              </div>
+              <img 
+                src="https://www.dropbox.com/scl/fi/s8536h7tgg2xi0nzxfkke/Emyti-nuevo-logo-transparente.png?rlkey=nztnagwk4hog68blvm8eym4qv&raw=1" 
+                alt="EMYTI Logo" 
+                className="w-8 h-8 rounded object-cover"
+                referrerPolicy="no-referrer"
+              />
               <span className="text-lg font-bold tracking-tight">EMYTI</span>
             </div>
             <p className="text-sm leading-relaxed">
