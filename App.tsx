@@ -229,7 +229,7 @@ const TRANSLATIONS = {
     nav: { model: 'Model', programs: 'Programs', team: 'Team', rosario: 'In-person' },
     hero: {
       tag: '360° Holistic Healing',
-      title: 'At EMYTI, you feel good again',
+      title: 'Feel good again',
       titleAccent: 'in your own body',
       sub: 'We accompany you with Functional and Metabolic Medicine Coaching, working on metabolism and stress to achieve sustainable changes.',
       ctaPrimary: 'Book Now',
