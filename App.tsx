@@ -605,9 +605,9 @@ const App: React.FC = () => {
 
       {/* DETAILS MODAL */}
       {activeModal === 'metabolica' && (
-        <div className="fixed inset-0 z-[60] flex items-start md:items-center justify-center p-4 md:p-6 overflow-y-auto bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300">
-          <div className="relative bg-white w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[95vh] flex flex-col my-8 md:my-0">
-            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 sticky top-0 bg-white z-10">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-0 md:p-6 animate-in fade-in duration-300">
+          <div className="bg-white w-full h-full md:h-auto md:max-h-[90vh] md:max-w-4xl md:rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-300">
+            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 bg-white shrink-0">
               <h3 className="text-xl md:text-2xl font-bold text-slate-900">{d.details.metabolica.title}</h3>
               <button onClick={closeModal} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
                 <svg className="w-6 h-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -674,9 +674,9 @@ const App: React.FC = () => {
       )}
 
       {activeModal === 'evaluacion_metabolica' && (
-        <div className="fixed inset-0 z-[60] flex items-start md:items-center justify-center p-4 md:p-6 overflow-y-auto bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300">
-          <div className="relative bg-white w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[95vh] flex flex-col my-8 md:my-0">
-            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 sticky top-0 bg-white z-10">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-0 md:p-6 animate-in fade-in duration-300">
+          <div className="bg-white w-full h-full md:h-auto md:max-h-[90vh] md:max-w-4xl md:rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-300">
+            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 bg-white shrink-0">
               <h3 className="text-xl md:text-2xl font-bold text-slate-900">{d.details.evaluacion_metabolica.title}</h3>
               <button onClick={closeModal} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
                 <svg className="w-6 h-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -740,9 +740,9 @@ const App: React.FC = () => {
       )}
 
       {activeModal === 'acupuntura' && (
-        <div className="fixed inset-0 z-[60] flex items-start md:items-center justify-center p-4 md:p-6 overflow-y-auto bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300">
-          <div className="relative bg-white w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[95vh] flex flex-col my-8 md:my-0">
-            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 sticky top-0 bg-white z-10">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-0 md:p-6 animate-in fade-in duration-300">
+          <div className="bg-white w-full h-full md:h-auto md:max-h-[90vh] md:max-w-4xl md:rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-300">
+            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 bg-white shrink-0">
               <h3 className="text-xl md:text-2xl font-bold text-slate-900">{d.details.acupuntura.title}</h3>
               <button onClick={closeModal} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
                 <svg className="w-6 h-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -806,9 +806,9 @@ const App: React.FC = () => {
       )}
 
       {activeModal === 'estres' && (
-        <div className="fixed inset-0 z-[60] flex items-start md:items-center justify-center p-4 md:p-6 overflow-y-auto bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300">
-          <div className="relative bg-white w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[95vh] flex flex-col my-8 md:my-0">
-            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 sticky top-0 bg-white z-10">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-0 md:p-6 animate-in fade-in duration-300">
+          <div className="bg-white w-full h-full md:h-auto md:max-h-[90vh] md:max-w-4xl md:rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-300">
+            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 bg-white shrink-0">
               <h3 className="text-xl md:text-2xl font-bold text-slate-900">{d.details.estres.title}</h3>
               <button onClick={closeModal} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
                 <svg className="w-6 h-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -873,9 +873,9 @@ const App: React.FC = () => {
 
       {/* TEAM MODAL */}
       {(activeModal === 'team_adriana' || activeModal === 'team_ariel') && (
-        <div className="fixed inset-0 z-[60] flex items-start md:items-center justify-center p-4 md:p-6 overflow-y-auto bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300">
-          <div className="relative bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[90vh] flex flex-col my-8 md:my-0">
-            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 sticky top-0 bg-white z-10">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-0 md:p-6 animate-in fade-in duration-300">
+          <div className="bg-white w-full h-full md:h-auto md:max-h-[90vh] md:max-w-2xl md:rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-300">
+            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 bg-white shrink-0">
               <h3 className="text-xl md:text-2xl font-bold text-slate-900">
                 {activeModal === 'team_adriana' ? d.team.details.adriana.title : d.team.details.ariel.title}
               </h3>
