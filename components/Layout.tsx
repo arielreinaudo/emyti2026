@@ -16,7 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children, currentLang, onLanguageChange
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img 
-              src="https://www.dropbox.com/scl/fi/s8536h7tgg2xi0nzxfkke/Emyti-nuevo-logo-transparente.png?rlkey=nztnagwk4hog68blvm8eym4qv&raw=1" 
+              src="https://www.dropbox.com/scl/fi/8ql3t6b7ha5ogpvof2urz/Emyti-nuevo-icono.jpg?rlkey=u8s8u5u6gozc11eq1pu24dqal&raw=1" 
               alt="EMYTI Logo" 
               className="w-10 h-10 rounded-lg object-cover"
               referrerPolicy="no-referrer"
@@ -58,7 +58,7 @@ const Layout: React.FC<LayoutProps> = ({ children, currentLang, onLanguageChange
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-white">
               <img 
-                src="https://www.dropbox.com/scl/fi/s8536h7tgg2xi0nzxfkke/Emyti-nuevo-logo-transparente.png?rlkey=nztnagwk4hog68blvm8eym4qv&raw=1" 
+                src="https://www.dropbox.com/scl/fi/8ql3t6b7ha5ogpvof2urz/Emyti-nuevo-icono.jpg?rlkey=u8s8u5u6gozc11eq1pu24dqal&raw=1" 
                 alt="EMYTI Logo" 
                 className="w-8 h-8 rounded object-cover"
                 referrerPolicy="no-referrer"
