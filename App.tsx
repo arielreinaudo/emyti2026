@@ -66,7 +66,7 @@ const TRANSLATIONS = {
           "$50 encuentros posteriores y mientras tu membresía esté activa.",
           "Incluye un mes de la Membresía V.I.P.",
           "(Consulta por precio promocional para quienes viven en Argentina)",
-          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial compra."
+          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta."
         ],
         cta: "Agendar ahora"
       },
@@ -91,7 +91,7 @@ const TRANSLATIONS = {
         investment: [
           "$80 USD",
           "Si sos miembro activo, tenés 30% de descuento.",
-          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial compra."
+          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta."
         ],
         cta: "Agendar ahora"
       },
@@ -116,7 +116,7 @@ const TRANSLATIONS = {
         investment: [
           "$80 USD",
           "Si sos miembro activo, tenés 30% de descuento.",
-          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial compra."
+          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta."
         ],
         cta: "Agendar ahora"
       },
@@ -141,7 +141,7 @@ const TRANSLATIONS = {
         investment: [
           "$60 USD",
           "Si sos miembro activo, tenés 30% de descuento.",
-          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial compra."
+          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta."
         ],
         cta: "Agendar ahora"
       }
@@ -650,9 +650,10 @@ const App: React.FC = () => {
                 <h4 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-6">{d.details.metabolica.investmentTitle}</h4>
                 <div className="space-y-3">
                   {d.details.metabolica.investment.map((line, i) => {
+                    const isPromo = line.includes('Argentina');
                     const isNote = line.includes('(') || line.includes('Importes');
                     return (
-                      <p key={i} className={`${isNote ? 'text-xs text-slate-400' : 'text-slate-700 font-medium'}`}>
+                      <p key={i} className={`${isPromo ? 'text-sm text-blue-600 font-bold' : isNote ? 'text-xs text-slate-400' : 'text-slate-700 font-medium'}`}>
                         {line}
                       </p>
                     );

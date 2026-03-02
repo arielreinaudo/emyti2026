@@ -49,7 +49,7 @@ const DICT = {
       acupuntura: 'Acupuntura',
       acupunturaDesc: 'Equilibrio energético y tratamiento de dolor crónico.',
       noteEn: 'Nota: Las consultas en inglés están limitadas actualmente a medicina Metabólica / Funcional con la Dra. Ortiz.',
-      paymentNote: 'Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial compra.',
+      paymentNote: 'Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta.',
       memberDiscount: 'Si sos miembro activo, tenés descuento.',
       promoArgentina: '(Consulta por precio promocional para quienes viven en Argentina)'
     },
@@ -325,7 +325,7 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
             <p className="text-sm text-slate-500 font-medium">{t.step4.paymentNote}</p>
             <p className="text-xs text-slate-400 italic">{t.step4.memberDiscount}</p>
             {booking.modality === 'virtual' && (
-              <p className="text-xs text-slate-400 italic">{t.step4.promoArgentina}</p>
+              <p className="text-xs text-blue-600 font-bold italic">{t.step4.promoArgentina}</p>
             )}
             {booking.lang === 'en' && booking.modality === 'virtual' && (
               <p className="text-xs text-indigo-400 italic pt-2">{t.step4.noteEn}</p>
