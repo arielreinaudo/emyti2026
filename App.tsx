@@ -165,7 +165,7 @@ const TRANSLATIONS = {
           role: 'Manejo de Estrés (ES)', 
           desc: 'Especialista en regulación del sistema nervioso y conducta.', 
           cta: 'Conoce más de mí',
-          image: 'https://www.dropbox.com/scl/fi/urm1fbnflxg4o89178k3r/Iconos-landing-visualmedita.png?rlkey=rxura802yl8l7gyns15e5njz7&raw=1'
+          image: 'https://www.dropbox.com/scl/fi/kjm77l1awzj4la7h6y4zl/Profile-circule-400x400.png?rlkey=huham341k3txsk9pz5ovv7a5n&raw=1'
         }
       ],
       details: {
@@ -385,7 +385,7 @@ const TRANSLATIONS = {
           role: 'Stress Management (ES)', 
           desc: 'Specialist in nervous system regulation and behavior.', 
           cta: 'Learn more about me',
-          image: 'https://www.dropbox.com/scl/fi/urm1fbnflxg4o89178k3r/Iconos-landing-visualmedita.png?rlkey=rxura802yl8l7gyns15e5njz7&raw=1'
+          image: 'https://www.dropbox.com/scl/fi/kjm77l1awzj4la7h6y4zl/Profile-circule-400x400.png?rlkey=huham341k3txsk9pz5ovv7a5n&raw=1'
         }
       ],
       details: {
@@ -480,7 +480,7 @@ const App: React.FC = () => {
             {d.hero.tag}
           </span>
           <img 
-            src="https://www.dropbox.com/scl/fi/s8536h7tgg2xi0nzxfkke/Emyti-nuevo-logo-transparente.png?rlkey=nztnagwk4hog68blvm8eym4qv&raw=1" 
+            src="https://www.dropbox.com/scl/fi/4crs963tdvkmzn1zfgmkq/Circulo-Adri-y-Ariel-emyti.png?rlkey=jamj1vxveuf7msm7gk8hcifmi&raw=1" 
             alt="EMYTI Logo" 
             className="mx-auto w-32 h-32 object-contain mb-8"
             referrerPolicy="no-referrer"
@@ -518,7 +518,7 @@ const App: React.FC = () => {
             </button>
           </div>
 
-          <div className="mt-20 pt-10 border-t border-slate-100 flex flex-wrap justify-center gap-12 text-slate-400 text-sm font-semibold uppercase tracking-widest">
+          <div className="mt-12 pt-8 border-t border-slate-100 flex flex-wrap justify-center gap-12 text-slate-400 text-sm font-semibold uppercase tracking-widest">
             {d.hero.stats.map((stat, i) => (
               <div key={i} className="flex items-center gap-2">{stat}</div>
             ))}
@@ -527,8 +527,17 @@ const App: React.FC = () => {
       </section>
 
       {/* NUESTRO MODELO */}
-      <section id="modelo" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="modelo" className="relative py-24 bg-white overflow-hidden">
+        <div 
+          className="absolute inset-0 z-0 opacity-20 pointer-events-none"
+          style={{ 
+            backgroundImage: 'url("https://www.dropbox.com/scl/fi/ijqs9opgzfb7te43qh3f0/surprising_media-woman-7704047_1280.jpg?rlkey=ksnmv8aqpuyl2nkdtciko43za&raw=1")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-white/20 z-0 pointer-events-none"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="mb-20">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">{d.model.title}</h2>
             <p className="text-xl text-slate-600 leading-relaxed">
