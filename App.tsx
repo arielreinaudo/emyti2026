@@ -42,6 +42,15 @@ const TRANSLATIONS = {
         { id: 'estres', title: 'Evaluación y Entrenamiento para Control del Estrés', lead: 'Ariel Reinaudo', type: 'Manejo de Estrés', desc: 'Para quienes conviven con ansiedad, burnout o síntomas psicosomáticos persistentes.', features: ['Atención en Rosario', 'Entrenamiento Vagal', 'Regulación Emocional', 'Solo Español'], cta: 'Ver más' }
       ]
     },
+    testimonials: {
+      title: 'Lo que dicen nuestros pacientes',
+      sub: 'Experiencias reales de personas que transformaron su salud con nuestro acompañamiento.',
+      items: [
+        { text: 'Después de años con fatiga crónica, el enfoque metabólico de la Dra. Adriana y el entrenamiento de estrés con Ariel me devolvieron la energía. Por fin entiendo cómo funciona mi cuerpo.', author: 'M.G.' },
+        { text: 'La combinación de acupuntura y medicina funcional fue clave para mi recuperación. No solo trataron el síntoma, sino la causa raíz. Altamente recomendados.', author: 'Roberto S.' },
+        { text: 'Increíble experiencia virtual. El plan es claro, medible y, sobre todo, sostenible. Siento que recuperé el control de mi salud sin dietas restrictivas.', author: 'Lucía P.' }
+      ]
+    },
     details: {
       metabolica: {
         title: "Consulta Virtual de Medicina Nutricional y Metabólica",
@@ -260,6 +269,15 @@ const TRANSLATIONS = {
         { id: 'evaluacion_metabolica', title: 'Nutritional and Metabolic Evaluation', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Holistic Health', desc: 'Personalized assessment of metabolic parameters and body composition', features: ['Care in Rosario', 'Body composition', 'Vitamins and Minerals'], cta: 'See more' },
         { id: 'acupuntura', title: 'Energy Evaluation and Acupuncture', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Acupuncture', desc: 'Pain treatment and homeostatic rebalancing through ancient techniques.', features: ['Care in Rosario', 'Pain management', 'Biological regulation'], cta: 'See more' },
         { id: 'estres', title: 'Stress Control Evaluation and Training', lead: 'Ariel Reinaudo', type: 'Stress Management', desc: 'For those living with anxiety, burnout, or persistent psychiatrist symptoms.', features: ['Care in Rosario', 'Vagal Training', 'Emotional Regulation', 'Spanish Only'], cta: 'See more' }
+      ]
+    },
+    testimonials: {
+      title: 'What our patients say',
+      sub: 'Real experiences from people who transformed their health with our guidance.',
+      items: [
+        { text: 'After years of chronic fatigue, Dr. Adriana\'s metabolic approach and Ariel\'s stress training gave me my energy back. I finally understand how my body works.', author: 'M.G.' },
+        { text: 'The combination of acupuncture and functional medicine was key to my recovery. They didn\'t just treat the symptom, but the root cause. Highly recommended.', author: 'Roberto S.' },
+        { text: 'Incredible virtual experience. The plan is clear, measurable, and above all, sustainable. I feel I regained control of my health without restrictive diets.', author: 'Lucía P.' }
       ]
     },
     details: {
@@ -952,6 +970,39 @@ const App: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* TESTIMONIALS SECTION */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl font-bold text-slate-900 mb-6">{d.testimonials.title}</h2>
+            <p className="text-slate-600 text-lg">
+              {d.testimonials.sub}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {d.testimonials.items.map((t, i) => (
+              <div key={i} className="p-8 rounded-3xl bg-white border border-slate-100 hover:border-indigo-200 transition-all hover:shadow-xl hover:shadow-indigo-50/50">
+                <div className="mb-6">
+                  {[...Array(5)].map((_, star) => (
+                    <span key={star} className="text-amber-400 text-lg">★</span>
+                  ))}
+                </div>
+                <p className="text-slate-700 italic mb-8 leading-relaxed">
+                  "{t.text}"
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-sm">
+                    {t.author[0]}
+                  </div>
+                  <span className="font-bold text-slate-900">{t.author}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* EQUIPO */}
       <section id="equipo" className="py-24 bg-white">
