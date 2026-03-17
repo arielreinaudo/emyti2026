@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Language } from '../types';
-import logoImg from '@/src/assets/logo.jpg';
+const logoImg = '/img/logo.jpg';
 
 interface LayoutProps {
   children: React.ReactNode;
