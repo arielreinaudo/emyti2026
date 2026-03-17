@@ -9,6 +9,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 async function createServer() {
   const app = express();
 
+  // Serve static assets from public folder BEFORE Vite middlewares
+  app.use(express.static(path.resolve(__dirname, 'public')));
+
   const vite = await createViteServer({
     server: { middlewareMode: true },
     appType: 'custom'
@@ -18,6 +21,11 @@ async function createServer() {
 
   app.use('*', async (req, res, next) => {
     const url = req.originalUrl;
+
+    // Skip SSR for static assets that might have been missed by vite.middlewares
+    if (url.match(/\.(png|jpg|jpeg|gif|svg|webp|ico|css|js|woff2?|ttf|otf)$/)) {
+      return next();
+    }
 
     try {
       let template = fs.readFileSync(

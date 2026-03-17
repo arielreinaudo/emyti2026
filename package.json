@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "tsx server.js",
     "build": "vite build",
     "lint": "tsc --noEmit",
     "preview": "vite preview"
@@ -14,6 +14,7 @@
     "express": "^4.22.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "sirv": "^3.0.2",
     "tailwindcss": "^4.2.1",
     "tsx": "^4.21.0"
   },

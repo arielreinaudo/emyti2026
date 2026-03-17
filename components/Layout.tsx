@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Language } from '../types';
-const logoImg = '/img/logo.jpg';
+const logoImg = 'https://www.dropbox.com/scl/fi/8ql3t6b7ha5ogpvof2urz/Emyti-nuevo-icono.jpg?rlkey=u8s8u5u6gozc11eq1pu24dqal&raw=1';
 
 interface LayoutProps {
   children: React.ReactNode;
