@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Language } from '../types';
+import logoImg from '../src/assets/logo.jpg';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,10 +17,9 @@ const Layout: React.FC<LayoutProps> = ({ children, currentLang, onLanguageChange
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img 
-              src="/images/logo.jpg" 
+              src={logoImg} 
               alt="EMYTI Logo" 
               className="w-10 h-10 rounded-lg object-cover"
-              referrerPolicy="no-referrer"
             />
             <span className="text-xl font-bold tracking-tight text-slate-900 uppercase">Emyti</span>
           </div>
@@ -58,10 +58,9 @@ const Layout: React.FC<LayoutProps> = ({ children, currentLang, onLanguageChange
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-white">
               <img 
-                src="/images/logo.jpg" 
+                src={logoImg} 
                 alt="EMYTI Logo" 
                 className="w-8 h-8 rounded object-cover"
-                referrerPolicy="no-referrer"
               />
               <span className="text-lg font-bold tracking-tight">EMYTI</span>
             </div>

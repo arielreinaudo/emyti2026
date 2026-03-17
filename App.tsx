@@ -4,6 +4,13 @@ import Layout from './components/Layout';
 import BookingRouter from './components/BookingRouter';
 import { Language, BookingState, Modality } from './types';
 
+// Import images to ensure they are handled by Vite's build process
+import adrianaImg from './src/assets/adriana.png';
+import arielImg from './src/assets/ariel.png';
+import rosarioImg from './src/assets/rosario.jpg';
+import adrianaArielImg from './src/assets/adriana-ariel.png';
+import heroBgImg from './src/assets/hero-bg.jpg';
+
 const TRANSLATIONS = {
   es: {
     nav: { model: 'Modelo', programs: 'Programas', team: 'Equipo', rosario: 'Presencial' },
@@ -166,7 +173,7 @@ const TRANSLATIONS = {
           role: 'Medicina Funcional (ES/EN)', 
           desc: 'Experta en metabolismo y salud funcional con mirada global. Mat. Medica 6075 (Arg)', 
           cta: 'Conoce más de mí',
-          image: '/images/adriana.png'
+          image: adrianaImg
         },
         { 
           id: 'ariel',
@@ -174,7 +181,7 @@ const TRANSLATIONS = {
           role: 'Manejo de Estrés (ES)', 
           desc: 'Especialista en regulación del sistema nervioso y conducta.', 
           cta: 'Conoce más de mí',
-          image: '/images/ariel.png'
+          image: arielImg
         }
       ],
       details: {
@@ -211,7 +218,7 @@ const TRANSLATIONS = {
       desc: 'Contamos con un espacio diseñado para tu bienestar en el corazón de Rosario, Argentina. Ofrecemos una experiencia cercana y humana para quienes prefieren el contacto directo.',
       features: ['Consultas de evaluación exhaustiva.', 'Mediciones antropométricas y funcionales en sitio.'],
       cta: 'Agendar en Rosario',
-      image: '/images/rosario.jpg'
+      image: rosarioImg
     },
     routerSection: {
       title: 'Comienza tu proceso',
@@ -395,7 +402,7 @@ const TRANSLATIONS = {
           role: 'Functional Medicine (ES/EN)', 
           desc: 'Expert in metabolism and functional health with a global perspective. Mat. Medica 6075 (Arg)', 
           cta: 'Learn more about me',
-          image: '/images/adriana.png'
+          image: adrianaImg
         },
         { 
           id: 'ariel',
@@ -403,7 +410,7 @@ const TRANSLATIONS = {
           role: 'Stress Management (ES)', 
           desc: 'Specialist in nervous system regulation and behavior.', 
           cta: 'Learn more about me',
-          image: '/images/ariel.png'
+          image: arielImg
         }
       ],
       details: {
@@ -440,7 +447,7 @@ const TRANSLATIONS = {
       desc: 'We have a space designed for your well-being in the heart of Rosario, Argentina. We offer a close and human experience for those who prefer direct contact.',
       features: ['Exhaustive evaluation consultations.', 'On-site anthropometric and functional measurements.'],
       cta: 'Book in Rosario',
-      image: '/images/rosario.jpg'
+      image: rosarioImg
     },
     routerSection: {
       title: 'Start your process',
@@ -498,10 +505,9 @@ const App: React.FC = () => {
             {d.hero.tag}
           </span>
           <img 
-            src="/images/adriana-ariel.png" 
+            src={adrianaArielImg} 
             alt="EMYTI Logo" 
             className="mx-auto w-32 h-32 object-contain mb-8"
-            referrerPolicy="no-referrer"
           />
           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-8 leading-tight tracking-tight">
             {d.hero.title} <br className="hidden md:block" /> <span className="text-indigo-600">{d.hero.titleAccent}</span>
@@ -549,7 +555,7 @@ const App: React.FC = () => {
         <div 
           className="absolute inset-0 z-0 opacity-20 pointer-events-none"
           style={{ 
-            backgroundImage: 'url("/images/hero-bg.jpg")',
+            backgroundImage: `url(${heroBgImg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
