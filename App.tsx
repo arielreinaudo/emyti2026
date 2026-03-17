@@ -1,15 +1,16 @@
 
+// EMYTI - Holistic Healing Website
 import React, { useState } from 'react';
 import Layout from './components/Layout';
 import BookingRouter from './components/BookingRouter';
 import { Language, BookingState, Modality } from './types';
 
 // Import images to ensure they are handled by Vite's build process
-import adrianaImg from './src/assets/adriana.png';
-import arielImg from './src/assets/ariel.png';
-import rosarioImg from './src/assets/rosario.jpg';
-import adrianaArielImg from './src/assets/adriana-ariel.png';
-import heroBgImg from './src/assets/hero-bg.jpg';
+import adrianaImg from '@/src/assets/adriana.png';
+import arielImg from '@/src/assets/ariel.png';
+import rosarioImg from '@/src/assets/rosario.jpg';
+import adrianaArielImg from '@/src/assets/adriana-ariel.png';
+import heroBgImg from '@/src/assets/hero-bg.jpg';
 
 const TRANSLATIONS = {
   es: {
