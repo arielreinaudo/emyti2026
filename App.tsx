@@ -166,7 +166,7 @@ const TRANSLATIONS = {
           role: 'Medicina Funcional (ES/EN)', 
           desc: 'Experta en metabolismo y salud funcional con mirada global. Mat. Medica 6075 (Arg)', 
           cta: 'Conoce más de mí',
-          image: 'https://www.dropbox.com/scl/fi/otjqcs6zsn2xlek2pxnn0/Adriana-circle.png?rlkey=9nelpp0neu1ihmqdic4cwme3x&raw=1'
+          image: '/images/adriana.png'
         },
         { 
           id: 'ariel',
@@ -174,7 +174,7 @@ const TRANSLATIONS = {
           role: 'Manejo de Estrés (ES)', 
           desc: 'Especialista en regulación del sistema nervioso y conducta.', 
           cta: 'Conoce más de mí',
-          image: 'https://www.dropbox.com/scl/fi/kjm77l1awzj4la7h6y4zl/Profile-circule-400x400.png?rlkey=huham341k3txsk9pz5ovv7a5n&raw=1'
+          image: '/images/ariel.png'
         }
       ],
       details: {
@@ -211,7 +211,7 @@ const TRANSLATIONS = {
       desc: 'Contamos con un espacio diseñado para tu bienestar en el corazón de Rosario, Argentina. Ofrecemos una experiencia cercana y humana para quienes prefieren el contacto directo.',
       features: ['Consultas de evaluación exhaustiva.', 'Mediciones antropométricas y funcionales en sitio.'],
       cta: 'Agendar en Rosario',
-      image: 'https://www.dropbox.com/scl/fi/560vp920ntxlc15fsz4js/rosario-web.jpg?rlkey=8p8ulhxtokz7plms37ddj7ua9&raw=1'
+      image: '/images/rosario.jpg'
     },
     routerSection: {
       title: 'Comienza tu proceso',
@@ -395,7 +395,7 @@ const TRANSLATIONS = {
           role: 'Functional Medicine (ES/EN)', 
           desc: 'Expert in metabolism and functional health with a global perspective. Mat. Medica 6075 (Arg)', 
           cta: 'Learn more about me',
-          image: 'https://www.dropbox.com/scl/fi/otjqcs6zsn2xlek2pxnn0/Adriana-circle.png?rlkey=9nelpp0neu1ihmqdic4cwme3x&raw=1'
+          image: '/images/adriana.png'
         },
         { 
           id: 'ariel',
@@ -403,7 +403,7 @@ const TRANSLATIONS = {
           role: 'Stress Management (ES)', 
           desc: 'Specialist in nervous system regulation and behavior.', 
           cta: 'Learn more about me',
-          image: 'https://www.dropbox.com/scl/fi/kjm77l1awzj4la7h6y4zl/Profile-circule-400x400.png?rlkey=huham341k3txsk9pz5ovv7a5n&raw=1'
+          image: '/images/ariel.png'
         }
       ],
       details: {
@@ -440,7 +440,7 @@ const TRANSLATIONS = {
       desc: 'We have a space designed for your well-being in the heart of Rosario, Argentina. We offer a close and human experience for those who prefer direct contact.',
       features: ['Exhaustive evaluation consultations.', 'On-site anthropometric and functional measurements.'],
       cta: 'Book in Rosario',
-      image: 'https://www.dropbox.com/scl/fi/560vp920ntxlc15fsz4js/rosario-web.jpg?rlkey=8p8ulhxtokz7plms37ddj7ua9&raw=1'
+      image: '/images/rosario.jpg'
     },
     routerSection: {
       title: 'Start your process',
@@ -498,7 +498,7 @@ const App: React.FC = () => {
             {d.hero.tag}
           </span>
           <img 
-            src="https://www.dropbox.com/scl/fi/4crs963tdvkmzn1zfgmkq/Circulo-Adri-y-Ariel-emyti.png?rlkey=jamj1vxveuf7msm7gk8hcifmi&raw=1" 
+            src="/images/adriana-ariel.png" 
             alt="EMYTI Logo" 
             className="mx-auto w-32 h-32 object-contain mb-8"
             referrerPolicy="no-referrer"
@@ -549,7 +549,7 @@ const App: React.FC = () => {
         <div 
           className="absolute inset-0 z-0 opacity-20 pointer-events-none"
           style={{ 
-            backgroundImage: 'url("https://www.dropbox.com/scl/fi/ijqs9opgzfb7te43qh3f0/surprising_media-woman-7704047_1280.jpg?rlkey=ksnmv8aqpuyl2nkdtciko43za&raw=1")',
+            backgroundImage: 'url("/images/hero-bg.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
