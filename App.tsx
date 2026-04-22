@@ -7,9 +7,9 @@ import { Language, BookingState, Modality } from './types';
 
 // Image paths (Using Dropbox raw links)
 const adrianaImg = 'https://www.dropbox.com/scl/fi/cxs7w2sk1cy1jfry799cu/2.png?rlkey=9rtfshipxgdfz8cc75y5imla1&raw=1';
-const arielImg = 'https://www.dropbox.com/scl/fi/il34rju26nl2ho9lsw3ce/Profile-circule-400x400-copy.png?rlkey=a3944pmupcmahjuk0w3h277u3&raw=1';
+const arielImg = 'https://www.dropbox.com/scl/fi/ohyalvtbtvu3budkvj4f2/10.jpg?rlkey=yva84bfv1rwbqe2u9igdwhloc&raw=1';
 const rosarioImg = 'https://www.dropbox.com/scl/fi/560vp920ntxlc15fsz4js/rosario-web.jpg?rlkey=8p8ulhxtokz7plms37ddj7ua9&raw=1';
-const adrianaArielImg = 'https://www.dropbox.com/scl/fi/e4cldfk30mlwtjw2a46x9/Profile-circule-a-y-a-400x400.png?rlkey=v3t08cxwikem0ejp1ns9l0huf&raw=1';
+const adrianaArielImg = 'https://www.dropbox.com/scl/fi/8razi9uc7jyecttu5wlko/Profile-circule-400x400.jpg?rlkey=pwtvpc36q4b34diulh07yget2&raw=1';
 const heroBgImg = 'https://www.dropbox.com/scl/fi/jwd04gdjc1ndwi3p5kizi/pcjvdwiel-man-3861989.jpg?rlkey=ps3fejwfpttxoh1415gmqqege&raw=1';
 
 const TRANSLATIONS = {
