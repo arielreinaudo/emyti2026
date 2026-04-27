@@ -86,7 +86,9 @@ const TRANSLATIONS = {
           "(Consulta por precio promocional para quienes viven en Argentina)",
           "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta."
         ],
-        cta: "Agendar ahora"
+        cta: "Agendar ahora",
+        info: 'Más Información',
+        infoUrl: 'https://webilution.ac-page.com/consultavirtual?test=true'
       },
       evaluacion_metabolica: {
         title: "Consulta de Medicina Nutricional y Metabólica (Presencial)",
@@ -111,7 +113,9 @@ const TRANSLATIONS = {
           "Si sos miembro activo, tenés 30% de descuento.",
           "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta."
         ],
-        cta: "Agendar ahora"
+        cta: "Agendar ahora",
+        info: 'Más Información',
+        infoUrl: 'https://webilution.ac-page.com/metabolismorosario'
       },
       acupuntura: {
         title: "Evaluación Energética y Acupuntura (Presencial)",
@@ -136,7 +140,9 @@ const TRANSLATIONS = {
           "Si sos miembro activo, tenés 30% de descuento.",
           "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta."
         ],
-        cta: "Agendar ahora"
+        cta: "Agendar ahora",
+        info: 'Más Información',
+        infoUrl: 'https://webilution.ac-page.com/acupunturarosario?test=true'
       },
       estres: {
         title: "Entrenamiento en Coherencia Cardíaca y Regulación del Estrés",
@@ -161,7 +167,9 @@ const TRANSLATIONS = {
           "Si sos miembro activo, tenés 30% de descuento.",
           "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta."
         ],
-        cta: "Agendar ahora"
+        cta: "Agendar ahora",
+        info: 'Más Información',
+        infoUrl: 'https://webilution.ac-page.com/regulatuestres?test=true'
       },
       reconfiguracion: {
         title: "Evaluación y Entrenamiento en Reconfiguración del Estado Interno",
@@ -187,7 +195,9 @@ const TRANSLATIONS = {
           "Si sos miembro activo, tenés 50% de descuento.",
           "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta."
         ],
-        cta: "Agendar ahora"
+        cta: "Agendar ahora",
+        info: 'Más Información',
+        infoUrl: 'https://webilution.ac-page.com/estadointerno?test=true'
       }
     },
     team: {
@@ -267,6 +277,10 @@ const TRANSLATIONS = {
         privacy: 'Privacidad'
       },
       rights: 'Todos los derechos reservados.'
+    },
+    modalityLabels: {
+      virtual: 'VIRTUAL',
+      presencial: 'PRESENCIAL'
     }
   },
   en: {
@@ -342,7 +356,9 @@ const TRANSLATIONS = {
           "(Inquire for promotional price for residents in Argentina)",
           "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
         ],
-        cta: "Book now"
+        cta: "Book now",
+        info: 'More Information',
+        infoUrl: 'https://webilution.ac-page.com/consultavirtual?test=true'
       },
       evaluacion_metabolica: {
         title: "Nutritional and Metabolic Medicine Consultation (In-person)",
@@ -367,7 +383,9 @@ const TRANSLATIONS = {
           "If you are an active member, you get a 30% discount.",
           "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
         ],
-        cta: "Book now"
+        cta: "Book now",
+        info: 'More Information',
+        infoUrl: 'https://webilution.ac-page.com/metabolismorosario'
       },
       acupuntura: {
         title: "Acupuncture and Energy Assessment (In-person)",
@@ -392,7 +410,9 @@ const TRANSLATIONS = {
           "If you are an active member, you get a 30% discount.",
           "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
         ],
-        cta: "Book now"
+        cta: "Book now",
+        info: 'More Information',
+        infoUrl: 'https://webilution.ac-page.com/acupunturarosario?test=true'
       },
       estres: {
         title: "Heart Coherence Training and Stress Regulation",
@@ -417,7 +437,9 @@ const TRANSLATIONS = {
           "If you are an active member, you get a 30% discount.",
           "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
         ],
-        cta: "Book now"
+        cta: "Book now",
+        info: 'More Information',
+        infoUrl: 'https://webilution.ac-page.com/regulatuestres?test=true'
       },
       reconfiguracion: {
         title: "Internal State Reconfiguration Evaluation and Training",
@@ -443,7 +465,9 @@ const TRANSLATIONS = {
           "If you are an active member, you get a 50% discount.",
           "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
         ],
-        cta: "Book now"
+        cta: "Book now",
+        info: 'More Information',
+        infoUrl: 'https://webilution.ac-page.com/estadointerno?test=true'
       }
     },
     team: {
@@ -523,6 +547,10 @@ const TRANSLATIONS = {
         privacy: 'Privacy'
       },
       rights: 'All rights reserved.'
+    },
+    modalityLabels: {
+      virtual: 'VIRTUAL',
+      presencial: 'IN-PERSON'
     }
   }
 };
@@ -536,9 +564,9 @@ const App: React.FC = () => {
 
   const closeModal = () => setActiveModal(null);
 
-  const handleBookNowFromModal = (modality: Modality = 'virtual') => {
+  const handleBookNowFromModal = (state: Partial<BookingState>) => {
     closeModal();
-    setInitialBookingState({ modality });
+    setInitialBookingState(state);
     setRouterResetKey(prev => prev + 1);
     const target = document.getElementById('reservar');
     if (target) {
@@ -657,38 +685,44 @@ const App: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {d.programs.cards.map((card, i) => (
-              <ProgramCard 
-                key={i}
-                id={card.id}
-                title={card.title}
-                lead={card.lead}
-                type={card.type}
-                desc={card.desc}
-                features={card.features}
-                cta={card.cta}
-                isFeatured={card.id === 'integrado'}
-                isVirtual={card.id === 'metabolica'}
-                onAction={() => {
-                  if (card.id === 'metabolica') {
-                    setActiveModal('metabolica');
-                  } else if (card.id === 'evaluacion_metabolica') {
-                    setActiveModal('evaluacion_metabolica');
-                  } else if (card.id === 'acupuntura') {
-                    setActiveModal('acupuntura');
-                  } else if (card.id === 'estres') {
-                    setActiveModal('estres');
-                  } else if (card.id === 'reconfiguracion') {
-                    setActiveModal('reconfiguracion');
-                  } else {
-                    setInitialBookingState({});
-                    setRouterResetKey(prev => prev + 1);
-                    const target = document.getElementById('reservar');
-                    if (target) target.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              />
-            ))}
+            {d.programs.cards.map((card, i) => {
+              const isVirtual = card.id === 'metabolica' || card.id === 'reconfiguracion';
+              const modalityLabel = isVirtual ? (d as any).modalityLabels.virtual : (d as any).modalityLabels.presencial;
+              
+              return (
+                <ProgramCard 
+                  key={i}
+                  id={card.id}
+                  title={card.title}
+                  lead={card.lead}
+                  type={card.type}
+                  modalityLabel={modalityLabel}
+                  desc={card.desc}
+                  features={card.features}
+                  cta={card.cta}
+                  isFeatured={card.id === 'integrado'}
+                  isVirtual={isVirtual}
+                  onAction={() => {
+                    if (card.id === 'metabolica') {
+                      setActiveModal('metabolica');
+                    } else if (card.id === 'evaluacion_metabolica') {
+                      setActiveModal('evaluacion_metabolica');
+                    } else if (card.id === 'acupuntura') {
+                      setActiveModal('acupuntura');
+                    } else if (card.id === 'estres') {
+                      setActiveModal('estres');
+                    } else if (card.id === 'reconfiguracion') {
+                      setActiveModal('reconfiguracion');
+                    } else {
+                      setInitialBookingState({});
+                      setRouterResetKey(prev => prev + 1);
+                      const target = document.getElementById('reservar');
+                      if (target) target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
@@ -751,9 +785,17 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
+              <div className="mt-12 mb-6 flex flex-col sm:flex-row justify-center gap-4 sticky bottom-0 py-4 bg-white">
+                <a 
+                  href={d.details.metabolica.infoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 border-2 border-[#5145E5] text-[#5145E5] font-bold rounded-2xl hover:bg-indigo-50 transition-all text-center"
+                >
+                  {d.details.metabolica.info}
+                </a>
                 <button 
-                  onClick={() => handleBookNowFromModal('virtual')} 
+                  onClick={() => handleBookNowFromModal({ modality: 'virtual', area: 'dra' })} 
                   className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
                 >
                   {d.details.metabolica.cta}
@@ -817,9 +859,17 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
+              <div className="mt-12 mb-6 flex flex-col sm:flex-row justify-center gap-4 sticky bottom-0 py-4 bg-white">
+                <a 
+                  href={d.details.evaluacion_metabolica.infoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 border-2 border-[#5145E5] text-[#5145E5] font-bold rounded-2xl hover:bg-indigo-50 transition-all text-center"
+                >
+                  {d.details.evaluacion_metabolica.info}
+                </a>
                 <button 
-                  onClick={() => handleBookNowFromModal('presencial')} 
+                  onClick={() => handleBookNowFromModal({ modality: 'presencial', area: 'dra' })} 
                   className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
                 >
                   {d.details.evaluacion_metabolica.cta}
@@ -883,9 +933,17 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
+              <div className="mt-12 mb-6 flex flex-col sm:flex-row justify-center gap-4 sticky bottom-0 py-4 bg-white">
+                <a 
+                  href={d.details.acupuntura.infoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 border-2 border-[#5145E5] text-[#5145E5] font-bold rounded-2xl hover:bg-indigo-50 transition-all text-center"
+                >
+                  {d.details.acupuntura.info}
+                </a>
                 <button 
-                  onClick={() => handleBookNowFromModal('presencial')} 
+                  onClick={() => handleBookNowFromModal({ modality: 'presencial', area: 'acupuntura' })} 
                   className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
                 >
                   {d.details.acupuntura.cta}
@@ -949,9 +1007,17 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
+              <div className="mt-12 mb-6 flex flex-col sm:flex-row justify-center gap-4 sticky bottom-0 py-4 bg-white">
+                <a 
+                  href={d.details.estres.infoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 border-2 border-[#5145E5] text-[#5145E5] font-bold rounded-2xl hover:bg-indigo-50 transition-all text-center"
+                >
+                  {d.details.estres.info}
+                </a>
                 <button 
-                  onClick={() => handleBookNowFromModal('presencial')} 
+                  onClick={() => handleBookNowFromModal({ modality: 'presencial', area: 'ariel' })} 
                   className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
                 >
                   {d.details.estres.cta}
@@ -1017,9 +1083,17 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
+              <div className="mt-12 mb-6 flex flex-col sm:flex-row justify-center gap-4 sticky bottom-0 py-4 bg-white">
+                <a 
+                  href={d.details.reconfiguracion.infoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 border-2 border-[#5145E5] text-[#5145E5] font-bold rounded-2xl hover:bg-indigo-50 transition-all text-center"
+                >
+                  {d.details.reconfiguracion.info}
+                </a>
                 <button 
-                  onClick={() => handleBookNowFromModal('virtual')} 
+                  onClick={() => handleBookNowFromModal({ modality: 'virtual', lang: 'es', area: 'reconfiguracion' })} 
                   className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
                 >
                   {d.details.reconfiguracion.cta}
@@ -1250,6 +1324,7 @@ interface ProgramCardProps {
   title: string;
   lead: string;
   type: string;
+  modalityLabel: string;
   desc: string;
   features: string[];
   cta: string;
@@ -1258,9 +1333,10 @@ interface ProgramCardProps {
   isVirtual?: boolean;
 }
 
-const ProgramCard: React.FC<ProgramCardProps> = ({ id, title, lead, type, desc, features, cta, onAction, isFeatured, isVirtual }) => {
+const ProgramCard: React.FC<ProgramCardProps> = ({ id, title, lead, type, modalityLabel, desc, features, cta, onAction, isFeatured, isVirtual }) => {
   let cardStyles = 'bg-white text-slate-900 border-slate-200 hover:border-indigo-300';
   let badgeStyles = 'bg-slate-100 text-slate-500';
+  let modalityBadgeStyles = 'bg-slate-50 text-slate-400 border border-slate-100';
   let leadStyles = 'text-slate-500';
   let descStyles = 'text-slate-600';
   let dotStyles = 'bg-indigo-300';
@@ -1269,6 +1345,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ id, title, lead, type, desc, 
   if (isFeatured) {
     cardStyles = 'bg-slate-900 text-white border-slate-800 shadow-2xl shadow-indigo-200/20 scale-105 z-10';
     badgeStyles = 'bg-indigo-600 text-white';
+    modalityBadgeStyles = 'bg-indigo-500/20 text-indigo-300 border border-indigo-500/30';
     leadStyles = 'text-indigo-400';
     descStyles = 'text-slate-400';
     dotStyles = 'bg-indigo-500';
@@ -1276,6 +1353,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ id, title, lead, type, desc, 
   } else if (isVirtual) {
     cardStyles = 'bg-sky-50 text-slate-900 border-sky-200 hover:border-sky-400 shadow-sm';
     badgeStyles = 'bg-blue-600 text-white';
+    modalityBadgeStyles = 'bg-blue-100 text-blue-600 border border-blue-200';
     leadStyles = 'text-blue-700';
     descStyles = 'text-slate-600';
     dotStyles = 'bg-blue-500';
@@ -1286,8 +1364,9 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ id, title, lead, type, desc, 
     <div className={`p-8 rounded-3xl flex flex-col h-full border transition-all ${cardStyles}`}>
       {/* Header Section: Badge + Title + Lead */}
       <div className="mb-4 min-h-[190px]">
-        <div className="mb-3">
+        <div className="mb-3 flex flex-wrap gap-2">
           <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded inline-block ${badgeStyles}`}>{type}</span>
+          <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded inline-block ${modalityBadgeStyles}`}>{modalityLabel}</span>
         </div>
         <h3 className="text-2xl font-bold mb-1 leading-tight">{title}</h3>
         <p className={`text-sm ${leadStyles}`}>{lead}</p>

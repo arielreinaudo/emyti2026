@@ -45,10 +45,7 @@ const DICT = {
     step5: {
       ready: '¡Todo listo!',
       found: 'Hemos encontrado el espacio ideal para tu consulta',
-      cta: 'Agendar en Calendly',
-      change: '¿Quieres cambiar algo? Puedes volver atrás o iniciar una consulta general.',
-      back: 'Volver',
-      orientation: 'Consulta de Orientación'
+      cta: 'Agendar en Calendly'
     }
   },
   en: {
@@ -86,10 +83,7 @@ const DICT = {
     step5: {
       ready: 'All set!',
       found: 'We have found the ideal space for your consultation',
-      cta: 'Book on Calendly',
-      change: 'Want to change something? You can go back or start a general consultation.',
-      back: 'Back',
-      orientation: 'Orientation Consultation'
+      cta: 'Book on Calendly'
     }
   }
 };
@@ -97,7 +91,10 @@ const DICT = {
 const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang, onClose }) => {
   // Calculamos el paso inicial basado en la información recibida
   const getInitialStep = () => {
-    if (initialState?.modality === 'presencial') return 4; // Skip language for presencial and skip type
+    if (initialState?.modality === 'presencial' && initialState?.area) return 5;
+    if (initialState?.modality === 'presencial') return 4;
+    if (initialState?.modality && initialState?.lang && initialState?.area) return 5;
+    if (initialState?.modality && initialState?.lang) return 4;
     if (initialState?.modality) return 2;
     return 1;
   };
@@ -120,16 +117,20 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
   const t = DICT[booking.lang || 'es'];
 
   const updateBooking = (key: keyof BookingState, value: any) => {
-    setBooking(prev => ({ ...prev, [key]: value }));
-
-    // Determine next step
-    if (key === 'modality' && value === 'presencial') {
-      setStep(4); // Skip language for presencial and skip type
-    } else if (key === 'lang') {
-      setStep(4); // After language, go to area selection (skip type)
-    } else {
-      setStep(prev => prev + 1);
-    }
+    setBooking(prev => {
+      const newState = { ...prev, [key]: value };
+      
+      // Determine next step based on the updated state
+      if (key === 'modality' && value === 'presencial') {
+        setStep(newState.area ? 5 : 4);
+      } else if (key === 'lang') {
+        setStep(newState.area ? 5 : 4);
+      } else {
+        setStep(s => s + 1);
+      }
+      
+      return newState;
+    });
   };
 
   const handleAreaSelect = (area: Area) => {
@@ -300,14 +301,6 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
             >
               {t.step5.cta}
             </a>
-          </div>
-
-          <div className="pt-8 border-t border-slate-100">
-            <p className="text-sm text-slate-400 mb-4">{t.step5.change}</p>
-            <div className="flex justify-center gap-4">
-               <button onClick={() => setStep(4)} className="px-4 py-2 text-slate-600 hover:text-indigo-600">{t.step5.back}</button>
-               <a href={CALENDLY.default_orientacion} target="_blank" className="px-4 py-2 border border-slate-200 rounded-lg text-slate-600 hover:border-indigo-600 transition-colors">{t.step5.orientation}</a>
-            </div>
           </div>
         </div>
       )}
