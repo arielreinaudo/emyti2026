@@ -44,10 +44,10 @@ const TRANSLATIONS = {
       title: 'Elige tu camino',
       sub: 'Opciones puntuales o programas de transformación profunda.',
       cards: [
-        { id: 'metabolica', title: 'Medicina Nutricional y Metabólica', lead: 'Dra. Adriana Ortiz', type: 'Salud Funcional', desc: 'Para quienes buscan balance hormonal, salud digestiva o longevidad metabólica.', features: ['Laboratorios funcionales', 'Protocolo nutricional', 'Atención virtual en Español o Ingles'], cta: 'Ver más' },
         { id: 'evaluacion_metabolica', title: 'Evaluación Nutricional y Metabólica', lead: 'Dra. Adriana Ortiz + Ariel Reinaudo', type: 'Salud Integral', desc: 'Evaluación personalizada de parámetros metabólicos y composición corporal', features: ['Atención en Rosario', 'Composición corporal', 'Vitaminas y Minerales'], cta: 'Ver más' },
         { id: 'acupuntura', title: 'Evaluación Energética y Acupuntura', lead: 'Dra. Adriana Ortiz + Ariel Reinaudo', type: 'Acupuntura', desc: 'Tratamiento del dolor y reequilibrio homeostático mediante técnicas milenarias.', features: ['Atención en Rosario', 'Manejo del dolor', 'Regulación biológica'], cta: 'Ver más' },
         { id: 'estres', title: 'Evaluación y Entrenamiento para Control del Estrés', lead: 'Ariel Reinaudo', type: 'Manejo de Estrés', desc: 'Para quienes conviven con ansiedad, burnout o síntomas psicosomáticos persistentes.', features: ['Atención en Rosario', 'Entrenamiento Vagal', 'Regulación Emocional', 'Solo Español'], cta: 'Ver más' },
+        { id: 'metabolica', title: 'Medicina Nutricional y Metabólica', lead: 'Dra. Adriana Ortiz', type: 'Salud Funcional', desc: 'Para quienes buscan balance hormonal, salud digestiva o longevidad metabólica.', features: ['Laboratorios funcionales', 'Protocolo nutricional', 'Atención virtual en Español o Ingles'], cta: 'Ver más' },
         { id: 'reconfiguracion', title: 'Evaluación y Entrenamiento en Reconfiguración del Estado Interno', lead: 'Ariel Reinaudo', type: 'RECONFIGURACIÓN INTERNA', desc: 'Para quienes repiten patrones, viven ansiedad o sienten bloqueos en decisiones.', features: ['Atención virtual en Español', 'Cambio de creencias', 'Claridad mental y toma de decisiones', 'Regulación emocional'], cta: 'Ver más' }
       ]
     },
@@ -314,10 +314,10 @@ const TRANSLATIONS = {
       title: 'Choose your path',
       sub: 'Specific options or deep transformation programs.',
       cards: [
-        { id: 'metabolica', title: 'Nutritional and Metabolic Medicine', lead: 'Dr. Adriana Ortiz', type: 'Functional Health', desc: 'For those seeking hormonal balance, digestive health, or metabolic longevity.', features: ['Functional labs', 'Nutritional protocol', 'Virtual care in Spanish or English'], cta: 'See more' },
         { id: 'evaluacion_metabolica', title: 'Nutritional and Metabolic Evaluation', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Holistic Health', desc: 'Personalized assessment of metabolic parameters and body composition', features: ['Care in Rosario', 'Body composition', 'Vitamins and Minerals'], cta: 'See more' },
         { id: 'acupuntura', title: 'Energy Evaluation and Acupuncture', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Acupuncture', desc: 'Pain treatment and homeostatic rebalancing through ancient techniques.', features: ['Care in Rosario', 'Pain management', 'Biological regulation'], cta: 'See more' },
         { id: 'estres', title: 'Stress Control Evaluation and Training', lead: 'Ariel Reinaudo', type: 'Stress Management', desc: 'For those living with anxiety, burnout, or persistent psychiatrist symptoms.', features: ['Care in Rosario', 'Vagal Training', 'Emotional Regulation', 'Spanish Only'], cta: 'See more' },
+        { id: 'metabolica', title: 'Nutritional and Metabolic Medicine', lead: 'Dr. Adriana Ortiz', type: 'Functional Health', desc: 'For those seeking hormonal balance, digestive health, or metabolic longevity.', features: ['Functional labs', 'Nutritional protocol', 'Virtual care in Spanish or English'], cta: 'See more' },
         { id: 'reconfiguracion', title: 'Internal State Reconfiguration Evaluation and Training', lead: 'Ariel Reinaudo', type: 'INTERNAL RECONFIGURATION', desc: 'For those who repeat patterns, live with anxiety, or feel blocks in decisions.', features: ['Spanish Virtual Care', 'Belief change', 'Mental clarity and decision making', 'Emotional regulation'], cta: 'See more' }
       ]
     },
