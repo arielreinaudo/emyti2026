@@ -147,8 +147,8 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
   }, [booking]);
 
   const reset = () => {
+    setBooking({ modality: null, type: 'puntual', area: null, lang: initialLang || null });
     setStep(1);
-    setBooking({ modality: null, type: null, area: null, lang: initialLang || null });
   };
 
   const getPrice = (area: Area) => {
