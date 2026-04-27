@@ -27,32 +27,21 @@ const DICT = {
       en: 'English',
       enDesc: 'Consultations available in English (Limited to Metabolic Medicine).'
     },
-    step3: {
-      q: '¿Qué tipo de acompañamiento buscas?',
-      puntual: 'Consulta puntual',
-      puntualDesc: 'Evaluación inicial o consulta enfocada en un tema específico.',
-      progVirtual: 'Programa (min 6 meses)',
-      progVirtualDesc: 'Acompañamiento profundo y sostenido para cambios metabólicos reales.',
-      progPresencial: 'Programa Pack 4 sesiones',
-      progPresencialDesc: 'Ciclo de sesiones presenciales para un tratamiento estructurado.',
-      membresia: 'Membresía (mes a mes)',
-      membresiaDesc: 'Seguimiento continuo y optimización constante de tu salud.'
-    },
-    step4: {
-      q: '¿En qué área necesitas enfocarte?',
-      metabolica: 'Metabólica / Funcional',
-      metabolicaDesc: 'Salud hormonal, nutrición y optimización metabólica.',
-      estres: 'Manejo de Estrés',
-      estresDesc: 'Regulación del sistema nervioso y coherencia cardíaca.',
-      integrado: 'Modelo Integrado',
-      integradoDesc: 'Enfoque completo combinando medicina y manejo de estrés.',
-      acupuntura: 'Acupuntura',
-      acupunturaDesc: 'Equilibrio energético y tratamiento de dolor crónico.',
-      noteEn: 'Nota: Las consultas en inglés están limitadas actualmente a medicina Metabólica / Funcional con la Dra. Ortiz.',
-      paymentNote: 'Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta.',
-      memberDiscount: 'Si sos miembro activo, tenés descuento.',
-      promoArgentina: '(Consulta por precio promocional para quienes viven en Argentina)'
-    },
+    q: '¿En qué área necesitas enfocarte?',
+    metabolica: 'Medicina Nutricional y Metabólica',
+    metabolicaDesc: 'Salud hormonal, nutrición y optimización metabólica.',
+    estres: 'Evaluación y Entrenamiento para Control del Estrés',
+    estresDesc: 'Regulación del sistema nervioso y coherencia cardíaca.',
+    integrado: 'Evaluación Nutricional y Metabólica',
+    integradoDesc: 'Evaluación de parámetros metabólicos y composición corporal.',
+    reconfiguracion: 'Evaluación y Entrenamiento en Reconfiguración del Estado Interno',
+    reconfiguracionDesc: 'Detección de patrones y reconfiguración del estado interno.',
+    acupuntura: 'Evaluación Energética y Acupuntura',
+    acupunturaDesc: 'Equilibrio energético y tratamiento de dolor crónico.',
+    noteEn: 'Nota: Las consultas en inglés están limitadas actualmente a medicina Metabólica / Funcional con la Dra. Ortiz.',
+    paymentNote: 'Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta.',
+    memberDiscount: 'Si sos miembro activo, tenés descuento.',
+    promoArgentina: '(Consulta por precio promocional para quienes viven en Argentina)',
     step5: {
       ready: '¡Todo listo!',
       found: 'Hemos encontrado el espacio ideal para tu consulta',
@@ -79,32 +68,21 @@ const DICT = {
       en: 'English',
       enDesc: 'Consultations available in English (Limited to Metabolic Medicine).'
     },
-    step3: {
-      q: 'What type of support are you looking for?',
-      puntual: 'One-time consultation',
-      puntualDesc: 'Initial assessment or consultation focused on a specific topic.',
-      progVirtual: 'Program (min 6 months)',
-      progVirtualDesc: 'Deep and sustained support for real metabolic changes.',
-      progPresencial: 'Program Pack 4 sessions',
-      progPresencialDesc: 'Cycle of in-person sessions for a structured treatment.',
-      membresia: 'Membership (month to month)',
-      membresiaDesc: 'Continuous monitoring and constant optimization of your health.'
-    },
-    step4: {
-      q: 'Which area do you need to focus on?',
-      metabolica: 'Metabolic / Functional',
-      metabolicaDesc: 'Hormonal health, nutrition, and metabolic optimization.',
-      estres: 'Stress Management',
-      estresDesc: 'Nervous system regulation and heart coherence.',
-      integrado: 'Integrated Model',
-      integradoDesc: 'Complete approach combining medicine and stress management.',
-      acupuntura: 'Acupuncture',
-      acupunturaDesc: 'Energy balance and chronic pain treatment.',
-      noteEn: 'Note: English consultations are currently limited to Metabolic / Functional medicine with Dr. Ortiz.',
-      paymentNote: 'Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate.',
-      memberDiscount: 'If you are an active member, you have a discount.',
-      promoArgentina: '(Inquire for promotional price for residents in Argentina)'
-    },
+    q: 'Which area do you need to focus on?',
+    metabolica: 'Nutritional and Metabolic Medicine',
+    metabolicaDesc: 'Hormonal health, nutrition, and metabolic optimization.',
+    estres: 'Stress Control Evaluation and Training',
+    estresDesc: 'Nervous system regulation and heart coherence.',
+    integrado: 'Nutritional and Metabolic Evaluation',
+    integradoDesc: 'Assessment of metabolic parameters and body composition.',
+    reconfiguracion: 'Internal State Reconfiguration Evaluation and Training',
+    reconfiguracionDesc: 'Pattern detection and internal state reconfiguration.',
+    acupuntura: 'Energy Evaluation and Acupuncture',
+    acupunturaDesc: 'Energy balance and chronic pain treatment.',
+    noteEn: 'Note: English consultations are currently limited to Metabolic / Functional medicine with Dr. Ortiz.',
+    paymentNote: 'Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate.',
+    memberDiscount: 'If you are an active member, you have a discount.',
+    promoArgentina: '(Inquire for promotional price for residents in Argentina)',
     step5: {
       ready: 'All set!',
       found: 'We have found the ideal space for your consultation',
@@ -119,7 +97,7 @@ const DICT = {
 const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang, onClose }) => {
   // Calculamos el paso inicial basado en la información recibida
   const getInitialStep = () => {
-    if (initialState?.modality === 'presencial') return 3; // Skip language for presencial
+    if (initialState?.modality === 'presencial') return 4; // Skip language for presencial and skip type
     if (initialState?.modality) return 2;
     return 1;
   };
@@ -127,7 +105,7 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
   const [step, setStep] = useState(getInitialStep());
   const [booking, setBooking] = useState<BookingState>({
     modality: initialState?.modality || null,
-    type: initialState?.type || null,
+    type: initialState?.type || 'puntual', // Default to punctual as selection was removed
     area: initialState?.area || null,
     lang: initialState?.lang || initialLang || null,
   });
@@ -146,7 +124,9 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
 
     // Determine next step
     if (key === 'modality' && value === 'presencial') {
-      setStep(3); // Skip language for presencial
+      setStep(4); // Skip language for presencial and skip type
+    } else if (key === 'lang') {
+      setStep(4); // After language, go to area selection (skip type)
     } else {
       setStep(prev => prev + 1);
     }
@@ -177,12 +157,14 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
       if (type === 'puntual') {
         if (area === 'dra') return '$80';
         if (area === 'ariel') return '$60';
-        if (area === 'integrado') return '$120';
+        if (area === 'reconfiguracion') return '$40';
+        if (area === 'integrado') return '$80';
       }
       if (type === 'programa') {
         if (area === 'dra') return '$384';
         if (area === 'ariel') return '$288';
-        if (area === 'integrado') return '$576';
+        if (area === 'reconfiguracion') return '$192';
+        if (area === 'integrado') return '$384';
       }
       if (type === 'membresia') return '$80 / $50';
     } else {
@@ -190,14 +172,8 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
       if (type === 'puntual') {
         if (area === 'dra') return '$80';
         if (area === 'ariel') return '$60';
-        if (area === 'integrado') return '$120';
+        if (area === 'integrado') return '$80';
         if (area === 'acupuntura') return '$80';
-      }
-      if (type === 'programa') {
-        if (area === 'dra') return '$120';
-        if (area === 'ariel') return '$120';
-        if (area === 'integrado') return '$180';
-        if (area === 'acupuntura') return '$120';
       }
     }
     return null;
@@ -211,7 +187,7 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
       </div>
 
       <div className="flex gap-2 mb-12 overflow-hidden rounded-full bg-slate-100 h-2">
-        {[1, 2, 3, 4, 5].map(s => (
+        {[1, 2, 4, 5].map(s => (
           <div key={s} className={`flex-1 transition-all duration-500 ${step >= s ? 'bg-indigo-600' : 'bg-transparent'}`} />
         ))}
       </div>
@@ -254,81 +230,54 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
         </div>
       )}
 
-      {/* STEP 3: TIPO DE SERVICIO */}
-      {step === 3 && (
-        <div className="space-y-6 animate-in fade-in duration-500">
-          <p className="text-lg font-medium text-slate-600">{t.step3.q}</p>
-          <div className="grid grid-cols-1 gap-4">
-            <OptionCard 
-              title={t.step3.puntual} 
-              desc={t.step3.puntualDesc} 
-              onClick={() => updateBooking('type', 'puntual')}
-            />
-            <OptionCard 
-              title={booking.modality === 'virtual' ? t.step3.progVirtual : t.step3.progPresencial} 
-              desc={booking.modality === 'virtual' ? t.step3.progVirtualDesc : t.step3.progPresencialDesc} 
-              onClick={() => updateBooking('type', 'programa')}
-            />
-            {booking.modality === 'virtual' && (
-              <OptionCard 
-                title={t.step3.membresia} 
-                desc={t.step3.membresiaDesc} 
-                onClick={() => updateBooking('type', 'membresia')}
-              />
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* STEP 4: ESPECIALIDAD */}
+      {/* STEP 4: ESPECIALIDAD (Step 3 removed) */}
       {step === 4 && (
         <div className="space-y-6 animate-in fade-in duration-500">
-          <p className="text-lg font-medium text-slate-600">{t.step4.q}</p>
-          <div className={`grid grid-cols-1 gap-4 ${booking.modality === 'presencial' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'}`}>
+          <p className="text-lg font-medium text-slate-600">{t.q}</p>
+          <div className={`grid grid-cols-1 gap-4 ${booking.modality === 'presencial' ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
             <OptionCard 
-              title={t.step4.metabolica} 
-              desc={t.step4.metabolicaDesc} 
+              title={t.metabolica} 
+              desc={t.metabolicaDesc} 
               price={getPrice('dra')}
               onClick={() => handleAreaSelect('dra')}
             />
             
-            {/* Restrictions based on chart: English is restricted for virtual, but presencial shows all (in Spanish) */}
-            {(booking.lang === 'es' || booking.modality === 'presencial') && (
+            {booking.modality === 'virtual' ? (
+              booking.lang === 'es' && (
+                <OptionCard 
+                  title={t.reconfiguracion} 
+                  desc={t.reconfiguracionDesc}
+                  price={getPrice('reconfiguracion')}
+                  onClick={() => handleAreaSelect('reconfiguracion')}
+                />
+              )
+            ) : (
+              // Presencial
               <>
                 <OptionCard 
-                  title={t.step4.estres} 
-                  desc={t.step4.estresDesc} 
+                  title={t.estres} 
+                  desc={t.estresDesc} 
                   price={getPrice('ariel')}
                   onClick={() => handleAreaSelect('ariel')}
                 />
                 <OptionCard 
-                  title={t.step4.integrado} 
-                  desc={t.step4.integradoDesc} 
-                  price={getPrice('integrado')}
-                  isFeatured
-                  onClick={() => handleAreaSelect('integrado')}
+                  title={t.acupuntura} 
+                  desc={t.acupunturaDesc} 
+                  price={getPrice('acupuntura')}
+                  onClick={() => handleAreaSelect('acupuntura')}
                 />
               </>
-            )}
-
-            {booking.modality === 'presencial' && (
-              <OptionCard 
-                title={t.step4.acupuntura} 
-                desc={t.step4.acupunturaDesc} 
-                price={getPrice('acupuntura')}
-                onClick={() => handleAreaSelect('acupuntura')}
-              />
             )}
           </div>
           
           <div className="mt-8 p-4 bg-slate-50 rounded-xl border border-slate-100 space-y-2">
-            <p className="text-sm text-slate-500 font-medium">{t.step4.paymentNote}</p>
-            <p className="text-xs text-slate-400 italic">{t.step4.memberDiscount}</p>
+            <p className="text-sm text-slate-500 font-medium">{t.paymentNote}</p>
+            <p className="text-xs text-slate-400 italic">{t.memberDiscount}</p>
             {booking.modality === 'virtual' && (
-              <p className="text-xs text-blue-600 font-bold italic">{t.step4.promoArgentina}</p>
+              <p className="text-xs text-blue-600 font-bold italic">{t.promoArgentina}</p>
             )}
             {booking.lang === 'en' && booking.modality === 'virtual' && (
-              <p className="text-xs text-indigo-400 italic pt-2">{t.step4.noteEn}</p>
+              <p className="text-xs text-indigo-400 italic pt-2">{t.noteEn}</p>
             )}
           </div>
         </div>

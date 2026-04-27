@@ -9,7 +9,7 @@ import { Language, BookingState, Modality } from './types';
 const adrianaImg = 'https://www.dropbox.com/scl/fi/cxs7w2sk1cy1jfry799cu/2.png?rlkey=9rtfshipxgdfz8cc75y5imla1&raw=1';
 const arielImg = 'https://www.dropbox.com/scl/fi/ohyalvtbtvu3budkvj4f2/10.jpg?rlkey=yva84bfv1rwbqe2u9igdwhloc&raw=1';
 const rosarioImg = 'https://www.dropbox.com/scl/fi/560vp920ntxlc15fsz4js/rosario-web.jpg?rlkey=8p8ulhxtokz7plms37ddj7ua9&raw=1';
-const adrianaArielImg = 'https://www.dropbox.com/scl/fi/8razi9uc7jyecttu5wlko/Profile-circule-400x400.jpg?rlkey=pwtvpc36q4b34diulh07yget2&raw=1';
+const adrianaArielImg = 'https://www.dropbox.com/scl/fi/s8536h7tgg2xi0nzxfkke/Emyti-nuevo-logo-transparente.png?rlkey=nztnagwk4hog68blvm8eym4qv&raw=1';
 const heroBgImg = 'https://www.dropbox.com/scl/fi/jwd04gdjc1ndwi3p5kizi/pcjvdwiel-man-3861989.jpg?rlkey=ps3fejwfpttxoh1415gmqqege&raw=1';
 
 const TRANSLATIONS = {
@@ -47,7 +47,8 @@ const TRANSLATIONS = {
         { id: 'metabolica', title: 'Medicina Nutricional y Metabólica', lead: 'Dra. Adriana Ortiz', type: 'Salud Funcional', desc: 'Para quienes buscan balance hormonal, salud digestiva o longevidad metabólica.', features: ['Laboratorios funcionales', 'Protocolo nutricional', 'Atención virtual en Español o Ingles'], cta: 'Ver más' },
         { id: 'evaluacion_metabolica', title: 'Evaluación Nutricional y Metabólica', lead: 'Dra. Adriana Ortiz + Ariel Reinaudo', type: 'Salud Integral', desc: 'Evaluación personalizada de parámetros metabólicos y composición corporal', features: ['Atención en Rosario', 'Composición corporal', 'Vitaminas y Minerales'], cta: 'Ver más' },
         { id: 'acupuntura', title: 'Evaluación Energética y Acupuntura', lead: 'Dra. Adriana Ortiz + Ariel Reinaudo', type: 'Acupuntura', desc: 'Tratamiento del dolor y reequilibrio homeostático mediante técnicas milenarias.', features: ['Atención en Rosario', 'Manejo del dolor', 'Regulación biológica'], cta: 'Ver más' },
-        { id: 'estres', title: 'Evaluación y Entrenamiento para Control del Estrés', lead: 'Ariel Reinaudo', type: 'Manejo de Estrés', desc: 'Para quienes conviven con ansiedad, burnout o síntomas psicosomáticos persistentes.', features: ['Atención en Rosario', 'Entrenamiento Vagal', 'Regulación Emocional', 'Solo Español'], cta: 'Ver más' }
+        { id: 'estres', title: 'Evaluación y Entrenamiento para Control del Estrés', lead: 'Ariel Reinaudo', type: 'Manejo de Estrés', desc: 'Para quienes conviven con ansiedad, burnout o síntomas psicosomáticos persistentes.', features: ['Atención en Rosario', 'Entrenamiento Vagal', 'Regulación Emocional', 'Solo Español'], cta: 'Ver más' },
+        { id: 'reconfiguracion', title: 'Evaluación y Entrenamiento en Reconfiguración del Estado Interno', lead: 'Ariel Reinaudo', type: 'RECONFIGURACIÓN INTERNA', desc: 'Para quienes repiten patrones, viven ansiedad o sienten bloqueos en decisiones.', features: ['Atención virtual en Español', 'Cambio de creencias', 'Claridad mental y toma de decisiones', 'Regulación emocional'], cta: 'Ver más' }
       ]
     },
     testimonials: {
@@ -158,6 +159,32 @@ const TRANSLATIONS = {
         investment: [
           "$60 USD",
           "Si sos miembro activo, tenés 30% de descuento.",
+          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta."
+        ],
+        cta: "Agendar ahora"
+      },
+      reconfiguracion: {
+        title: "Evaluación y Entrenamiento en Reconfiguración del Estado Interno",
+        description: "Sesión integral basada en la identificación de patrones actuales, detección de creencias y reconfiguración del estado interno desde el cual la persona percibe, siente y actúa. A través de una integración de modelos como PNL, Eneagrama, estructura de creencias (Dilts), y la lógica de conciencia–asunción–resultado, se guía a la persona a transformar su experiencia interna para generar cambios reales y sostenibles en su vida.",
+        servicesTitle: "Servicios incluidos en la consulta",
+        services: [
+          "Identificación del patrón actual no deseado (conductual, emocional y cognitivo)",
+          "Detección de creencias raíz y asunciones internas que sostienen el patrón",
+          "Lectura del patrón desde Eneagrama (motivación, miedo central y automatismo)",
+          "Diseño de acciones concretas y medibles para sostener el cambio"
+        ],
+        benefitsTitle: "Beneficios de esta consulta",
+        benefits: [
+          "Permite transformar creencias limitantes en creencias funcionales",
+          "Mejora la coherencia entre pensamiento, emoción y acción",
+          "Fortalece la autoconfianza y la sensación de dirección interna",
+          "Rompe patrones repetitivos y automatismos defensivos",
+          "Genera cambios reales a través de microacciones sostenidas"
+        ],
+        investmentTitle: "Inversión",
+        investment: [
+          "$40 USD",
+          "Si sos miembro activo, tenés 50% de descuento.",
           "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta."
         ],
         cta: "Agendar ahora"
@@ -276,7 +303,8 @@ const TRANSLATIONS = {
         { id: 'metabolica', title: 'Nutritional and Metabolic Medicine', lead: 'Dr. Adriana Ortiz', type: 'Functional Health', desc: 'For those seeking hormonal balance, digestive health, or metabolic longevity.', features: ['Functional labs', 'Nutritional protocol', 'Virtual care in Spanish or English'], cta: 'See more' },
         { id: 'evaluacion_metabolica', title: 'Nutritional and Metabolic Evaluation', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Holistic Health', desc: 'Personalized assessment of metabolic parameters and body composition', features: ['Care in Rosario', 'Body composition', 'Vitamins and Minerals'], cta: 'See more' },
         { id: 'acupuntura', title: 'Energy Evaluation and Acupuncture', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Acupuncture', desc: 'Pain treatment and homeostatic rebalancing through ancient techniques.', features: ['Care in Rosario', 'Pain management', 'Biological regulation'], cta: 'See more' },
-        { id: 'estres', title: 'Stress Control Evaluation and Training', lead: 'Ariel Reinaudo', type: 'Stress Management', desc: 'For those living with anxiety, burnout, or persistent psychiatrist symptoms.', features: ['Care in Rosario', 'Vagal Training', 'Emotional Regulation', 'Spanish Only'], cta: 'See more' }
+        { id: 'estres', title: 'Stress Control Evaluation and Training', lead: 'Ariel Reinaudo', type: 'Stress Management', desc: 'For those living with anxiety, burnout, or persistent psychiatrist symptoms.', features: ['Care in Rosario', 'Vagal Training', 'Emotional Regulation', 'Spanish Only'], cta: 'See more' },
+        { id: 'reconfiguracion', title: 'Internal State Reconfiguration Evaluation and Training', lead: 'Ariel Reinaudo', type: 'INTERNAL RECONFIGURATION', desc: 'For those who repeat patterns, live with anxiety, or feel blocks in decisions.', features: ['Spanish Virtual Care', 'Belief change', 'Mental clarity and decision making', 'Emotional regulation'], cta: 'See more' }
       ]
     },
     testimonials: {
@@ -387,6 +415,32 @@ const TRANSLATIONS = {
         investment: [
           "$60 USD",
           "If you are an active member, you get a 30% discount.",
+          "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
+        ],
+        cta: "Book now"
+      },
+      reconfiguracion: {
+        title: "Internal State Reconfiguration Evaluation and Training",
+        description: "Comprehensive session based on the identification of current patterns, belief detection, and reconfiguration of the internal state from which the person perceives, feels, and acts. Through an integration of models such as NLP, Enneagram, belief structure (Dilts), and the logic of consciousness–assumption–result, the person is guided to transform their internal experience to generate real and sustainable changes in their life.",
+        servicesTitle: "Services included in the consultation",
+        services: [
+          "Identification of the current unwanted pattern (behavioral, emotional, and cognitive)",
+          "Detection of root beliefs and internal assumptions that sustain the pattern",
+          "Pattern reading from the Enneagram perspective (motivation, central fear, and automatism)",
+          "Design of concrete and measurable actions to sustain change"
+        ],
+        benefitsTitle: "Benefits of this consultation",
+        benefits: [
+          "Allows transforming limiting beliefs into functional beliefs",
+          "Improves coherence between thought, emotion, and action",
+          "Strengthens self-confidence and the sense of internal direction",
+          "Breaks repetitive patterns and defensive automatisms",
+          "Generates real changes through sustained micro-actions"
+        ],
+        investmentTitle: "Investment",
+        investment: [
+          "$40 USD",
+          "If you are an active member, you get a 50% discount.",
           "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
         ],
         cta: "Book now"
@@ -602,7 +656,7 @@ const App: React.FC = () => {
             <p className="text-slate-500">{d.programs.sub}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {d.programs.cards.map((card, i) => (
               <ProgramCard 
                 key={i}
@@ -624,6 +678,8 @@ const App: React.FC = () => {
                     setActiveModal('acupuntura');
                   } else if (card.id === 'estres') {
                     setActiveModal('estres');
+                  } else if (card.id === 'reconfiguracion') {
+                    setActiveModal('reconfiguracion');
                   } else {
                     setInitialBookingState({});
                     setRouterResetKey(prev => prev + 1);
@@ -899,6 +955,74 @@ const App: React.FC = () => {
                   className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
                 >
                   {d.details.estres.cta}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeModal === 'reconfiguracion' && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-0 md:p-6 animate-in fade-in duration-300">
+          <div className="bg-white w-full h-full md:h-auto md:max-h-[90vh] md:max-w-4xl md:rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-300">
+            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 bg-white shrink-0">
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900">{d.details.reconfiguracion.title}</h3>
+              <button onClick={closeModal} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                <svg className="w-6 h-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="p-6 md:p-10 overflow-y-auto flex-grow">
+              <p className="text-slate-600 leading-relaxed mb-10 text-lg">
+                {d.details.reconfiguracion.description}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-600 mb-6">{d.details.reconfiguracion.servicesTitle}</h4>
+                  <ul className="space-y-4">
+                    {d.details.reconfiguracion.services.map((s, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0"></span>
+                        <span className="text-sm leading-relaxed">{s}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-600 mb-6">{d.details.reconfiguracion.benefitsTitle}</h4>
+                  <ul className="space-y-4">
+                    {d.details.reconfiguracion.benefits.map((b, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0"></span>
+                        <span className="text-sm leading-relaxed">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-slate-50/80 p-10 rounded-[32px] border border-slate-100">
+                <h4 className="text-sm font-bold uppercase tracking-[0.1em] text-slate-900 mb-8">
+                  {d.details.reconfiguracion.investmentTitle}
+                </h4>
+                <div className="space-y-6">
+                  {d.details.reconfiguracion.investment.map((line, i) => (
+                    <p key={i} className="text-[17px] text-slate-700">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
+                <button 
+                  onClick={() => handleBookNowFromModal('virtual')} 
+                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  {d.details.reconfiguracion.cta}
                 </button>
               </div>
             </div>

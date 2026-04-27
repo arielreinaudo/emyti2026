@@ -35,6 +35,10 @@ export const CALENDLY: CalendlyLinks = {
   "ariel_programa_presencial_es": "https://calendly.com/emyti/ariel-programa-es-p",
   "ariel_membresia_presencial_es": "https://calendly.com/emyti/ariel-membresia-es-p",
 
+  // RECONFIGURACIÓN INTERNA - VIRTUAL
+  "reconfiguracion_puntual_virtual_es": "https://calendly.com/emyti/reconfiguracion-puntual-es-v",
+  "reconfiguracion_programa_virtual_es": "https://calendly.com/emyti/reconfiguracion-programa-es-v",
+
   // ACUPUNTURA - PRESENCIAL ONLY
   "acupuntura_puntual_presencial_es": "https://calendly.com/emyti/acupuntura-p-es",
   "acupuntura_programa_presencial_es": "https://calendly.com/emyti/acupuntura-programa-es",
