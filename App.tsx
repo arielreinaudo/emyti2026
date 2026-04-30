@@ -635,15 +635,6 @@ const App: React.FC = () => {
 
       {/* NUESTRO MODELO */}
       <section id="modelo" className="relative py-24 bg-white overflow-hidden">
-        <div 
-          className="absolute inset-0 z-0 opacity-20 pointer-events-none"
-          style={{ 
-            backgroundImage: `url(${heroBgImg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-white/20 z-0 pointer-events-none"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="mb-20">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">{d.model.title}</h2>
