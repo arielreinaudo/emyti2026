@@ -13,11 +13,11 @@ import { CalendlyLinks } from '../types';
 
 export const CALENDLY: CalendlyLinks = {
   // DRA. ORTIZ - VIRTUAL
-  "dra_puntual_virtual_es": "https://calendly.com/adrianaortiz/consulta-virtual-argentina",
+  "dra_puntual_virtual_es": "https://calendly.com/adrianaortiz/virtualadri",
   "dra_puntual_virtual_en": "https://calendly.com/adrianaortiz/virtualadri",
-  "dra_programa_virtual_es": "https://calendly.com/adrianaortiz/consulta-virtual-argentina",
+  "dra_programa_virtual_es": "https://calendly.com/adrianaortiz/virtualadri",
   "dra_programa_virtual_en": "https://calendly.com/adrianaortiz/virtualadri",
-  "dra_membresia_virtual_es": "https://calendly.com/adrianaortiz/consulta-virtual-argentina",
+  "dra_membresia_virtual_es": "https://calendly.com/adrianaortiz/virtualadri",
   "dra_membresia_virtual_en": "https://calendly.com/adrianaortiz/virtualadri",
 
   // DRA. ORTIZ - PRESENCIAL (ROSARIO)
