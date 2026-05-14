@@ -1,7 +1,7 @@
 
 export type Modality = 'virtual' | 'presencial';
 export type ConsultationType = 'puntual' | 'programa' | 'membresia';
-export type Area = 'dra' | 'ariel' | 'integrado' | 'acupuntura' | 'reconfiguracion';
+export type Area = 'dra' | 'ariel' | 'integrado' | 'acupuntura' | 'reconfiguracion' | 'coherencia';
 export type Language = 'es' | 'en';
 
 export interface BookingState {

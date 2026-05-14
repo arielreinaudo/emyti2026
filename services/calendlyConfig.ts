@@ -51,6 +51,10 @@ export const CALENDLY: CalendlyLinks = {
   "integrado_programa_presencial_es": "https://calendly.com/emyti/integrado-programa-es-p",
   "integrado_membresia_presencial_es": "https://calendly.com/emyti/integrado-membresia-es-p",
 
+  "coherencia_puntual_virtual_es": "https://calendly.com/adrianaortiz/vfc",
+  "coherencia_programa_virtual_es": "https://calendly.com/adrianaortiz/vfc",
+  "coherencia_membresia_virtual_es": "https://calendly.com/adrianaortiz/vfc",
+
   // FALLBACKS
   "default_orientacion": "https://calendly.com/adrianaortiz/llamada-orientacion"
 };

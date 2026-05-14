@@ -36,6 +36,8 @@ const DICT = {
     integradoDesc: 'Evaluación de parámetros metabólicos y composición corporal.',
     reconfiguracion: 'Evaluación y Entrenamiento en Reconfiguración del Estado Interno',
     reconfiguracionDesc: 'Detección de patrones y reconfiguración del estado interno.',
+    coherencia: 'Evaluación y Entrenamiento en Coherencia Cardíaca (VFC)',
+    coherenciaDesc: 'Regulación del sistema nervioso y coherencia cardíaca (Virtual).',
     acupuntura: 'Evaluación Energética y Acupuntura',
     acupunturaDesc: 'Equilibrio energético y tratamiento de dolor crónico.',
     noteEn: 'Nota: Las consultas en inglés están limitadas actualmente a medicina Metabólica / Funcional con la Dra. Ortiz.',
@@ -74,6 +76,8 @@ const DICT = {
     integradoDesc: 'Assessment of metabolic parameters and body composition.',
     reconfiguracion: 'Internal State Reconfiguration Evaluation and Training',
     reconfiguracionDesc: 'Pattern detection and internal state reconfiguration.',
+    coherencia: 'Heart Coherence Assessment and Training (HRV)',
+    coherenciaDesc: 'Nervous system regulation and heart coherence (Virtual).',
     acupuntura: 'Energy Evaluation and Acupuncture',
     acupunturaDesc: 'Energy balance and chronic pain treatment.',
     noteEn: 'Note: English consultations are currently limited to Metabolic / Functional medicine with Dr. Ortiz.',
@@ -121,8 +125,14 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
       const newState = { ...prev, [key]: value };
       
       // Determine next step based on the updated state
-      if (key === 'modality' && value === 'presencial') {
-        setStep(newState.area ? 5 : 4);
+      if (key === 'modality') {
+        if (value === 'presencial') {
+          // Presencial is only in Spanish, skip language check
+          setStep(newState.area ? 5 : 4);
+        } else {
+          // Virtual: Always ask for language because options differ by language
+          setStep(2);
+        }
       } else if (key === 'lang') {
         setStep(newState.area ? 5 : 4);
       } else {
@@ -159,12 +169,14 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
         if (area === 'dra') return '$80';
         if (area === 'ariel') return '$60';
         if (area === 'reconfiguracion') return '$40';
+        if (area === 'coherencia') return '$40';
         if (area === 'integrado') return '$80';
       }
       if (type === 'programa') {
         if (area === 'dra') return '$384';
         if (area === 'ariel') return '$288';
         if (area === 'reconfiguracion') return '$192';
+        if (area === 'coherencia') return '$192';
         if (area === 'integrado') return '$384';
       }
       if (type === 'membresia') return '$80 / $50';
@@ -178,6 +190,75 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
       }
     }
     return null;
+  };
+
+  const renderOptions = () => {
+    const options = [];
+
+    if (booking.modality === 'virtual') {
+      // Order: Metabolica, Coherencia, Reconfiguracion
+      options.push(
+        <OptionCard 
+          key="dra"
+          title={t.metabolica} 
+          desc={t.metabolicaDesc} 
+          price={getPrice('dra')}
+          onClick={() => handleAreaSelect('dra')}
+        />
+      );
+
+      if (booking.lang === 'es' || !booking.lang) {
+        options.push(
+          <OptionCard 
+            key="coherencia"
+            title={t.coherencia} 
+            desc={t.coherenciaDesc}
+            price={getPrice('coherencia')}
+            onClick={() => handleAreaSelect('coherencia')}
+          />
+        );
+        options.push(
+          <OptionCard 
+            key="reconfiguracion"
+            title={t.reconfiguracion} 
+            desc={t.reconfiguracionDesc}
+            price={getPrice('reconfiguracion')}
+            onClick={() => handleAreaSelect('reconfiguracion')}
+          />
+        );
+      }
+    } else {
+      // Presencial Order: Evaluacion Nutricional (Integrado), Acupuntura, Estres
+      options.push(
+        <OptionCard 
+          key="integrado"
+          title={t.integrado} 
+          desc={t.integradoDesc} 
+          price={getPrice('integrado')}
+          onClick={() => handleAreaSelect('integrado')}
+        />
+      );
+      options.push(
+        <OptionCard 
+          key="acupuntura"
+          title={t.acupuntura} 
+          desc={t.acupunturaDesc} 
+          price={getPrice('acupuntura')}
+          onClick={() => handleAreaSelect('acupuntura')}
+        />
+      );
+      options.push(
+        <OptionCard 
+          key="estres"
+          title={t.estres} 
+          desc={t.estresDesc} 
+          price={getPrice('ariel')}
+          onClick={() => handleAreaSelect('ariel')}
+        />
+      );
+    }
+
+    return options;
   };
 
   return (
@@ -235,40 +316,8 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
       {step === 4 && (
         <div className="space-y-6 animate-in fade-in duration-500">
           <p className="text-lg font-medium text-slate-600">{t.q}</p>
-          <div className={`grid grid-cols-1 gap-4 ${booking.modality === 'presencial' ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
-            <OptionCard 
-              title={t.metabolica} 
-              desc={t.metabolicaDesc} 
-              price={getPrice('dra')}
-              onClick={() => handleAreaSelect('dra')}
-            />
-            
-            {booking.modality === 'virtual' ? (
-              booking.lang === 'es' && (
-                <OptionCard 
-                  title={t.reconfiguracion} 
-                  desc={t.reconfiguracionDesc}
-                  price={getPrice('reconfiguracion')}
-                  onClick={() => handleAreaSelect('reconfiguracion')}
-                />
-              )
-            ) : (
-              // Presencial
-              <>
-                <OptionCard 
-                  title={t.estres} 
-                  desc={t.estresDesc} 
-                  price={getPrice('ariel')}
-                  onClick={() => handleAreaSelect('ariel')}
-                />
-                <OptionCard 
-                  title={t.acupuntura} 
-                  desc={t.acupunturaDesc} 
-                  price={getPrice('acupuntura')}
-                  onClick={() => handleAreaSelect('acupuntura')}
-                />
-              </>
-            )}
+          <div className={`grid grid-cols-1 gap-4 ${booking.modality === 'presencial' ? 'md:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
+            {renderOptions()}
           </div>
           
           <div className="mt-8 p-4 bg-slate-50 rounded-xl border border-slate-100 space-y-2">
