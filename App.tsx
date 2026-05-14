@@ -192,7 +192,7 @@ const TRANSLATIONS = {
         investmentTitle: "Inversión",
         investment: [
           "$40 USD",
-          "Si sos miembro activo, tenés 50% de descuento.",
+          "Si sos miembro activo, tenés 25% de descuento.",
           "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta."
         ],
         cta: "Agendar ahora",
@@ -462,7 +462,7 @@ const TRANSLATIONS = {
         investmentTitle: "Investment",
         investment: [
           "$40 USD",
-          "If you are an active member, you get a 50% discount.",
+          "If you are an active member, you get a 25% discount.",
           "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
         ],
         cta: "Book now",
