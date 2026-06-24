@@ -55,6 +55,10 @@ export const CALENDLY: CalendlyLinks = {
   "coherencia_programa_virtual_es": "https://calendly.com/adrianaortiz/vfc",
   "coherencia_membresia_virtual_es": "https://calendly.com/adrianaortiz/vfc",
 
+  // ENEAGRAMA VIRTUAL - VIRTUAL (ES ONLY)
+  "eneagrama_puntual_virtual_es": "https://calendly.com/adrianaortiz/virtualeneagrama",
+  "eneagrama_programa_virtual_es": "https://calendly.com/adrianaortiz/virtualeneagrama",
+
   // FALLBACKS
   "default_orientacion": "https://calendly.com/adrianaortiz/llamada-orientacion"
 };
