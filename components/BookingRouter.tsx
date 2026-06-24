@@ -40,6 +40,8 @@ const DICT = {
     coherenciaDesc: 'Regulación del sistema nervioso y coherencia cardíaca (Virtual).',
     eneagrama: 'Consulta Eneagramática para Autoconocimiento y Transformación Personal',
     eneagramaDesc: 'Para comprender patrones de carácter, motivaciones profundas y toma de decisiones.',
+    estres_virtual: 'Manejo del Estrés Virtual (Programa Base de Calma y Regulación Corporal)',
+    estres_virtualDesc: 'Para quienes sienten estrés, tensión corporal, mente acelerada, sueño liviano o dificultad para recuperar la calma.',
     acupuntura: 'Evaluación Energética y Acupuntura',
     acupunturaDesc: 'Equilibrio energético y tratamiento de dolor crónico.',
     noteEn: 'Nota: Las consultas en inglés están limitadas actualmente a medicina Metabólica / Funcional con la Dra. Ortiz.',
@@ -82,6 +84,8 @@ const DICT = {
     coherenciaDesc: 'Nervous system regulation and heart coherence (Virtual).',
     eneagrama: 'Enneagram Consultation for Self-Knowledge and Personal Transformation',
     eneagramaDesc: 'To understand character patterns, deep motivations, and decision-making.',
+    estres_virtual: 'Virtual Stress Management (Calm and Body Regulation Base Program)',
+    estres_virtualDesc: 'For those who feel stress, body tension, racing mind, light sleep, or difficulty recovering calm.',
     acupuntura: 'Energy Evaluation and Acupuncture',
     acupunturaDesc: 'Energy balance and chronic pain treatment.',
     noteEn: 'Note: English consultations are currently limited to Metabolic / Functional medicine with Dr. Ortiz.',
@@ -175,6 +179,7 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
         if (area === 'reconfiguracion') return '$40';
         if (area === 'coherencia') return '$40';
         if (area === 'eneagrama') return '$40';
+        if (area === 'estres_virtual') return '$60';
         if (area === 'integrado') return '$80';
       }
       if (type === 'programa') {
@@ -183,6 +188,7 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
         if (area === 'reconfiguracion') return '$192';
         if (area === 'coherencia') return '$192';
         if (area === 'eneagrama') return '$192';
+        if (area === 'estres_virtual') return '$60';
         if (area === 'integrado') return '$384';
       }
       if (type === 'membresia') return '$80 / $50';
@@ -239,6 +245,15 @@ const BookingRouter: React.FC<BookingRouterProps> = ({ initialState, initialLang
             desc={t.eneagramaDesc}
             price={getPrice('eneagrama')}
             onClick={() => handleAreaSelect('eneagrama')}
+          />
+        );
+        options.push(
+          <OptionCard 
+            key="estres_virtual"
+            title={t.estres_virtual} 
+            desc={t.estres_virtualDesc}
+            price={getPrice('estres_virtual')}
+            onClick={() => handleAreaSelect('estres_virtual')}
           />
         );
       }

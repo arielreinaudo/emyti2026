@@ -59,6 +59,10 @@ export const CALENDLY: CalendlyLinks = {
   "eneagrama_puntual_virtual_es": "https://calendly.com/adrianaortiz/virtualeneagrama",
   "eneagrama_programa_virtual_es": "https://calendly.com/adrianaortiz/virtualeneagrama",
 
+  // MANEJO DEL ESTRES VIRTUAL - VIRTUAL (ES ONLY)
+  "estres_virtual_puntual_virtual_es": "https://calendly.com/adrianaortiz/programacalma",
+  "estres_virtual_programa_virtual_es": "https://calendly.com/adrianaortiz/programacalma",
+
   // FALLBACKS
   "default_orientacion": "https://calendly.com/adrianaortiz/llamada-orientacion"
 };

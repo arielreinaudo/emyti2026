@@ -48,6 +48,7 @@ const TRANSLATIONS = {
         { id: 'acupuntura', title: 'Evaluación Energética y Acupuntura', lead: 'Dra. Adriana Ortiz + Ariel Reinaudo', type: 'Acupuntura', desc: 'Tratamiento del dolor y reequilibrio homeostático mediante técnicas milenarias.', features: ['Atención en Rosario', 'Manejo del dolor', 'Regulación biológica'], cta: 'Ver más' },
         { id: 'estres', title: 'Evaluación y Entrenamiento para Control del Estrés', lead: 'Ariel Reinaudo', type: 'Manejo de Estrés', desc: 'Para quienes conviven con ansiedad, burnout o síntomas psicosomáticos persistentes.', features: ['Atención en Rosario', 'Entrenamiento Vagal', 'Regulación Emocional', 'Solo Español'], cta: 'Ver más' },
         { id: 'metabolica', title: 'Medicina Nutricional y Metabólica', lead: 'Dra. Adriana Ortiz', type: 'Salud Funcional', desc: 'Para quienes buscan balance hormonal, salud digestiva o longevidad metabólica.', features: ['Laboratorios funcionales', 'Protocolo nutricional', 'Atención virtual en Español o Ingles'], cta: 'Ver más' },
+        { id: 'estres_virtual', title: 'Programa Base de Calma y Regulación Corporal', lead: 'Ariel Reinaudo', type: 'MANEJO DEL ESTRÉS VIRTUAL', desc: 'Para quienes sienten estrés, tensión corporal, mente acelerada, sueño liviano o dificultad para recuperar calma durante el día.', features: ['Atención virtual en Español', 'Prácticas guiadas de respiración y relajación', 'Técnicas de atención plena y autoinducción', 'Indicaciones prácticas autónomas para el hogar'], cta: 'Ver más' },
         { id: 'coherencia_vfc', title: 'Evaluación y Entrenamiento en Coherencia Cardíaca (VFC)', lead: 'Ariel Reinaudo', type: 'COHERENCIA CARDIACA', desc: 'Para quienes sienten estrés, ansiedad, sueño liviano o dificultad para recuperar calma y foco en el día a día.', features: ['Atención virtual en Español', 'Entrenamiento guiado con biofeedback', 'Protocolo de práctica (con o sin wearables)', 'Seguimiento por indicadores simples'], cta: 'Ver más' },
         { id: 'reconfiguracion', title: 'Evaluación y Entrenamiento en Reconfiguración del Estado Interno', lead: 'Ariel Reinaudo', type: 'RECONFIGURACIÓN INTERNA', desc: 'Para quienes repiten patrones, viven ansiedad o sienten bloqueos en decisiones.', features: ['Atención virtual en Español', 'Cambio de creencias', 'Claridad mental y toma de decisiones', 'Regulación emocional'], cta: 'Ver más' },
         { id: 'eneagrama', title: 'Consulta Eneagramática para Autoconocimiento y Transformación Personal', lead: 'Ariel Reinaudo', type: 'ENEAGRAMA VIRTUAL', desc: 'Para quienes desean comprender con mayor claridad sus patrones de carácter, motivaciones profundas y toma de decisiones.', features: ['Atención virtual en Español', 'Plan con prácticas de autoobservación', 'Lectura de patrones de carácter', 'Trabajo sobre creencias y reacciones'], cta: 'Ver más' }
@@ -255,6 +256,35 @@ const TRANSLATIONS = {
         cta: "Agendar ahora",
         info: 'Más Información',
         infoUrl: 'https://webilution.ac-page.com/eneagrama'
+      },
+      estres_virtual: {
+        title: "Programa Base de Calma y Regulación Corporal",
+        description: "Programa de 4 encuentros virtuales, con frecuencia semanal, orientado a aprender prácticas simples de respiración, relajación corporal y atención plena, para ayudar a disminuir la activación del estrés y recuperar una sensación básica de calma durante el día. Es un programa inicial, práctico y accesible, pensado como una base antes de avanzar hacia técnicas más específicas o profundas.",
+        servicesTitle: "Servicios incluidos en la consulta",
+        services: [
+          "Evaluación inicial del estado general de estrés, tensión corporal y hábitos de autorregulación",
+          "Práctica guiada de respiración lenta y consciente",
+          "Entrenamiento en relajación corporal autoinducida",
+          "Prácticas simples de atención plena enfocadas en el cuerpo",
+          "Indicación verbal de ejercicios breves para repetir en casa de forma autónoma"
+        ],
+        benefitsTitle: "Beneficios de esta consulta",
+        benefits: [
+          "Ayuda a reducir la activación corporal asociada al estrés",
+          "Favorece una mayor sensación de calma y descanso interno",
+          "Mejora la percepción de las señales corporales de tensión",
+          "Facilita momentos breves de pausa durante el día",
+          "Crea una base simple para luego trabajar con técnicas más profundas"
+        ],
+        investmentTitle: "Inversión",
+        investment: [
+          "$60 USD (Programa de 4 sesiones)",
+          "Si sos miembro activo, tenés 25% de descuento.",
+          "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta."
+        ],
+        cta: "Agendar ahora",
+        info: 'Más Información',
+        infoUrl: 'https://webilution.ac-page.com/programacalma?test=true'
       }
     },
     team: {
@@ -375,6 +405,7 @@ const TRANSLATIONS = {
         { id: 'acupuntura', title: 'Energy Evaluation and Acupuncture', lead: 'Dr. Adriana Ortiz + Ariel Reinaudo', type: 'Acupuncture', desc: 'Pain treatment and homeostatic rebalancing through ancient techniques.', features: ['Care in Rosario', 'Pain management', 'Biological regulation'], cta: 'See more' },
         { id: 'estres', title: 'Stress Control Evaluation and Training', lead: 'Ariel Reinaudo', type: 'Stress Management', desc: 'For those living with anxiety, burnout, or persistent psychiatrist symptoms.', features: ['Care in Rosario', 'Vagal Training', 'Emotional Regulation', 'Spanish Only'], cta: 'See more' },
         { id: 'metabolica', title: 'Nutritional and Metabolic Medicine', lead: 'Dr. Adriana Ortiz', type: 'Functional Health', desc: 'For those seeking hormonal balance, digestive health, or metabolic longevity.', features: ['Functional labs', 'Nutritional protocol', 'Virtual care in Spanish or English'], cta: 'See more' },
+        { id: 'estres_virtual', title: 'Calm and Body Regulation Base Program', lead: 'Ariel Reinaudo', type: 'VIRTUAL STRESS MANAGEMENT', desc: 'For those who feel stress, body tension, racing mind, light sleep, or difficulty recovering calm during the day.', features: ['Spanish Virtual Care', 'Guided breathing and relaxation practices', 'Simple mindfulness and self-induction techniques', 'Practical guidelines to repeat at home autonomously'], cta: 'See more' },
         { id: 'coherencia_vfc', title: 'Heart Coherence Assessment and Training (HRV)', lead: 'Ariel Reinaudo', type: 'HEART COHERENCE', desc: 'For those who feel stress, anxiety, light sleep or difficulty recovering calm and focus on a daily basis.', features: ['Spanish Virtual Care', 'Guided biofeedback training', 'Practice protocol (with or without wearables)', 'Follow-up by simple indicators'], cta: 'See more' },
         { id: 'reconfiguracion', title: 'Internal State Reconfiguration Evaluation and Training', lead: 'Ariel Reinaudo', type: 'INTERNAL RECONFIGURATION', desc: 'For those who repeat patterns, live with anxiety, or feel blocks in decisions.', features: ['Spanish Virtual Care', 'Belief change', 'Mental clarity and decision making', 'Emotional regulation'], cta: 'See more' },
         { id: 'eneagrama', title: 'Enneagram Consultation for Self-Knowledge and Personal Transformation', lead: 'Ariel Reinaudo', type: 'VIRTUAL ENNEAGRAM', desc: 'For those who wish to understand their character patterns, deep motivations, and decision-making.', features: ['Spanish Virtual Care', 'Plan with self-observation practices', 'Character pattern reading', 'Belief and reaction work'], cta: 'See more' }
@@ -582,6 +613,35 @@ const TRANSLATIONS = {
         cta: "Book now",
         info: 'More Information',
         infoUrl: 'https://webilution.ac-page.com/eneagrama'
+      },
+      estres_virtual: {
+        title: "Calm and Body Regulation Base Program",
+        description: "A program of 4 virtual weekly sessions, oriented towards learning simple practices of breathing, body relaxation, and mindfulness, to help decrease stress activation and recover a basic sense of calm during the day. It is an initial, practical, and accessible program, designed as a foundation before moving on to more specific or deeper techniques.",
+        servicesTitle: "Services included in the consultation",
+        services: [
+          "Initial assessment of overall stress level, body tension, and self-regulation habits",
+          "Guided practice of slow and conscious breathing",
+          "Training in self-induced body relaxation",
+          "Simple mindfulness practices focused on the body",
+          "Verbal instructions for brief exercises to repeat at home autonomously"
+        ],
+        benefitsTitle: "Benefits of this consultation",
+        benefits: [
+          "Helps reduce body activation associated with stress",
+          "Promotes a greater sense of calm and inner rest",
+          "Improves perception of bodily tension signals",
+          "Facilitates brief pause moments during the day",
+          "Creates a simple foundation for later working with deeper techniques"
+        ],
+        investmentTitle: "Investment",
+        investment: [
+          "$60 USD (Complete 4-Session Program)",
+          "If you are an active member, you get a 25% discount.",
+          "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
+        ],
+        cta: "Book now",
+        info: 'More Information',
+        infoUrl: 'https://webilution.ac-page.com/programacalma?test=true'
       }
     },
     team: {
@@ -791,7 +851,7 @@ const App: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {d.programs.cards.map((card, i) => {
-              const isVirtual = card.id === 'metabolica' || card.id === 'reconfiguracion' || card.id === 'coherencia_vfc' || card.id === 'eneagrama';
+              const isVirtual = card.id === 'metabolica' || card.id === 'reconfiguracion' || card.id === 'coherencia_vfc' || card.id === 'eneagrama' || card.id === 'estres_virtual';
               const modalityLabel = isVirtual ? (d as any).modalityLabels.virtual : (d as any).modalityLabels.presencial;
               
               return (
@@ -822,6 +882,8 @@ const App: React.FC = () => {
                       setActiveModal('coherencia_vfc');
                     } else if (card.id === 'eneagrama') {
                       setActiveModal('eneagrama');
+                    } else if (card.id === 'estres_virtual') {
+                      setActiveModal('estres_virtual');
                     } else {
                       setInitialBookingState({});
                       setRouterResetKey(prev => prev + 1);
@@ -1354,6 +1416,80 @@ const App: React.FC = () => {
                   className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
                 >
                   {d.details.eneagrama.cta}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeModal === 'estres_virtual' && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-0 md:p-6 animate-in fade-in duration-300">
+          <div className="bg-white w-full h-full md:h-auto md:max-h-[90vh] md:max-w-4xl md:rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-300">
+            <div className="p-6 md:p-8 flex items-center justify-between border-b border-slate-100 bg-white shrink-0">
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900">{d.details.estres_virtual.title}</h3>
+              <button onClick={closeModal} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                <svg className="w-6 h-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="p-6 md:p-10 overflow-y-auto flex-grow">
+              <p className="text-slate-600 leading-relaxed mb-10 text-lg">
+                {d.details.estres_virtual.description}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-600 mb-6">{d.details.estres_virtual.servicesTitle}</h4>
+                  <ul className="space-y-4">
+                    {d.details.estres_virtual.services.map((s, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0"></span>
+                        <span className="text-sm leading-relaxed">{s}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-600 mb-6">{d.details.estres_virtual.benefitsTitle}</h4>
+                  <ul className="space-y-4">
+                    {d.details.estres_virtual.benefits.map((b, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 shrink-0"></span>
+                        <span className="text-sm leading-relaxed">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                <h4 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-6">{d.details.estres_virtual.investmentTitle}</h4>
+                <div className="space-y-3">
+                  {d.details.estres_virtual.investment.map((line, i) => (
+                    <p key={i} className="text-slate-700 font-medium">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-12 mb-6 flex flex-col sm:flex-row justify-center gap-4 sticky bottom-0 py-4 bg-white">
+                <a 
+                  href={d.details.estres_virtual.infoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 border-2 border-[#5145E5] text-[#5145E5] font-bold rounded-2xl hover:bg-indigo-50 transition-all text-center"
+                >
+                  {d.details.estres_virtual.info}
+                </a>
+                <button 
+                  onClick={() => handleBookNowFromModal({ modality: 'virtual', lang: 'es', area: 'estres_virtual' })} 
+                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  {d.details.estres_virtual.cta}
                 </button>
               </div>
             </div>
