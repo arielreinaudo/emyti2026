@@ -1,9 +1,10 @@
 
 // EMYTI - Holistic Healing Website
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import BookingRouter from './components/BookingRouter';
-import { Language, BookingState, Modality } from './types';
+import { EbooksPage } from './components/EbooksPage';
+import { Language, BookingState, Modality, CurrentView } from './types';
 
 // Image paths (Using Dropbox raw links)
 const adrianaImg = 'https://www.dropbox.com/scl/fi/cxs7w2sk1cy1jfry799cu/2.png?rlkey=9rtfshipxgdfz8cc75y5imla1&raw=1';
@@ -14,7 +15,7 @@ const heroBgImg = 'https://www.dropbox.com/scl/fi/jwd04gdjc1ndwi3p5kizi/pcjvdwie
 
 const TRANSLATIONS = {
   es: {
-    nav: { model: 'Modelo', programs: 'Programas', team: 'Equipo', rosario: 'Presencial' },
+    nav: { model: 'Modelo', programs: 'Programas', team: 'Equipo', rosario: 'Presencial', ebooks: 'E-books' },
     hero: {
       tag: '360° Holistic Healing',
       title: 'Volvé a sentirte bien',
@@ -371,7 +372,7 @@ const TRANSLATIONS = {
     }
   },
   en: {
-    nav: { model: 'Model', programs: 'Programs', team: 'Team', rosario: 'In-person' },
+    nav: { model: 'Model', programs: 'Programs', team: 'Team', rosario: 'In-person', ebooks: 'E-books' },
     hero: {
       tag: '360° Holistic Healing',
       title: 'Feel good again',
@@ -731,10 +732,53 @@ const TRANSLATIONS = {
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('es');
+  const [currentView, setCurrentView] = useState<CurrentView>('home');
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [routerResetKey, setRouterResetKey] = useState<number>(0);
   const [initialBookingState, setInitialBookingState] = useState<Partial<BookingState>>({});
   const d = TRANSLATIONS[lang];
+
+  useEffect(() => {
+    // Check initial hash on client mount after hydration is complete
+    if (window.location.hash === '#ebooks') {
+      setCurrentView('ebooks');
+    }
+
+    const handleHashChange = () => {
+      if (window.location.hash === '#ebooks') {
+        setCurrentView('ebooks');
+      } else {
+        setCurrentView('home');
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const handleNavigate = (view: CurrentView, sectionId?: string) => {
+    if (view === 'ebooks') {
+      setCurrentView('ebooks');
+      window.location.hash = '#ebooks';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      setCurrentView('home');
+      if (sectionId) {
+        window.location.hash = `#${sectionId}`;
+        setTimeout(() => {
+          const target = document.getElementById(sectionId);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 80);
+      } else {
+        if (window.location.hash === '#ebooks') {
+          window.history.pushState(null, '', window.location.pathname);
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  };
 
   const closeModal = () => setActiveModal(null);
 
@@ -749,8 +793,22 @@ const App: React.FC = () => {
   };
 
   return (
-    <Layout currentLang={lang} onLanguageChange={setLang} dict={d}>
-      {/* HERO SECTION */}
+    <Layout 
+      currentLang={lang} 
+      onLanguageChange={setLang} 
+      dict={d}
+      currentView={currentView}
+      onNavigate={handleNavigate}
+    >
+      {currentView === 'ebooks' ? (
+        <EbooksPage
+          lang={lang}
+          onNavigateHome={() => handleNavigate('home')}
+          onBookConsultation={() => handleNavigate('home', 'reservar')}
+        />
+      ) : (
+        <>
+          {/* HERO SECTION */}
       <section className="relative overflow-hidden pt-20 pb-32">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
@@ -1681,23 +1739,25 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* BOOKING ROUTER (SECTION) */}
-      <section id="reservar" className="py-24 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-             <h2 className="text-4xl font-bold text-slate-900 mb-6">{d.routerSection.title}</h2>
-             <p className="text-slate-600">
-               {d.routerSection.desc}
-             </p>
-          </div>
-          
-          <BookingRouter 
-            initialLang={lang} 
-            initialState={initialBookingState}
-            key={`booking-router-${routerResetKey}`}
-          />
-        </div>
-      </section>
+          {/* BOOKING ROUTER (SECTION) */}
+          <section id="reservar" className="py-24 bg-slate-50 border-t border-slate-200">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="text-center max-w-2xl mx-auto mb-16">
+                 <h2 className="text-4xl font-bold text-slate-900 mb-6">{d.routerSection.title}</h2>
+                 <p className="text-slate-600">
+                   {d.routerSection.desc}
+                 </p>
+              </div>
+              
+              <BookingRouter 
+                initialLang={lang} 
+                initialState={initialBookingState}
+                key={`booking-router-${routerResetKey}`}
+              />
+            </div>
+          </section>
+        </>
+      )}
     </Layout>
   );
 };
