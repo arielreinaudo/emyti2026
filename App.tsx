@@ -280,7 +280,7 @@ const TRANSLATIONS = {
         investmentTitle: "Inversión",
         investment: [
           "$60 USD (Programa de 4 sesiones)",
-          "Si sos miembro activo, tenés 25% de descuento.",
+          "Incluido GRATIS en tu membresía activa",
           "Importes expresados en Dólares Americanos, pagaderos en Dólares o Pesos Argentinos al precio del dólar oficial venta."
         ],
         cta: "Agendar ahora",
@@ -637,7 +637,7 @@ const TRANSLATIONS = {
         investmentTitle: "Investment",
         investment: [
           "$60 USD (Complete 4-Session Program)",
-          "If you are an active member, you get a 25% discount.",
+          "Included FREE with your active membership",
           "Amounts expressed in US Dollars, payable in Dollars or Argentine Pesos at the official dollar rate."
         ],
         cta: "Book now",
@@ -1014,18 +1014,10 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-12 mb-6 flex flex-col sm:flex-row justify-center gap-4 sticky bottom-0 py-4 bg-white">
-                <a 
-                  href={d.details.metabolica.infoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 border-2 border-[#5145E5] text-[#5145E5] font-bold rounded-2xl hover:bg-indigo-50 transition-all text-center"
-                >
-                  {d.details.metabolica.info}
-                </a>
+              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
                 <button 
                   onClick={() => handleBookNowFromModal({ modality: 'virtual', area: 'dra' })} 
-                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="w-full sm:w-auto px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98] text-center"
                 >
                   {d.details.metabolica.cta}
                 </button>
@@ -1088,18 +1080,10 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-12 mb-6 flex flex-col sm:flex-row justify-center gap-4 sticky bottom-0 py-4 bg-white">
-                <a 
-                  href={d.details.evaluacion_metabolica.infoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 border-2 border-[#5145E5] text-[#5145E5] font-bold rounded-2xl hover:bg-indigo-50 transition-all text-center"
-                >
-                  {d.details.evaluacion_metabolica.info}
-                </a>
+              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
                 <button 
                   onClick={() => handleBookNowFromModal({ modality: 'presencial', area: 'dra' })} 
-                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="w-full sm:w-auto px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98] text-center"
                 >
                   {d.details.evaluacion_metabolica.cta}
                 </button>
@@ -1162,18 +1146,10 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-12 mb-6 flex flex-col sm:flex-row justify-center gap-4 sticky bottom-0 py-4 bg-white">
-                <a 
-                  href={d.details.acupuntura.infoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 border-2 border-[#5145E5] text-[#5145E5] font-bold rounded-2xl hover:bg-indigo-50 transition-all text-center"
-                >
-                  {d.details.acupuntura.info}
-                </a>
+              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
                 <button 
                   onClick={() => handleBookNowFromModal({ modality: 'presencial', area: 'acupuntura' })} 
-                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="w-full sm:w-auto px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98] text-center"
                 >
                   {d.details.acupuntura.cta}
                 </button>
@@ -1236,18 +1212,10 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-12 mb-6 flex flex-col sm:flex-row justify-center gap-4 sticky bottom-0 py-4 bg-white">
-                <a 
-                  href={d.details.estres.infoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 border-2 border-[#5145E5] text-[#5145E5] font-bold rounded-2xl hover:bg-indigo-50 transition-all text-center"
-                >
-                  {d.details.estres.info}
-                </a>
+              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
                 <button 
                   onClick={() => handleBookNowFromModal({ modality: 'presencial', area: 'ariel' })} 
-                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="w-full sm:w-auto px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98] text-center"
                 >
                   {d.details.estres.cta}
                 </button>
@@ -1312,18 +1280,10 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-12 mb-6 flex flex-col sm:flex-row justify-center gap-4 sticky bottom-0 py-4 bg-white">
-                <a 
-                  href={d.details.reconfiguracion.infoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 border-2 border-[#5145E5] text-[#5145E5] font-bold rounded-2xl hover:bg-indigo-50 transition-all text-center"
-                >
-                  {d.details.reconfiguracion.info}
-                </a>
+              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
                 <button 
                   onClick={() => handleBookNowFromModal({ modality: 'virtual', lang: 'es', area: 'reconfiguracion' })} 
-                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="w-full sm:w-auto px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98] text-center"
                 >
                   {d.details.reconfiguracion.cta}
                 </button>
@@ -1386,18 +1346,10 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-12 mb-6 flex flex-col sm:flex-row justify-center gap-4 sticky bottom-0 py-4 bg-white">
-                <a 
-                  href={d.details.coherencia_vfc.infoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 border-2 border-[#5145E5] text-[#5145E5] font-bold rounded-2xl hover:bg-indigo-50 transition-all text-center"
-                >
-                  {d.details.coherencia_vfc.info}
-                </a>
+              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
                 <button 
                   onClick={() => handleBookNowFromModal({ modality: 'virtual', lang: 'es', area: 'coherencia' })} 
-                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="w-full sm:w-auto px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98] text-center"
                 >
                   {d.details.coherencia_vfc.cta}
                 </button>
@@ -1460,18 +1412,10 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-12 mb-6 flex flex-col sm:flex-row justify-center gap-4 sticky bottom-0 py-4 bg-white">
-                <a 
-                  href={d.details.eneagrama.infoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 border-2 border-[#5145E5] text-[#5145E5] font-bold rounded-2xl hover:bg-indigo-50 transition-all text-center"
-                >
-                  {d.details.eneagrama.info}
-                </a>
+              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
                 <button 
                   onClick={() => handleBookNowFromModal({ modality: 'virtual', lang: 'es', area: 'eneagrama' })} 
-                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="w-full sm:w-auto px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98] text-center"
                 >
                   {d.details.eneagrama.cta}
                 </button>
@@ -1534,18 +1478,10 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-12 mb-6 flex flex-col sm:flex-row justify-center gap-4 sticky bottom-0 py-4 bg-white">
-                <a 
-                  href={d.details.estres_virtual.infoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 border-2 border-[#5145E5] text-[#5145E5] font-bold rounded-2xl hover:bg-indigo-50 transition-all text-center"
-                >
-                  {d.details.estres_virtual.info}
-                </a>
+              <div className="mt-12 mb-6 flex justify-center sticky bottom-0 py-4 bg-white">
                 <button 
                   onClick={() => handleBookNowFromModal({ modality: 'virtual', lang: 'es', area: 'estres_virtual' })} 
-                  className="px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="w-full sm:w-auto px-12 py-4 bg-[#5145E5] text-white font-bold rounded-2xl shadow-xl hover:bg-[#4338ca] transition-all transform hover:scale-[1.02] active:scale-[0.98] text-center"
                 >
                   {d.details.estres_virtual.cta}
                 </button>
