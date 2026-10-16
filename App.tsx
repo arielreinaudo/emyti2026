@@ -348,7 +348,8 @@ const TRANSLATIONS = {
     },
     routerSection: {
       title: 'Comienza tu proceso',
-      desc: 'Utiliza nuestro asistente inteligente para encontrar el turno y profesional que mejor se adapte a tu caso.'
+      desc: 'Utiliza nuestro asistente inteligente para encontrar el turno y profesional que mejor se adapte a tu caso.',
+      admissionNotice: 'Nuestro servicio se reserva el derecho de admisión y permanencia. Seleccionamos a nuestros pacientes en función de la viabilidad del tratamiento y la compatibilidad terapéutica, con el objetivo de garantizar una atención de calidad y un vínculo profesional adecuado para ambas partes.'
     },
     footer: {
       tagline: '360° Holistic Healing Model. Medicina Funcional, Metabolismo y Manejo de Estrés.',
@@ -705,7 +706,8 @@ const TRANSLATIONS = {
     },
     routerSection: {
       title: 'Start your process',
-      desc: 'Use our smart assistant to find the appointment and professional that best suits your case.'
+      desc: 'Use our smart assistant to find the appointment and professional that best suits your case.',
+      admissionNotice: 'Our service reserves the right of admission and permanence. We select our patients based on treatment viability and therapeutic compatibility, with the goal of ensuring quality care and a proper professional relationship for both parties.'
     },
     footer: {
       tagline: '360° Holistic Healing Model. Functional Medicine, Metabolism and Stress Management.',
@@ -1690,6 +1692,12 @@ const App: React.FC = () => {
                 initialState={initialBookingState}
                 key={`booking-router-${routerResetKey}`}
               />
+
+              <div className="max-w-3xl mx-auto -mt-4 mb-4 text-center px-6 py-4 bg-white/70 border border-slate-200 rounded-2xl shadow-sm">
+                <p className="text-xs md:text-sm text-slate-500 leading-relaxed">
+                  {d.routerSection.admissionNotice}
+                </p>
+              </div>
             </div>
           </section>
         </>
